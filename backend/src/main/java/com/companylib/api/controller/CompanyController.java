@@ -3,6 +3,7 @@ package com.companylib.api.controller;
 import com.companylib.api.domain.dto.*;
 import com.companylib.api.service.CompanyNotFoundException;
 import com.companylib.api.service.CompanyService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,7 @@ public class CompanyController {
 
     @GetMapping
     public ResponseEntity<PageResponse<CompanySummaryDto>> search(
-        @ModelAttribute CompanySearchRequest request
+        @Valid @ModelAttribute CompanySearchRequest request
     ) {
         return ResponseEntity.ok(companyService.search(request));
     }

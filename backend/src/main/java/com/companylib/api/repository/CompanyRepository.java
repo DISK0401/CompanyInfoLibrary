@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Optional;
+
 public interface CompanyRepository extends JpaRepository<Company, String> {
 
     Page<Company> findByNameContainingIgnoreCase(String name, Pageable pageable);
@@ -25,4 +27,12 @@ public interface CompanyRepository extends JpaRepository<Company, String> {
         @Param("minEmployees") Integer minEmployees,
         Pageable pageable
     );
+
+    @Query("""
+        SELECT DISTINCT c FROM Company c
+        LEFT JOIN FETCH c.finances
+        LEFT JOIN FETCH c.businessItems
+        WHERE c.corporateNumber = :corporateNumber
+        """)
+    Optional<Company> findByIdWithDetails(@Param("corporateNumber") String corporateNumber);
 }
