@@ -1,0 +1,17 @@
+# ---- Build stage ----
+FROM eclipse-temurin:17-jdk-alpine AS builder
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+
+# Maven Wrapper がない場合は mvn コマンドを使用
+# CI 環境では ./mvnw package -DskipTests で代替可能
+RUN apk add --no-cache maven && \
+    mvn package -DskipTests
+
+# ---- Run stage ----
+FROM eclipse-temurin:17-jre-alpine
+WORKDIR /app
+COPY --from=builder /app/target/*.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]
