@@ -1,0 +1,2 @@
+# CompanyInfoLibrary
+企業情報を収集しライブラリ化するサービス
