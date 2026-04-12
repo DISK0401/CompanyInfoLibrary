@@ -16,11 +16,11 @@ CREATE TABLE IF NOT EXISTS company_finances (
     created_at              TIMESTAMP NOT NULL DEFAULT NOW(),
     updated_at              TIMESTAMP NOT NULL DEFAULT NOW(),
     CONSTRAINT pk_company_finances PRIMARY KEY (id),
+    CONSTRAINT uq_company_finances_corporate_number_period UNIQUE (corporate_number, period),
     CONSTRAINT fk_company_finances_corporate_number
         FOREIGN KEY (corporate_number) REFERENCES companies (corporate_number) ON DELETE CASCADE
 );
 
-CREATE INDEX IF NOT EXISTS idx_company_finances_corporate_number ON company_finances (corporate_number);
-CREATE INDEX IF NOT EXISTS idx_company_finances_period ON company_finances (period);
+CREATE INDEX IF NOT EXISTS idx_company_finances_corporate_number_period ON company_finances (corporate_number, period DESC);
 
 COMMENT ON TABLE company_finances IS '財務情報（年度別）';

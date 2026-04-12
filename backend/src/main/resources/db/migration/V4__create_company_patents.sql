@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS company_patents (
     created_at       TIMESTAMP NOT NULL DEFAULT NOW(),
     updated_at       TIMESTAMP NOT NULL DEFAULT NOW(),
     CONSTRAINT pk_company_patents PRIMARY KEY (id),
+    CONSTRAINT uq_company_patents_corp_patent_number UNIQUE (corporate_number, patent_number),
     CONSTRAINT fk_company_patents_corporate_number
         FOREIGN KEY (corporate_number) REFERENCES companies (corporate_number) ON DELETE CASCADE
 );

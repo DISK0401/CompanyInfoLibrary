@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS company_subsidies (
     created_at            TIMESTAMP NOT NULL DEFAULT NOW(),
     updated_at            TIMESTAMP NOT NULL DEFAULT NOW(),
     CONSTRAINT pk_company_subsidies PRIMARY KEY (id),
+    CONSTRAINT uq_company_subsidies_corp_title_date UNIQUE (corporate_number, title, date_of_approval),
     CONSTRAINT fk_company_subsidies_corporate_number
         FOREIGN KEY (corporate_number) REFERENCES companies (corporate_number) ON DELETE CASCADE
 );
