@@ -1,0 +1,29 @@
+[
+  {
+    "corporate_number": "1234567890123",
+    "name": "テスト株式会社",
+    "kana": "テストカブシキガイシャ",
+    "location": "東京都千代田区丸の内1-1-1",
+    "capital_stock": 10000000,
+    "employee_number": 100,
+    "status": "01",
+    "update_date": "2024-01-15"
+  },
+  {
+    "corporate_number": "9876543210987",
+    "name": "サンプル有限会社",
+    "location": "大阪府大阪市北区梅田2-2-2",
+    "capital_stock": 3000000,
+    "employee_number": 30,
+    "status": "01",
+    "update_date": "2024-01-10"
+  },
+  {
+    "corporate_number": null,
+    "name": "法人番号なしの無効データ"
+  },
+  {
+    "corporate_number": "1111111111111",
+    "name": null
+  }
+]
