@@ -11,8 +11,6 @@ import java.util.Optional;
 
 public interface CompanyRepository extends JpaRepository<Company, String> {
 
-    Page<Company> findByNameContainingIgnoreCase(String name, Pageable pageable);
-
     @Query("""
         SELECT c FROM Company c
         WHERE (:name IS NULL OR LOWER(c.name) LIKE LOWER(CONCAT('%', :name, '%')))

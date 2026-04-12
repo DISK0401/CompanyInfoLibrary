@@ -59,8 +59,11 @@ public class GBizInfoImportJobConfig {
     @Bean
     @StepScope
     public JsonItemReader<HojinInfo> gbizInfoJsonReader(
-        @Value("#{jobParameters['inputFilePath']}") String inputFilePath
+        @Value("#{jobParameters['inputFilePath'] ?: null}") String inputFilePath
     ) {
+        if (inputFilePath == null || inputFilePath.isBlank()) {
+            throw new IllegalArgumentException("ジョブパラメータ 'inputFilePath' が指定されていません");
+        }
         return new JsonItemReaderBuilder<HojinInfo>()
             .name("gbizInfoJsonReader")
             .resource(new FileSystemResource(inputFilePath))

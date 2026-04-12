@@ -1,14 +1,14 @@
 package com.companylib.api.domain.entity;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "companies")
@@ -78,17 +78,19 @@ public class Company {
     @Column(name = "gbizinfo_update_date")
     private LocalDate gbizinfoUpdateDate;
 
+    @Setter(AccessLevel.NONE)
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
+    @Setter(AccessLevel.NONE)
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
 
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<CompanyFinance> finances = new ArrayList<>();
+    private Set<CompanyFinance> finances = new HashSet<>();
 
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<CompanyBusinessItem> businessItems = new ArrayList<>();
+    private Set<CompanyBusinessItem> businessItems = new HashSet<>();
 
     @PrePersist
     protected void onCreate() {

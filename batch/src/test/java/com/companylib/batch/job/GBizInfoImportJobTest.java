@@ -156,6 +156,10 @@ class GBizInfoImportJobTest {
     private String resolveTestFilePath(String resourceName) {
         URL resource = getClass().getClassLoader().getResource(resourceName);
         assertThat(resource).as("テストリソース '%s' が見つかりません", resourceName).isNotNull();
-        return resource.getPath();
+        try {
+            return java.nio.file.Paths.get(resource.toURI()).toAbsolutePath().toString();
+        } catch (java.net.URISyntaxException e) {
+            throw new RuntimeException("テストリソースパスの解決に失敗: " + resourceName, e);
+        }
     }
 }

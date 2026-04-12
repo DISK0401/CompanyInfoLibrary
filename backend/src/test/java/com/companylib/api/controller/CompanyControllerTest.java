@@ -202,12 +202,21 @@ class CompanyControllerTest {
         }
 
         @Test
+        @DisplayName("13桁以外の法人番号はバリデーションエラーで 400 を返す")
+        void getDetail_invalidCorporateNumberFormat_returns400() throws Exception {
+            mockMvc.perform(get("/api/companies/invalid")
+                    .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.error").value("バリデーションエラー"));
+        }
+
+        @Test
         @DisplayName("IllegalArgumentException は 400 を返す")
         void getDetail_illegalArgument_returns400() throws Exception {
-            when(companyService.getDetail(any()))
+            when(companyService.getDetail("1234567890123"))
                 .thenThrow(new IllegalArgumentException("不正な法人番号形式"));
 
-            mockMvc.perform(get("/api/companies/invalid")
+            mockMvc.perform(get("/api/companies/1234567890123")
                     .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.error").value("不正な法人番号形式"));

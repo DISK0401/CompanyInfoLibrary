@@ -86,6 +86,7 @@
 import { ref, reactive, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { searchCompanies } from '@/api/companies'
+import { formatCapital } from '@/utils/format'
 
 const router = useRouter()
 
@@ -144,18 +145,6 @@ function goToDetail(corporateNumber) {
   router.push({ name: 'CompanyDetail', params: { corporateNumber } })
 }
 
-function formatCapital(value) {
-  if (value == null) return '—'
-  if (value >= 100_000_000) {
-    const oku = Math.floor(value / 100_000_000)
-    const man = Math.floor((value % 100_000_000) / 10_000)
-    return man > 0 ? `${oku}億${man.toLocaleString()}万円` : `${oku}億円`
-  }
-  if (value >= 10_000) {
-    return `${Math.floor(value / 10_000).toLocaleString()}万円`
-  }
-  return `${value.toLocaleString()}円`
-}
 </script>
 
 <style scoped>

@@ -20,9 +20,8 @@ public class CompanyService {
 
     @Transactional(readOnly = true)
     public PageResponse<CompanySummaryDto> search(CompanySearchRequest req) {
-        int validSize = Math.min(req.getSize(), 100);
         PageRequest pageable = PageRequest.of(
-            req.getPage(), validSize,
+            req.getPage(), req.getSize(),
             Sort.by(Sort.Direction.DESC, "capitalStock")
         );
         Page<CompanySummaryDto> result = companyRepository.searchCompanies(

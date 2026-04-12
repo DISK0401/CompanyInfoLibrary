@@ -1,0 +1,9 @@
+spring:
+  flyway:
+    # @DataJpaTest は H2 インメモリ DB を使用するため Flyway を無効化し、
+    # Hibernate の DDL 自動生成でスキーマを作成する
+    enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
