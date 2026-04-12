@@ -50,7 +50,9 @@ public class GBizInfoImportJobConfig {
             .writer(gbizInfoImportWriter())
             .faultTolerant()
             .skipLimit(1000)
-            .skip(Exception.class)
+            .skip(com.fasterxml.jackson.core.JsonProcessingException.class)
+            .skip(IllegalArgumentException.class)
+            .noSkip(org.springframework.dao.DataAccessException.class)
             .build();
     }
 

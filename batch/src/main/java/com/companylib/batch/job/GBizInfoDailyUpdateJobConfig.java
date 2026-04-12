@@ -2,6 +2,8 @@ package com.companylib.batch.job;
 
 import com.companylib.batch.infrastructure.gbizinfo.GBizInfoApiClient;
 import com.companylib.batch.infrastructure.gbizinfo.CompanyUpsertService;
+import com.companylib.batch.infrastructure.gbizinfo.UpdateTargetRepository;
+import com.companylib.batch.infrastructure.gbizinfo.dto.HojinInfo;
 import com.companylib.batch.infrastructure.gbizinfo.dto.HojinInfoResponse;
 import com.companylib.batch.infrastructure.gbizinfo.dto.UpdateInfoResponse;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +14,7 @@ import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.core.step.tasklet.Tasklet;
+import org.springframework.batch.item.*;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -20,6 +23,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -31,8 +35,10 @@ public class GBizInfoDailyUpdateJobConfig {
     private final PlatformTransactionManager transactionManager;
     private final GBizInfoApiClient apiClient;
     private final CompanyUpsertService companyUpsertService;
+    private final UpdateTargetRepository updateTargetRepository;
 
     public static final String JOB_NAME = "gbizInfoDailyUpdateJob";
+    private static final int CHUNK_SIZE = 50;
 
     @Bean(JOB_NAME)
     public Job gbizInfoDailyUpdateJob(Step fetchUpdateInfoStep, Step updateCompaniesStep) {
@@ -42,7 +48,7 @@ public class GBizInfoDailyUpdateJobConfig {
             .build();
     }
 
-    /** Step1: /updateInfo API から更新法人番号リストを取得してJobExecutionContextに保存 */
+    /** Step1: /updateInfo API から更新法人番号リストを取得して DB テーブルに保存 */
     @Bean
     public Step fetchUpdateInfoStep() {
         return new StepBuilder("fetchUpdateInfoStep", jobRepository)
@@ -57,72 +63,104 @@ public class GBizInfoDailyUpdateJobConfig {
         @Value("#{jobParameters['to'] ?: null}") String to
     ) {
         return (contribution, chunkContext) -> {
+            long jobExecutionId = chunkContext.getStepContext()
+                .getStepExecution().getJobExecutionId();
+
             String targetFrom = from != null ? from
                 : LocalDate.now().minusDays(1).format(DateTimeFormatter.ISO_LOCAL_DATE);
             String targetTo = to != null ? to
                 : LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE);
 
             log.info("差分取得期間: {} ~ {}", targetFrom, targetTo);
+
+            // 冪等性: 前回の残骸を削除してから再登録
+            updateTargetRepository.clearTargets(jobExecutionId);
+
             UpdateInfoResponse response = apiClient.getUpdateInfo(targetFrom, targetTo);
+            if (response == null || response.getHojinInfos() == null || response.getHojinInfos().isEmpty()) {
+                log.info("更新対象なし");
+                return RepeatStatus.FINISHED;
+            }
 
             List<String> corporateNumbers = response.getHojinInfos().stream()
                 .map(UpdateInfoResponse.UpdatedHojinInfo::getCorporateNumber)
                 .toList();
 
+            updateTargetRepository.bulkInsert(jobExecutionId, corporateNumbers);
             log.info("更新対象法人数: {}", corporateNumbers.size());
-            chunkContext.getStepContext()
-                .getStepExecution()
-                .getJobExecution()
-                .getExecutionContext()
-                .put("corporateNumbers", corporateNumbers);
 
             return RepeatStatus.FINISHED;
         };
     }
 
-    /** Step2: 各法人番号の詳細情報を取得して DB UPSERT */
+    /** Step2: 各法人番号の詳細情報を DB ページングで取得して UPSERT（chunk 指向処理） */
     @Bean
     public Step updateCompaniesStep() {
         return new StepBuilder("updateCompaniesStep", jobRepository)
-            .tasklet(updateCompaniesTasklet(), transactionManager)
+            .<String, HojinInfo>chunk(CHUNK_SIZE, transactionManager)
+            .reader(updateTargetReader(0L))
+            .processor(updateTargetProcessor())
+            .writer(updateTargetWriter())
+            .faultTolerant()
+            .retry(RuntimeException.class)
+            .retryLimit(3)
+            .skipLimit(100)
+            .skip(RuntimeException.class)
             .build();
     }
 
     @Bean
     @StepScope
-    public Tasklet updateCompaniesTasklet() {
-        return (contribution, chunkContext) -> {
-            @SuppressWarnings("unchecked")
-            List<String> corporateNumbers = (List<String>) chunkContext
-                .getStepContext()
-                .getStepExecution()
-                .getJobExecution()
-                .getExecutionContext()
-                .get("corporateNumbers");
+    public ItemReader<String> updateTargetReader(
+        @Value("#{stepExecution.jobExecution.id}") Long jobExecutionId
+    ) {
+        return new ItemReader<>() {
+            private int offset = 0;
+            private List<String> buffer = new ArrayList<>();
+            private int bufferIndex = 0;
+            private boolean exhausted = false;
 
-            if (corporateNumbers == null || corporateNumbers.isEmpty()) {
-                log.info("更新対象なし");
-                return RepeatStatus.FINISHED;
-            }
+            @Override
+            public String read() {
+                if (exhausted) return null;
 
-            int success = 0;
-            int failed = 0;
-            for (String corporateNumber : corporateNumbers) {
-                try {
-                    HojinInfoResponse response = apiClient.getHojinInfo(corporateNumber);
-                    if (response != null && response.getHojinInfos() != null) {
-                        response.getHojinInfos().forEach(companyUpsertService::upsert);
-                        success++;
+                if (bufferIndex >= buffer.size()) {
+                    buffer = updateTargetRepository.fetchPage(jobExecutionId, offset, CHUNK_SIZE);
+                    offset += buffer.size();
+                    bufferIndex = 0;
+
+                    if (buffer.isEmpty()) {
+                        exhausted = true;
+                        return null;
                     }
-                    // API レート制限対策（1件あたり最低100ms待機）
-                    Thread.sleep(100);
-                } catch (Exception e) {
-                    log.error("更新失敗: corporateNumber={}, error={}", corporateNumber, e.getMessage());
-                    failed++;
                 }
+
+                return buffer.get(bufferIndex++);
             }
-            log.info("日次差分更新完了: success={}, failed={}", success, failed);
-            return RepeatStatus.FINISHED;
+        };
+    }
+
+    @Bean
+    @StepScope
+    public ItemProcessor<String, HojinInfo> updateTargetProcessor() {
+        return corporateNumber -> {
+            HojinInfoResponse response = apiClient.getHojinInfo(corporateNumber);
+            if (response == null || response.getHojinInfos() == null || response.getHojinInfos().isEmpty()) {
+                log.warn("法人情報取得結果なし: corporateNumber={}", corporateNumber);
+                return null;
+            }
+            return response.getHojinInfos().get(0);
+        };
+    }
+
+    @Bean
+    @StepScope
+    public ItemWriter<HojinInfo> updateTargetWriter() {
+        return items -> {
+            for (HojinInfo item : items) {
+                companyUpsertService.upsert(item);
+            }
+            log.debug("{}件 UPSERT 完了", items.size());
         };
     }
 }
