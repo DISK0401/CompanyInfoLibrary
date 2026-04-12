@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: company-info-library-api
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/companylib}
+    username: ${DB_USERNAME:companylib}
+    password: ${DB_PASSWORD:companylib}
+    driver-class-name: org.postgresql.Driver
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: ${FLYWAY_BASELINE_ON_MIGRATE:false}
+
+  jpa:
+    hibernate:
+      ddl-auto: ${JPA_DDL_AUTO:validate}
+    show-sql: ${JPA_SHOW_SQL:false}
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+server:
+  port: ${SERVER_PORT:8080}
+
+logging:
+  level:
+    com.companylib: ${LOG_LEVEL:INFO}

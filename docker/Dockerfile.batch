@@ -1,0 +1,19 @@
+# ---- Build stage ----
+# ビルドコンテキスト: プロジェクトルート（docker-compose では context: .. を指定）
+FROM eclipse-temurin:17-jdk-alpine AS builder
+WORKDIR /app
+
+# 親 pom と batch モジュールの pom を先にコピーして依存解決をキャッシュ
+COPY pom.xml .
+COPY batch/pom.xml batch/pom.xml
+COPY batch/src batch/src
+
+RUN apk add --no-cache maven && \
+    mvn -pl batch -am package -DskipTests
+
+# ---- Run stage ----
+FROM eclipse-temurin:17-jre-alpine
+WORKDIR /app
+COPY --from=builder /app/batch/target/*.jar app.jar
+EXPOSE 8081
+ENTRYPOINT ["java", "-jar", "app.jar"]

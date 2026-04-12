@@ -1,0 +1,64 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: companylib-db
+    environment:
+      POSTGRES_DB: companylib
+      POSTGRES_USER: companylib
+      POSTGRES_PASSWORD: companylib
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U companylib"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.backend
+    container_name: companylib-backend
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/companylib
+      DB_USERNAME: companylib
+      DB_PASSWORD: companylib
+      JPA_DDL_AUTO: update
+      SERVER_PORT: 8080
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  batch:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.batch
+    container_name: companylib-batch
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/companylib
+      DB_USERNAME: companylib
+      DB_PASSWORD: companylib
+      JPA_DDL_AUTO: update
+      GBIZINFO_API_TOKEN: ${GBIZINFO_API_TOKEN:-}
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: ../docker/Dockerfile.frontend
+    container_name: companylib-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

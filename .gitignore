@@ -1,24 +1,49 @@
-# Compiled class file
+# ===== Java / Maven =====
 *.class
-
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
-*.nar
 *.ear
+*.nar
 *.zip
 *.tar.gz
 *.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+target/
+.mvn/
 hs_err_pid*
 replay_pid*
+
+# ===== Logs =====
+*.log
+logs/
+
+# ===== IDE =====
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# ===== Node.js / Frontend =====
+node_modules/
+dist/
+.vite/
+frontend/.env
+frontend/.env.local
+
+# ===== Docker =====
+docker/.env
+
+# ===== 環境変数（機密情報） =====
+.env
+.env.local
+.env.*.local
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Spring Batch メタデータ（ローカルH2使用時） =====
+*.db
+
+# ===== Claude Code =====
+.claude/
