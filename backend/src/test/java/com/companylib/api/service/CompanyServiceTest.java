@@ -85,27 +85,8 @@ class CompanyServiceTest {
         }
 
         @Test
-        @DisplayName("size が 100 を超える場合は 100 に切り下げる")
-        void search_capsPageSizeAt100() {
-            CompanySearchRequest req = new CompanySearchRequest();
-            req.setSize(200);
-
-            Page<Company> page = new PageImpl<>(List.of(), PageRequest.of(0, 100), 0);
-            when(companyRepository.searchCompanies(any(), any(), any(), any(),
-                argThat(p -> p.getPageSize() == 100)))
-                .thenReturn(page);
-
-            companyService.search(req);
-
-            verify(companyRepository).searchCompanies(
-                any(), any(), any(), any(),
-                argThat(pageable -> pageable.getPageSize() == 100)
-            );
-        }
-
-        @Test
-        @DisplayName("size が 100 以下の場合はそのまま使用する")
-        void search_usesRequestedSizeWhenUnder100() {
+        @DisplayName("size を指定するとそのまま Repository に渡す")
+        void search_usesRequestedSize() {
             CompanySearchRequest req = new CompanySearchRequest();
             req.setSize(50);
 
@@ -119,24 +100,6 @@ class CompanyServiceTest {
             verify(companyRepository).searchCompanies(
                 any(), any(), any(), any(),
                 argThat(pageable -> pageable.getPageSize() == 50)
-            );
-        }
-
-        @Test
-        @DisplayName("size がちょうど 100 のとき切り下げない")
-        void search_sizeExactly100_notCapped() {
-            CompanySearchRequest req = new CompanySearchRequest();
-            req.setSize(100);
-
-            Page<Company> page = new PageImpl<>(List.of(), PageRequest.of(0, 100), 0);
-            when(companyRepository.searchCompanies(any(), any(), any(), any(), any()))
-                .thenReturn(page);
-
-            companyService.search(req);
-
-            verify(companyRepository).searchCompanies(
-                any(), any(), any(), any(),
-                argThat(pageable -> pageable.getPageSize() == 100)
             );
         }
 

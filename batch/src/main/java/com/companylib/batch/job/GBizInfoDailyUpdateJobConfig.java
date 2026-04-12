@@ -100,12 +100,12 @@ public class GBizInfoDailyUpdateJobConfig {
             .<String, HojinInfo>chunk(CHUNK_SIZE, transactionManager)
             .reader(updateTargetReader(0L))
             .processor(updateTargetProcessor())
-            .writer(updateTargetWriter())
+            .writer(updateTargetWriter(null))
             .faultTolerant()
             .retry(RuntimeException.class)
             .retryLimit(3)
             .skipLimit(100)
-            .skip(RuntimeException.class)
+            .skip(IllegalArgumentException.class)
             .build();
     }
 
@@ -155,12 +155,17 @@ public class GBizInfoDailyUpdateJobConfig {
 
     @Bean
     @StepScope
-    public ItemWriter<HojinInfo> updateTargetWriter() {
+    public ItemWriter<HojinInfo> updateTargetWriter(
+        @Value("#{stepExecution.jobExecution.id}") Long jobExecutionId
+    ) {
         return items -> {
+            List<String> processedNumbers = new ArrayList<>();
             for (HojinInfo item : items) {
                 companyUpsertService.upsert(item);
+                processedNumbers.add(item.getCorporateNumber());
             }
-            log.debug("{}件 UPSERT 完了", items.size());
+            updateTargetRepository.markProcessed(jobExecutionId, processedNumbers);
+            log.debug("{}件 UPSERT・処理済みマーク完了", items.size());
         };
     }
 }

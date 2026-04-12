@@ -198,9 +198,9 @@ class CompanyRepositoryTest {
             Company c = result.get();
             assertThat(c.getName()).isEqualTo("テスト株式会社");
             assertThat(c.getFinances()).hasSize(1);
-            assertThat(c.getFinances().get(0).getPeriod()).isEqualTo("2023");
+            assertThat(c.getFinances().iterator().next().getPeriod()).isEqualTo("2023");
             assertThat(c.getBusinessItems()).hasSize(1);
-            assertThat(c.getBusinessItems().get(0).getItemName()).isEqualTo("情報処理サービス");
+            assertThat(c.getBusinessItems().iterator().next().getItemName()).isEqualTo("情報処理サービス");
         }
 
         @Test
