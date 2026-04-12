@@ -49,7 +49,7 @@ class CompanyServiceTest {
     class SearchTest {
 
         @Test
-        @DisplayName("検索条件を渡すと CompanyRepository を呼び出し結果を返す")
+        @DisplayName("name 条件を渡すと Repository を呼び出し結果を返す")
         void search_returnsResults() {
             CompanySearchRequest req = new CompanySearchRequest();
             req.setName("テスト");
@@ -68,7 +68,7 @@ class CompanyServiceTest {
         }
 
         @Test
-        @DisplayName("検索結果が0件のとき空のページを返す")
+        @DisplayName("検索結果が 0 件のとき空のページを返す")
         void search_returnsEmptyPage() {
             CompanySearchRequest req = new CompanySearchRequest();
             req.setPage(0);
@@ -119,6 +119,72 @@ class CompanyServiceTest {
             verify(companyRepository).searchCompanies(
                 any(), any(), any(), any(),
                 argThat(pageable -> pageable.getPageSize() == 50)
+            );
+        }
+
+        @Test
+        @DisplayName("size がちょうど 100 のとき切り下げない")
+        void search_sizeExactly100_notCapped() {
+            CompanySearchRequest req = new CompanySearchRequest();
+            req.setSize(100);
+
+            Page<Company> page = new PageImpl<>(List.of(), PageRequest.of(0, 100), 0);
+            when(companyRepository.searchCompanies(any(), any(), any(), any(), any()))
+                .thenReturn(page);
+
+            companyService.search(req);
+
+            verify(companyRepository).searchCompanies(
+                any(), any(), any(), any(),
+                argThat(pageable -> pageable.getPageSize() == 100)
+            );
+        }
+
+        @Test
+        @DisplayName("location・minCapital・minEmployees パラメータが Repository に正しく渡される")
+        void search_passesAllParamsToRepository() {
+            CompanySearchRequest req = new CompanySearchRequest();
+            req.setName("テスト");
+            req.setLocation("東京都");
+            req.setMinCapital(1_000_000L);
+            req.setMinEmployees(10);
+            req.setPage(0);
+            req.setSize(20);
+
+            Page<Company> page = new PageImpl<>(List.of(), PageRequest.of(0, 20), 0);
+            when(companyRepository.searchCompanies(any(), any(), any(), any(), any()))
+                .thenReturn(page);
+
+            companyService.search(req);
+
+            verify(companyRepository).searchCompanies(
+                eq("テスト"),
+                eq("東京都"),
+                eq(1_000_000L),
+                eq(10),
+                any(Pageable.class)
+            );
+        }
+
+        @Test
+        @DisplayName("検索結果は capitalStock の降順でソートされる")
+        void search_sortsBy_capitalStockDesc() {
+            CompanySearchRequest req = new CompanySearchRequest();
+            req.setPage(0);
+            req.setSize(20);
+
+            Page<Company> page = new PageImpl<>(List.of(), PageRequest.of(0, 20), 0);
+            when(companyRepository.searchCompanies(any(), any(), any(), any(), any()))
+                .thenReturn(page);
+
+            companyService.search(req);
+
+            verify(companyRepository).searchCompanies(
+                any(), any(), any(), any(),
+                argThat(pageable -> {
+                    Sort.Order order = pageable.getSort().getOrderFor("capitalStock");
+                    return order != null && order.isDescending();
+                })
             );
         }
     }

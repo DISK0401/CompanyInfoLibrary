@@ -69,13 +69,25 @@ class CompanyControllerTest {
         }
 
         @Test
-        @DisplayName("size=0 はバリデーションエラーで 400 を返す")
+        @DisplayName("size=0 はバリデーションエラーで 400 を返す（@Min(1) 違反）")
         void search_invalidSize_returns400() throws Exception {
             mockMvc.perform(get("/api/companies")
                     .param("size", "0")
                     .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.error").exists());
+                .andExpect(jsonPath("$.error").value("バリデーションエラー"))
+                .andExpect(jsonPath("$.details.size").exists());
+        }
+
+        @Test
+        @DisplayName("size=101 はバリデーションエラーで 400 を返す（@Max(100) 違反）")
+        void search_sizeExceeds100_returns400() throws Exception {
+            mockMvc.perform(get("/api/companies")
+                    .param("size", "101")
+                    .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.error").value("バリデーションエラー"))
+                .andExpect(jsonPath("$.details.size").exists());
         }
 
         @Test
@@ -86,7 +98,65 @@ class CompanyControllerTest {
                     .param("name", tooLong)
                     .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.error").value("バリデーションエラー"));
+                .andExpect(jsonPath("$.error").value("バリデーションエラー"))
+                .andExpect(jsonPath("$.details.name").exists());
+        }
+
+        @Test
+        @DisplayName("location が 200 文字超はバリデーションエラーで 400 を返す")
+        void search_locationTooLong_returns400() throws Exception {
+            String tooLong = "あ".repeat(201);
+            mockMvc.perform(get("/api/companies")
+                    .param("location", tooLong)
+                    .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.error").value("バリデーションエラー"))
+                .andExpect(jsonPath("$.details.location").exists());
+        }
+
+        @Test
+        @DisplayName("minCapital が負数はバリデーションエラーで 400 を返す")
+        void search_negativeMinCapital_returns400() throws Exception {
+            mockMvc.perform(get("/api/companies")
+                    .param("minCapital", "-1")
+                    .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.error").value("バリデーションエラー"))
+                .andExpect(jsonPath("$.details.minCapital").exists());
+        }
+
+        @Test
+        @DisplayName("minEmployees が負数はバリデーションエラーで 400 を返す")
+        void search_negativeMinEmployees_returns400() throws Exception {
+            mockMvc.perform(get("/api/companies")
+                    .param("minEmployees", "-1")
+                    .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.error").value("バリデーションエラー"))
+                .andExpect(jsonPath("$.details.minEmployees").exists());
+        }
+
+        @Test
+        @DisplayName("page が負数はバリデーションエラーで 400 を返す")
+        void search_negativePage_returns400() throws Exception {
+            mockMvc.perform(get("/api/companies")
+                    .param("page", "-1")
+                    .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.error").value("バリデーションエラー"))
+                .andExpect(jsonPath("$.details.page").exists());
+        }
+
+        @Test
+        @DisplayName("予期しない例外は 500 を返す")
+        void search_unexpectedError_returns500() throws Exception {
+            when(companyService.search(any()))
+                .thenThrow(new RuntimeException("予期しないエラー"));
+
+            mockMvc.perform(get("/api/companies")
+                    .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isInternalServerError())
+                .andExpect(jsonPath("$.error").value("予期しないエラーが発生しました。"));
         }
     }
 
@@ -129,6 +199,30 @@ class CompanyControllerTest {
                     .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isServiceUnavailable())
                 .andExpect(jsonPath("$.error").exists());
+        }
+
+        @Test
+        @DisplayName("IllegalArgumentException は 400 を返す")
+        void getDetail_illegalArgument_returns400() throws Exception {
+            when(companyService.getDetail(any()))
+                .thenThrow(new IllegalArgumentException("不正な法人番号形式"));
+
+            mockMvc.perform(get("/api/companies/invalid")
+                    .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.error").value("不正な法人番号形式"));
+        }
+
+        @Test
+        @DisplayName("予期しない例外は 500 を返す")
+        void getDetail_unexpectedError_returns500() throws Exception {
+            when(companyService.getDetail(any()))
+                .thenThrow(new RuntimeException("予期しないエラー"));
+
+            mockMvc.perform(get("/api/companies/1234567890123")
+                    .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isInternalServerError())
+                .andExpect(jsonPath("$.error").value("予期しないエラーが発生しました。"));
         }
     }
 

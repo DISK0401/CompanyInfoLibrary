@@ -8,6 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -112,6 +113,36 @@ class GBizInfoApiClientTest {
 
             assertThat(result).isNull();
         }
+
+        @Test
+        @DisplayName("404・429 以外の 4xx（例: 401 Unauthorized）で RuntimeException をスロー")
+        void otherClientError_throwsRuntimeException() {
+            when(restTemplate.exchange(any(String.class), any(), any(HttpEntity.class), eq(HojinInfoResponse.class)))
+                .thenThrow(HttpClientErrorException.create(
+                    HttpStatus.UNAUTHORIZED, "Unauthorized", HttpHeaders.EMPTY, null, null));
+
+            assertThatThrownBy(() -> apiClient.getHojinInfo("1234567890123"))
+                .isInstanceOf(RuntimeException.class)
+                .hasMessageContaining("クライアントエラー");
+        }
+
+        @Test
+        @DisplayName("API トークンが X-hojinInfo-api-token ヘッダーに設定される")
+        void sendsApiTokenHeader() {
+            HojinInfoResponse body = new HojinInfoResponse();
+            body.setHojinInfos(List.of(new HojinInfo()));
+
+            @SuppressWarnings("unchecked")
+            ArgumentCaptor<HttpEntity<Void>> entityCaptor = ArgumentCaptor.forClass(HttpEntity.class);
+            when(restTemplate.exchange(
+                any(String.class), eq(HttpMethod.GET), entityCaptor.capture(), eq(HojinInfoResponse.class)
+            )).thenReturn(ResponseEntity.ok(body));
+
+            apiClient.getHojinInfo("1234567890123");
+
+            assertThat(entityCaptor.getValue().getHeaders().getFirst("X-hojinInfo-api-token"))
+                .isEqualTo("test-token");
+        }
     }
 
     @Nested
@@ -162,6 +193,30 @@ class GBizInfoApiClientTest {
             assertThatThrownBy(() -> apiClient.getUpdateInfo("2024-01-01", "2024-01-02"))
                 .isInstanceOf(RuntimeException.class)
                 .hasMessageContaining("レート制限");
+        }
+
+        @Test
+        @DisplayName("5xx レスポンスで RuntimeException をスロー")
+        void serverError_throwsRuntimeException() {
+            when(restTemplate.exchange(any(String.class), any(), any(HttpEntity.class), eq(UpdateInfoResponse.class)))
+                .thenThrow(HttpServerErrorException.create(
+                    HttpStatus.INTERNAL_SERVER_ERROR, "Internal Server Error", HttpHeaders.EMPTY, null, null));
+
+            assertThatThrownBy(() -> apiClient.getUpdateInfo("2024-01-01", "2024-01-02"))
+                .isInstanceOf(RuntimeException.class)
+                .hasMessageContaining("サーバーエラー");
+        }
+
+        @Test
+        @DisplayName("404・429 以外の 4xx で RuntimeException をスロー")
+        void otherClientError_throwsRuntimeException() {
+            when(restTemplate.exchange(any(String.class), any(), any(HttpEntity.class), eq(UpdateInfoResponse.class)))
+                .thenThrow(HttpClientErrorException.create(
+                    HttpStatus.FORBIDDEN, "Forbidden", HttpHeaders.EMPTY, null, null));
+
+            assertThatThrownBy(() -> apiClient.getUpdateInfo("2024-01-01", "2024-01-02"))
+                .isInstanceOf(RuntimeException.class)
+                .hasMessageContaining("クライアントエラー");
         }
     }
 }

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.dao.DataAccessResourceFailureException;
 import org.springframework.test.context.TestPropertySource;
 
 import java.net.URL;
@@ -103,6 +104,53 @@ class GBizInfoImportJobTest {
         StepExecution stepExecution = jobExecution.getStepExecutions().iterator().next();
         assertThat(stepExecution.getWriteCount()).isEqualTo(2);
         assertThat(stepExecution.getFilterCount()).isEqualTo(2);
+    }
+
+    @Test
+    @DisplayName("空の JSON 配列を処理してジョブが COMPLETED、upsert が呼ばれない")
+    void importJob_emptyFile_completesWithZeroWrites() throws Exception {
+        String inputFilePath = resolveTestFilePath("test-hojin-empty.json");
+
+        JobParameters params = new JobParametersBuilder()
+            .addString("inputFilePath", inputFilePath)
+            .addLong("run.id", System.currentTimeMillis())
+            .toJobParameters();
+
+        JobExecution execution = jobLauncherTestUtils.launchJob(params);
+
+        assertThat(execution.getStatus()).isEqualTo(BatchStatus.COMPLETED);
+        verifyNoInteractions(companyUpsertService);
+    }
+
+    @Test
+    @DisplayName("存在しないファイルパスを指定した場合、ジョブが FAILED になる")
+    void importJob_nonExistentFile_failsJob() throws Exception {
+        JobParameters params = new JobParametersBuilder()
+            .addString("inputFilePath", "/nonexistent/path/file.json")
+            .addLong("run.id", System.currentTimeMillis())
+            .toJobParameters();
+
+        JobExecution execution = jobLauncherTestUtils.launchJob(params);
+
+        assertThat(execution.getStatus()).isEqualTo(BatchStatus.FAILED);
+    }
+
+    @Test
+    @DisplayName("upsert が DataAccessException をスローした場合、ジョブが FAILED になる（noSkip）")
+    void importJob_dbError_failsJob() throws Exception {
+        String inputFilePath = resolveTestFilePath("test-hojin.json");
+
+        doThrow(new DataAccessResourceFailureException("DB connection failed"))
+            .when(companyUpsertService).upsert(any());
+
+        JobParameters params = new JobParametersBuilder()
+            .addString("inputFilePath", inputFilePath)
+            .addLong("run.id", System.currentTimeMillis())
+            .toJobParameters();
+
+        JobExecution execution = jobLauncherTestUtils.launchJob(params);
+
+        assertThat(execution.getStatus()).isEqualTo(BatchStatus.FAILED);
     }
 
     private String resolveTestFilePath(String resourceName) {
