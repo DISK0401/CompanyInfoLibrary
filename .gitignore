@@ -44,3 +44,6 @@ Thumbs.db
 
 # ===== Spring Batch メタデータ（ローカルH2使用時） =====
 *.db
+
+# ===== Claude Code =====
+.claude/
