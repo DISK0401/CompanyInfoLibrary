@@ -58,6 +58,14 @@ docker compose down
 docker compose down -v
 ```
 
+### 4. サンプルデータの投入（任意）
+
+スタック起動後に開発用サンプルデータ（5社）を投入できます。
+
+```bash
+docker exec -i companylib-db psql -U companylib -d companylib < docker/sample-data.sql
+```
+
 ---
 
 ## ローカル開発（個別起動）

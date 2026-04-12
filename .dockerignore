@@ -1,0 +1,31 @@
+# Maven ビルド成果物（Dockerfile 内でビルドするため不要）
+**/target/
+**/.mvn/
+
+# Node.js（コンテナ内でインストールするため不要）
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ログ・一時ファイル
+**/*.log
+**/logs/
+
+# IDE・OS 固有ファイル
+**/.idea/
+**/.vscode/
+**/*.iml
+**/.DS_Store
+**/Thumbs.db
+
+# 機密情報・環境変数ファイル
+.env
+.env.local
+.env.*.local
+docker/.env
+
+# テストリソース（本番イメージに含めない）
+**/src/test/
+
+# Claude Code
+.claude/
