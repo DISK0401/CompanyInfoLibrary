@@ -1,17 +1,19 @@
 # ---- Build stage ----
+# ビルドコンテキスト: プロジェクトルート（docker-compose では context: .. を指定）
 FROM eclipse-temurin:17-jdk-alpine AS builder
 WORKDIR /app
-COPY pom.xml .
-COPY src ./src
 
-# Maven Wrapper がない場合は mvn コマンドを使用
-# CI 環境では ./mvnw package -DskipTests で代替可能
+# 親 pom と backend モジュールの pom を先にコピーして依存解決をキャッシュ
+COPY pom.xml .
+COPY backend/pom.xml backend/pom.xml
+COPY backend/src backend/src
+
 RUN apk add --no-cache maven && \
-    mvn package -DskipTests
+    mvn -pl backend -am package -DskipTests
 
 # ---- Run stage ----
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
-COPY --from=builder /app/target/*.jar app.jar
+COPY --from=builder /app/backend/target/*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]

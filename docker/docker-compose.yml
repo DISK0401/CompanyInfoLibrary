@@ -12,7 +12,6 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./init:/docker-entrypoint-initdb.d
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U companylib"]
       interval: 10s
@@ -21,8 +20,8 @@ services:
 
   backend:
     build:
-      context: ../backend
-      dockerfile: ../docker/Dockerfile.backend
+      context: ..
+      dockerfile: docker/Dockerfile.backend
     container_name: companylib-backend
     environment:
       DB_URL: jdbc:postgresql://db:5432/companylib
@@ -38,8 +37,8 @@ services:
 
   batch:
     build:
-      context: ../batch
-      dockerfile: ../docker/Dockerfile.batch
+      context: ..
+      dockerfile: docker/Dockerfile.batch
     container_name: companylib-batch
     environment:
       DB_URL: jdbc:postgresql://db:5432/companylib
