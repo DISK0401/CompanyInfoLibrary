@@ -13,8 +13,8 @@ public interface CompanyRepository extends JpaRepository<Company, String> {
 
     @Query("""
         SELECT c FROM Company c
-        WHERE (:name IS NULL OR LOWER(c.name) LIKE LOWER(CONCAT('%', :name, '%')))
-          AND (:location IS NULL OR c.location LIKE CONCAT('%', :location, '%'))
+        WHERE (:name IS NULL OR LOWER(c.name) LIKE LOWER(CONCAT('%', CAST(:name AS String), '%')))
+          AND (:location IS NULL OR c.location LIKE CONCAT('%', CAST(:location AS String), '%'))
           AND (:minCapital IS NULL OR c.capitalStock >= :minCapital)
           AND (:minEmployees IS NULL OR c.employeeNumber >= :minEmployees)
         """)

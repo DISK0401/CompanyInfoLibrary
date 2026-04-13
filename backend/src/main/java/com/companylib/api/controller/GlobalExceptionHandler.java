@@ -10,6 +10,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -50,6 +51,12 @@ public class GlobalExceptionHandler {
             "details", violations
         );
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
+    }
+
+    @ExceptionHandler(NoHandlerFoundException.class)
+    public ResponseEntity<Map<String, String>> handleNoHandler(NoHandlerFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+            .body(Map.of("error", "指定されたエンドポイントは存在しません。"));
     }
 
     @ExceptionHandler(IllegalArgumentException.class)
