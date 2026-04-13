@@ -14,6 +14,12 @@
     <name>CompanyInfoLibrary Backend</name>
     <description>企業情報ライブラリ APIサーバー</description>
 
+    <properties>
+        <db.url>jdbc:postgresql://localhost:5432/companylib</db.url>
+        <db.username>companylib</db.username>
+        <db.password>companylib</db.password>
+    </properties>
+
     <dependencies>
         <!-- Spring Boot Web -->
         <dependency>
@@ -82,6 +88,16 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <configuration>
+                    <url>${db.url}</url>
+                    <user>${db.username}</user>
+                    <password>${db.password}</password>
+                    <locations>classpath:db/migration</locations>
                 </configuration>
             </plugin>
         </plugins>
