@@ -104,7 +104,8 @@
                     <url>${db.url}</url>
                     <user>${db.username}</user>
                     <password>${db.password}</password>
-                    <locations>classpath:db/migration</locations>
+                    <locations>filesystem:src/main/resources/db/migration</locations>
+                    <table>flyway_schema_history_backend</table>
                 </configuration>
             </plugin>
         </plugins>

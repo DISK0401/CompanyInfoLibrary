@@ -188,31 +188,58 @@ mvn spring-boot:run -Dspring-boot.run.arguments="--spring.batch.job.name=gbizInf
 > **前提**: `mvn flyway:info` / `mvn flyway:migrate` の実行には DB が起動している必要があります。
 > また、**Java 17** で Maven を実行してください（`mvn -version` で確認）。
 
+### 実行順序
+
+**backend → batch の順で実行してください。**
+
+backend と batch はそれぞれ独立した Flyway 履歴テーブルを持ちます。
+batch の `baselineOnMigrate=true` は「スキーマが空でない状態での初回起動」を想定した設定のため、
+backend が先に共通テーブルを作成している必要があります。
+batch を先に実行すると、続く backend の初回マイグレーションが失敗します。
+
+| モジュール | 履歴テーブル | 管理対象 |
+|---|---|---|
+| backend | `flyway_schema_history_backend` | 共通スキーマ（V0〜） |
+| batch | `flyway_schema_history_batch` | バッチ専用テーブル（V100〜） |
+
+### 手動マイグレーション実行
+
 ```bash
-# DB を起動（未起動の場合）
+# 1. DB を起動（未起動の場合）
 cd docker
 docker compose up -d db
 
-# マイグレーション状態確認（backend から実行）
+# 2. backend を先に実行
 cd ../backend
-mvn flyway:info
-
-# 手動マイグレーション実行
 mvn flyway:migrate
+
+# 3. batch を実行
+cd ../batch
+mvn flyway:migrate
+```
+
+状態確認:
+
+```bash
+# backend
+cd backend && mvn flyway:info
+
+# batch
+cd batch && mvn flyway:info
 ```
 
 デフォルトの接続先は `localhost:5432/companylib`（ユーザー: `companylib`）です。
 別の接続先を使う場合は `-D` フラグで上書きできます。
 
 ```bash
-mvn flyway:info -Ddb.url=jdbc:postgresql://host:5432/companylib \
-                -Ddb.username=user \
-                -Ddb.password=pass
+mvn flyway:migrate -Ddb.url=jdbc:postgresql://host:5432/companylib \
+                   -Ddb.username=user \
+                   -Ddb.password=pass
 ```
 
 マイグレーションファイルの場所:
-- `backend/src/main/resources/db/migration/` — 共通スキーマ（V0〜V11）
-- `batch/src/main/resources/db/migration/` — バッチ専用テーブル（V100〜）
+- `backend/src/main/resources/db/migration/` — 共通スキーマ（V0〜）
+- `batch/src/main/resources/db/migration/` — バッチ専用テーブル（V0〜）
 
 ---
 
@@ -227,7 +254,6 @@ mvn flyway:info -Ddb.url=jdbc:postgresql://host:5432/companylib \
 | `GBIZINFO_API_BASE_URL` | `https://api.info.gbiz.go.jp/hojin/v2` | gBizINFO API ベース URL |
 | `JPA_DDL_AUTO` | `validate` | Hibernate DDL モード |
 | `JPA_SHOW_SQL` | `false` | SQL ログ出力 |
-| `FLYWAY_BASELINE_ON_MIGRATE` | `false` | 既存 DB への初回マイグレーション |
 | `SCRAPING_INTERVAL_MS` | `2000` | スクレイピング間隔（ms） |
 | `LOG_LEVEL` | `INFO` | アプリログレベル |
 | `BATCH_LOG_LEVEL` | `INFO` | Spring Batch ログレベル |

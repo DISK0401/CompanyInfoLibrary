@@ -11,7 +11,8 @@ spring:
   flyway:
     enabled: true
     locations: classpath:db/migration
-    baseline-on-migrate: ${FLYWAY_BASELINE_ON_MIGRATE:false}
+    baseline-on-migrate: false
+    table: flyway_schema_history_backend
 
   jpa:
     hibernate:
