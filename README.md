@@ -185,13 +185,29 @@ mvn spring-boot:run -Dspring-boot.run.arguments="--spring.batch.job.name=gbizInf
 
 スキーマは Flyway で自動管理されます。アプリ起動時に自動適用されます。
 
+> **前提**: `mvn flyway:info` / `mvn flyway:migrate` の実行には DB が起動している必要があります。
+> また、**Java 17** で Maven を実行してください（`mvn -version` で確認）。
+
 ```bash
+# DB を起動（未起動の場合）
+cd docker
+docker compose up -d db
+
 # マイグレーション状態確認（backend から実行）
-cd backend
+cd ../backend
 mvn flyway:info
 
 # 手動マイグレーション実行
 mvn flyway:migrate
+```
+
+デフォルトの接続先は `localhost:5432/companylib`（ユーザー: `companylib`）です。
+別の接続先を使う場合は `-D` フラグで上書きできます。
+
+```bash
+mvn flyway:info -Ddb.url=jdbc:postgresql://host:5432/companylib \
+                -Ddb.username=user \
+                -Ddb.password=pass
 ```
 
 マイグレーションファイルの場所:
