@@ -1,5 +1,6 @@
 package com.companylib.batch.infrastructure.gbizinfo.download;
 
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,6 +11,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.*;
+import java.net.URLEncoder;
 import java.nio.file.*;
 import java.util.Comparator;
 import java.util.Optional;
@@ -49,6 +51,15 @@ public class GBizInfoDownloadService {
 
     @Value("${gbizinfo.api.token}")
     private String apiToken;
+
+    @PostConstruct
+    public void validateConfig() {
+        if (apiToken == null || apiToken.isBlank()) {
+            throw new IllegalStateException(
+                "gBizINFO API トークンが設定されていません。"
+                + "環境変数 GBIZINFO_API_TOKEN を設定してください。");
+        }
+    }
 
     /** ファイル名から日付部分（yyyyMMdd）を抽出するパターン */
     private static final Pattern DATE_PATTERN = Pattern.compile("_(\\d{8})(?:\\.zip)?$");
@@ -145,11 +156,13 @@ public class GBizInfoDownloadService {
             HttpMethod.POST,
             clientRequest -> {
                 clientRequest.getHeaders().setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-                // フォームボディを手動エンコード
+                // フォームボディを手動エンコード（特殊文字を含むトークン等を正しく送信するためURLエンコード必須）
                 StringBuilder sb = new StringBuilder();
                 body.forEach((key, values) -> values.forEach(val -> {
                     if (!sb.isEmpty()) sb.append('&');
-                    sb.append(key).append('=').append(val);
+                    sb.append(URLEncoder.encode(key, java.nio.charset.StandardCharsets.UTF_8))
+                      .append('=')
+                      .append(URLEncoder.encode(val, java.nio.charset.StandardCharsets.UTF_8));
                 }));
                 clientRequest.getBody().write(sb.toString().getBytes(java.nio.charset.StandardCharsets.UTF_8));
             },

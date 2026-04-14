@@ -16,7 +16,12 @@ import java.util.stream.Stream;
 
 /**
  * Kessanjoho ディレクトリ内の XML ファイルを順次読み込む ItemReader。
- * 1 XML ファイル = 1 {@link FinancialStatement} を返す。
+ *
+ * <p>1 XML ファイル = 最大 1 {@link FinancialStatement} を返す。
+ * XML の構造的パースエラー（{@link SAXException} / {@link ParserConfigurationException}）は
+ * ファイルが破損しているため WARN ログを出してスキップする。
+ * I/O エラー（{@link IOException}）は一時的な障害の可能性があるため再スローし、
+ * Spring Batch のリトライ/ステップ失敗機構に委ねる。
  */
 @Slf4j
 public class KessanjohoXmlReader implements ItemStreamReader<FinancialStatement> {
@@ -62,9 +67,12 @@ public class KessanjohoXmlReader implements ItemStreamReader<FinancialStatement>
             log.debug("XML 読み込み: {}", xmlFile.getFileName());
             try {
                 return parseXml(xmlFile);
-            } catch (Exception e) {
-                log.warn("XML パース失敗（スキップ）: {}", xmlFile.getFileName(), e);
-                // 次のファイルへ
+            } catch (IOException e) {
+                // I/O エラーは一時的な障害の可能性があるため再スローして Spring Batch に委ねる
+                throw e;
+            } catch (SAXException | ParserConfigurationException e) {
+                // 構造的パースエラーはファイルが破損しているためスキップ
+                log.warn("XML 構造エラーのためスキップ: {}", xmlFile.getFileName(), e);
             }
         }
         return null;

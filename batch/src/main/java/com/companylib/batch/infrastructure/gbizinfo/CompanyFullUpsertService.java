@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.companylib.batch.infrastructure.gbizinfo.dto.FinancialStatement;
@@ -78,7 +79,8 @@ public class CompanyFullUpsertService {
         "DELETE FROM company_business_items WHERE corporate_number = ?";
 
     private static final String INSERT_BUSINESS_ITEM =
-        "INSERT INTO company_business_items (corporate_number, item_name) VALUES (?, ?)";
+        "INSERT INTO company_business_items (corporate_number, item_name) VALUES (?, ?)"
+        + " ON CONFLICT (corporate_number, item_name) DO NOTHING";
 
     private static final String UPSERT_FINANCE = """
         INSERT INTO company_finances (
@@ -345,8 +347,13 @@ public class CompanyFullUpsertService {
 
     /**
      * FinancialStatement（Kessanjoho XML）を company_financial_statements テーブルに UPSERT する。
+     *
+     * <p>REQUIRES_NEW を使用して独立したトランザクションで実行することで、
+     * FK 違反（companies に未登録の法人番号）が発生した場合に
+     * Spring Batch のチャンクトランザクションを汚染せず、
+     * ステップレベルのスキップ機構が正常に動作することを保証する。
      */
-    @Transactional
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void upsertFinancialStatement(FinancialStatement fs) {
         if (fs.getCorporateNumber() == null || fs.getKeyField() == null) {
             log.warn("決算情報スキップ（必須フィールド欠損）: period={}", fs.getPeriod());

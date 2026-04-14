@@ -122,6 +122,99 @@ public class GBizInfoInitialLoadJobConfig {
         };
     }
 
+    // ── Step 2: Hojinjoho インポート ───────────────────────────────────────
+
+    @Bean
+    public Step importHojinjohoStep(
+        SynchronizedItemStreamReader<HojinInfo> hojinjohoMultiReader
+    ) {
+        return new StepBuilder("importHojinjohoStep", jobRepository)
+            .<HojinInfo, HojinInfo>chunk(HOJINJOHO_CHUNK_SIZE, transactionManager)
+            .reader(hojinjohoMultiReader)
+            .processor(hojinjohoProcessor())
+            .writer(hojinjohoWriter())
+            .faultTolerant()
+            .skipLimit(5000)
+            .skip(com.fasterxml.jackson.core.JsonProcessingException.class)
+            .skip(IllegalArgumentException.class)
+            .noSkip(org.springframework.dao.DataAccessException.class)
+            .listener(new StepExecutionListener() {
+                @Override
+                public void beforeStep(StepExecution stepExecution) {
+                    log.info("=== Step 2/6: Hojinjoho インポート開始 ===");
+                }
+                @Override
+                public ExitStatus afterStep(StepExecution stepExecution) {
+                    log.info("=== Step 2/6: Hojinjoho インポート完了: 読込={}, 書込={}, スキップ={} ===",
+                        stepExecution.getReadCount(),
+                        stepExecution.getWriteCount(),
+                        stepExecution.getSkipCount());
+                    return stepExecution.getExitStatus();
+                }
+            })
+            .build();
+    }
+
+    @Bean
+    @StepScope
+    public SynchronizedItemStreamReader<HojinInfo> hojinjohoMultiReader(
+        @Value("#{jobExecutionContext['hojinjohoExtractedDir']}") String extractedDir
+    ) throws IOException {
+        var resources = new PathMatchingResourcePatternResolver()
+            .getResources("file:" + extractedDir + "/**/*.json");
+
+        if (resources.length == 0) {
+            throw new IllegalStateException("Hojinjoho JSON ファイルが見つかりません: " + extractedDir);
+        }
+
+        // ファイル名順にソート（Hojinjoho_01.json, _02.json, ...）
+        Arrays.sort(resources, Comparator.comparing(r -> r.getFilename() == null ? "" : r.getFilename()));
+
+        log.info("Hojinjoho JSON ファイル数: {}", resources.length);
+
+        // 未知フィールドを WARN ログで継続するハンドラを設定した ObjectMapper を使用
+        ObjectMapper readerMapper = objectMapper.copy()
+            .addHandler(new GBizInfoDeserializationProblemHandler());
+
+        JsonItemReader<HojinInfo> delegate = new JsonItemReaderBuilder<HojinInfo>()
+            .name("hojinjohoJsonDelegate")
+            .jsonObjectReader(new JacksonJsonObjectReader<>(readerMapper, HojinInfo.class))
+            .build();
+
+        var multiReader = new org.springframework.batch.item.file.MultiResourceItemReader<HojinInfo>();
+        multiReader.setName("hojinjohoMultiReader");
+        multiReader.setResources(resources);
+        multiReader.setDelegate(delegate);
+
+        return new SynchronizedItemStreamReaderBuilder<HojinInfo>()
+            .delegate(multiReader)
+            .build();
+    }
+
+    @Bean
+    public ItemProcessor<HojinInfo, HojinInfo> hojinjohoProcessor() {
+        return item -> {
+            if (item.getCorporateNumber() == null || item.getCorporateNumber().isBlank()) {
+                log.debug("法人番号欠損のためスキップ");
+                return null;
+            }
+            if (item.getName() == null || item.getName().isBlank()) {
+                log.debug("法人名欠損のためスキップ: corporateNumber={}", item.getCorporateNumber());
+                return null;
+            }
+            return item;
+        };
+    }
+
+    @Bean
+    public ItemWriter<HojinInfo> hojinjohoWriter() {
+        return items -> {
+            for (HojinInfo item : items) {
+                companyFullUpsertService.upsert(item);
+            }
+        };
+    }
+
     // ── Step 3: Kihonjoho ダウンロード ──────────────────────────────────────
 
     @Bean
@@ -258,99 +351,6 @@ public class GBizInfoInitialLoadJobConfig {
                 }
             }
             log.debug("Kihonjoho チャンク処理: 新規={}, スキップ（Hojinjoho 登録済）={}", inserted, skipped);
-        };
-    }
-
-    // ── Step 2: Hojinjoho インポート ───────────────────────────────────────
-
-    @Bean
-    public Step importHojinjohoStep(
-        SynchronizedItemStreamReader<HojinInfo> hojinjohoMultiReader
-    ) {
-        return new StepBuilder("importHojinjohoStep", jobRepository)
-            .<HojinInfo, HojinInfo>chunk(HOJINJOHO_CHUNK_SIZE, transactionManager)
-            .reader(hojinjohoMultiReader)
-            .processor(hojinjohoProcessor())
-            .writer(hojinjohoWriter())
-            .faultTolerant()
-            .skipLimit(5000)
-            .skip(com.fasterxml.jackson.core.JsonProcessingException.class)
-            .skip(IllegalArgumentException.class)
-            .noSkip(org.springframework.dao.DataAccessException.class)
-            .listener(new StepExecutionListener() {
-                @Override
-                public void beforeStep(StepExecution stepExecution) {
-                    log.info("=== Step 2/6: Hojinjoho インポート開始 ===");
-                }
-                @Override
-                public ExitStatus afterStep(StepExecution stepExecution) {
-                    log.info("=== Step 2/6: Hojinjoho インポート完了: 読込={}, 書込={}, スキップ={} ===",
-                        stepExecution.getReadCount(),
-                        stepExecution.getWriteCount(),
-                        stepExecution.getSkipCount());
-                    return stepExecution.getExitStatus();
-                }
-            })
-            .build();
-    }
-
-    @Bean
-    @StepScope
-    public SynchronizedItemStreamReader<HojinInfo> hojinjohoMultiReader(
-        @Value("#{jobExecutionContext['hojinjohoExtractedDir']}") String extractedDir
-    ) throws IOException {
-        var resources = new PathMatchingResourcePatternResolver()
-            .getResources("file:" + extractedDir + "/**/*.json");
-
-        if (resources.length == 0) {
-            throw new IllegalStateException("Hojinjoho JSON ファイルが見つかりません: " + extractedDir);
-        }
-
-        // ファイル名順にソート（Hojinjoho_01.json, _02.json, ...）
-        Arrays.sort(resources, Comparator.comparing(r -> r.getFilename() == null ? "" : r.getFilename()));
-
-        log.info("Hojinjoho JSON ファイル数: {}", resources.length);
-
-        // 未知フィールドを WARN ログで継続するハンドラを設定した ObjectMapper を使用
-        ObjectMapper readerMapper = objectMapper.copy()
-            .addHandler(new GBizInfoDeserializationProblemHandler());
-
-        JsonItemReader<HojinInfo> delegate = new JsonItemReaderBuilder<HojinInfo>()
-            .name("hojinjohoJsonDelegate")
-            .jsonObjectReader(new JacksonJsonObjectReader<>(readerMapper, HojinInfo.class))
-            .build();
-
-        var multiReader = new org.springframework.batch.item.file.MultiResourceItemReader<HojinInfo>();
-        multiReader.setName("hojinjohoMultiReader");
-        multiReader.setResources(resources);
-        multiReader.setDelegate(delegate);
-
-        return new SynchronizedItemStreamReaderBuilder<HojinInfo>()
-            .delegate(multiReader)
-            .build();
-    }
-
-    @Bean
-    public ItemProcessor<HojinInfo, HojinInfo> hojinjohoProcessor() {
-        return item -> {
-            if (item.getCorporateNumber() == null || item.getCorporateNumber().isBlank()) {
-                log.debug("法人番号欠損のためスキップ");
-                return null;
-            }
-            if (item.getName() == null || item.getName().isBlank()) {
-                log.debug("法人名欠損のためスキップ: corporateNumber={}", item.getCorporateNumber());
-                return null;
-            }
-            return item;
-        };
-    }
-
-    @Bean
-    public ItemWriter<HojinInfo> hojinjohoWriter() {
-        return items -> {
-            for (HojinInfo item : items) {
-                companyFullUpsertService.upsert(item);
-            }
         };
     }
 
