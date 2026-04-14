@@ -1,22 +1,24 @@
 package com.companylib.batch.infrastructure.gbizinfo;
 
-import com.companylib.batch.infrastructure.gbizinfo.dto.FinancialStatement;
-import com.companylib.batch.infrastructure.gbizinfo.dto.HojinInfo;
-import com.companylib.batch.infrastructure.gbizinfo.dto.KihonjohoRow;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.List;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.companylib.batch.infrastructure.gbizinfo.dto.FinancialStatement;
+import com.companylib.batch.infrastructure.gbizinfo.dto.HojinInfo;
+import com.companylib.batch.infrastructure.gbizinfo.dto.KihonjohoRow;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * gBizINFO データを全関連テーブルへ UPSERT するサービス。
@@ -319,12 +321,12 @@ public class CompanyFullUpsertService {
             row.getCompanyUrl(),
             row.getBusinessSummary(),
             parseLong(row.getCapitalStockStr()),
-            parseLong(row.getEmployeeNumberStr()),
-            parseLong(row.getCompanySizeMaleStr()),
-            parseLong(row.getCompanySizeFemaleStr()),
+            parseInteger(row.getEmployeeNumberStr()),
+            parseInteger(row.getCompanySizeMaleStr()),
+            parseInteger(row.getCompanySizeFemaleStr()),
             row.getRepresentativeName(),
             parseDate(row.getDateOfEstablishmentStr()),
-            parseLong(row.getFoundingYearStr()),
+            parseInteger(row.getFoundingYearStr()),
             row.getStatus(),
             parseDate(row.getCloseDateStr()),
             row.getCloseCause(),
@@ -624,6 +626,16 @@ public class CompanyFullUpsertService {
         if (value == null || value.isBlank()) return null;
         try {
             return Long.parseLong(value.replaceAll("[^0-9]", ""));
+        } catch (NumberFormatException e) {
+            return null;
+        }
+    }
+
+    /** DB の INTEGER カラム向けパース。parseLong と同じロジックだが Integer を返す。 */
+    private Integer parseInteger(String value) {
+        if (value == null || value.isBlank()) return null;
+        try {
+            return Integer.parseInt(value.replaceAll("[^0-9]", ""));
         } catch (NumberFormatException e) {
             return null;
         }

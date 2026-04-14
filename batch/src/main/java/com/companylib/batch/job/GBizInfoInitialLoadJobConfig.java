@@ -21,8 +21,6 @@ import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.FlatFileItemReader;
-import org.springframework.batch.item.file.LineMapper;
-import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.batch.item.file.mapping.DefaultLineMapper;
 import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
 import org.springframework.batch.item.json.JacksonJsonObjectReader;
@@ -50,10 +48,12 @@ import java.util.stream.Stream;
  *
  * <p>処理フロー:
  * <ol>
- *   <li>downloadHojinjohoStep  — Hojinjoho ZIP のダウンロード・解凍</li>
- *   <li>importHojinjohoStep    — Hojinjoho JSON → 全テーブル UPSERT</li>
+ *   <li>downloadHojinjohoStep — Hojinjoho ZIP のダウンロード・解凍</li>
+ *   <li>importHojinjohoStep   — Hojinjoho JSON → 全テーブル UPSERT（約434K件・詳細データ）</li>
+ *   <li>downloadKihonjohoStep — Kihonjoho ZIP のダウンロード・解凍</li>
+ *   <li>importKihonjohoStep   — Kihonjoho CSV → companies 補完（約537万件・基本情報のみ）</li>
  *   <li>downloadKessanjohoStep — Kessanjoho ZIP のダウンロード・解凍</li>
- *   <li>importKessanjohoStep   — Kessanjoho XML → company_financial_statements UPSERT</li>
+ *   <li>importKessanjohoStep  — Kessanjoho XML → company_financial_statements UPSERT</li>
  * </ol>
  */
 @Slf4j
@@ -122,7 +122,7 @@ public class GBizInfoInitialLoadJobConfig {
         };
     }
 
-    // ── Step 2: Kihonjoho ダウンロード ──────────────────────────────────────
+    // ── Step 3: Kihonjoho ダウンロード ──────────────────────────────────────
 
     @Bean
     public Step downloadKihonjohoStep() {
@@ -144,7 +144,7 @@ public class GBizInfoInitialLoadJobConfig {
         };
     }
 
-    // ── Step 3: Kihonjoho インポート ─────────────────────────────────────────
+    // ── Step 4: Kihonjoho インポート ─────────────────────────────────────────
 
     @Bean
     public Step importKihonjohoStep(FlatFileItemReader<KihonjohoRow> kihonjohoReader) {
@@ -261,7 +261,7 @@ public class GBizInfoInitialLoadJobConfig {
         };
     }
 
-    // ── Step 4: Hojinjoho インポート ───────────────────────────────────────
+    // ── Step 2: Hojinjoho インポート ───────────────────────────────────────
 
     @Bean
     public Step importHojinjohoStep(
@@ -354,7 +354,7 @@ public class GBizInfoInitialLoadJobConfig {
         };
     }
 
-    // ── Step 3: Kessanjoho ダウンロード ────────────────────────────────────
+    // ── Step 5: Kessanjoho ダウンロード ────────────────────────────────────
 
     @Bean
     public Step downloadKessanjohoStep() {
@@ -376,7 +376,7 @@ public class GBizInfoInitialLoadJobConfig {
         };
     }
 
-    // ── Step 4: Kessanjoho インポート ──────────────────────────────────────
+    // ── Step 6: Kessanjoho インポート ──────────────────────────────────────
 
     @Bean
     public Step importKessanjohoStep(
