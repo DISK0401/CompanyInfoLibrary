@@ -1,0 +1,5014 @@
+[
+  {
+    "corporate_number": "1000000000001",
+    "name": "株式会社サンプル001",
+    "kana": "サンプル001",
+    "name_en": "Sample Company 001 Inc.",
+    "postal_code": "100-0001",
+    "location": "東京都千代田区丸の内1-1-1",
+    "process": "11",
+    "aggregated_year": "1",
+    "status": "-",
+    "close_date": null,
+    "close_cause": null,
+    "kind": "301",
+    "representative_name": "代表 太郎001",
+    "capital_stock": 1400975000000,
+    "employee_number": 7999,
+    "company_size_male": 6991,
+    "company_size_female": 1008,
+    "business_summary": "サンプル企業001の事業概要。製品・サービスの開発および販売を行っています。",
+    "company_url": "https://sample-company001.example.jp",
+    "founding_year": null,
+    "industry": [
+      "F"
+    ],
+    "date_of_establishment": "1951-05-01",
+    "business_items": [
+      "213",
+      "216",
+      "229",
+      "303",
+      "309",
+      "315"
+    ],
+    "qualification_grade": "、A、A、",
+    "update_date": "2018-04-17T00:00:00+09:00",
+    "meta-data": {
+      "key_field": "sample_company_00001",
+      "data_quality": "政府承認データ",
+      "source": "国税庁",
+      "import_frequency": {
+        "corporate_number": "日次",
+        "name": "日次",
+        "kana": "日次",
+        "name_en": "日次",
+        "postal_code": "日次",
+        "location": "日次",
+        "process": "日次",
+        "aggregated_year": "日次",
+        "status": "日次",
+        "close_date": "日次",
+        "close_cause": "日次",
+        "kind": "日次",
+        "representative_name": "日次",
+        "capital_stock": "日次",
+        "employee_number": "日次",
+        "company_size_male": "日次",
+        "company_size_female": "日次",
+        "business_summary": "日次",
+        "company_url": "日次",
+        "founding_year": "日次",
+        "industry": "日次",
+        "date_of_establishment": "日次",
+        "business_items": "日次",
+        "qualification_grade": "日次",
+        "update_date": "日次"
+      },
+      "last_acquisition_date": {
+        "corporate_number": "2025-12-05T00:00:00+09:00",
+        "name": "2025-12-05T00:00:00+09:00",
+        "kana": "2025-12-05T00:00:00+09:00",
+        "name_en": "2025-12-05T00:00:00+09:00",
+        "postal_code": "2025-12-05T00:00:00+09:00",
+        "location": "2025-12-05T00:00:00+09:00",
+        "process": "2025-12-05T00:00:00+09:00",
+        "aggregated_year": "2025-12-05T00:00:00+09:00",
+        "status": "2025-12-05T00:00:00+09:00",
+        "close_date": "2025-12-05T00:00:00+09:00",
+        "close_cause": "2025-12-05T00:00:00+09:00",
+        "kind": "2025-12-05T00:00:00+09:00",
+        "representative_name": "2025-06-25T00:00:00+09:00",
+        "capital_stock": "2025-06-25T00:00:00+09:00",
+        "employee_number": "2025-06-25T00:00:00+09:00",
+        "company_size_male": "2026-03-24T00:00:00+09:00",
+        "company_size_female": "2026-03-24T00:00:00+09:00",
+        "business_summary": "2026-03-24T00:00:00+09:00",
+        "company_url": "2026-03-24T00:00:00+09:00",
+        "founding_year": "2026-03-24T00:00:00+09:00",
+        "industry": "2026-03-24T00:00:00+09:00",
+        "date_of_establishment": "2026-04-13T00:00:00+09:00",
+        "business_items": "2026-04-13T00:00:00+09:00",
+        "qualification_grade": "2026-04-13T00:00:00+09:00",
+        "update_date": "2025-12-05T00:00:00+09:00"
+      },
+      "last_update_date": {
+        "corporate_number": "2025-12-05T12:32:23+09:00",
+        "name": "2025-12-05T12:32:23+09:00",
+        "kana": "2025-12-05T12:32:23+09:00",
+        "name_en": "2025-12-05T12:32:23+09:00",
+        "postal_code": "2025-12-05T12:32:23+09:00",
+        "location": "2025-12-05T12:32:23+09:00",
+        "process": "2025-12-05T12:32:23+09:00",
+        "aggregated_year": "2025-12-05T12:32:23+09:00",
+        "status": "2025-12-05T12:32:23+09:00",
+        "close_date": "2025-12-05T12:32:23+09:00",
+        "close_cause": "2025-12-05T12:32:23+09:00",
+        "kind": "2025-12-05T12:32:23+09:00",
+        "representative_name": "2025-12-17T20:48:28+09:00",
+        "capital_stock": "2025-12-17T20:48:28+09:00",
+        "employee_number": "2025-12-17T20:48:28+09:00",
+        "company_size_male": "2026-03-24T18:12:20+09:00",
+        "company_size_female": "2026-03-24T18:12:20+09:00",
+        "business_summary": "2026-03-24T18:12:20+09:00",
+        "company_url": "2026-03-24T18:12:20+09:00",
+        "founding_year": "2026-03-24T18:12:20+09:00",
+        "industry": "2026-03-24T18:12:20+09:00",
+        "date_of_establishment": "2026-04-13T00:41:21+09:00",
+        "business_items": "2026-04-13T00:41:21+09:00",
+        "qualification_grade": "2026-04-13T00:41:21+09:00",
+        "update_date": "2025-12-05T12:32:23+09:00"
+      }
+    },
+    "subsidy": [
+      {
+        "date_of_approval": "2019-09-25",
+        "title": "令和X年度省エネルギー設備導入補助金",
+        "amount": "10011030",
+        "target": null,
+        "government_departments": "経済産業省",
+        "meta-data": {
+          "key_field": "sample_subsidy_001_00",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2021-03-25T00:00:00+09:00",
+          "last_update_date": "2021-03-26T00:02:45+09:00"
+        }
+      }
+    ],
+    "commendation": [
+      {
+        "date_of_commendation": null,
+        "title": "優良企業表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "国土交通省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_001_00",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      },
+      {
+        "date_of_commendation": null,
+        "title": "環境大臣表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "総務省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_001_01",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      }
+    ],
+    "certification": [
+      {
+        "date_of_approval": "2025-05-01",
+        "title": "事業継続力強化計画認定",
+        "target": null,
+        "government_departments": "国土交通省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_001_00",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2025-06-25T00:00:00+09:00",
+          "last_update_date": "2025-06-26T00:29:45+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2023-05-01",
+        "title": "DX認定",
+        "target": null,
+        "government_departments": "総務省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_001_01",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2023-05-10T00:00:00+09:00",
+          "last_update_date": "2023-05-11T00:01:00+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2021-05-01",
+        "title": "健康経営優良法人認定",
+        "target": null,
+        "government_departments": "総務省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_001_02",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2021-07-08T00:00:00+09:00",
+          "last_update_date": "2021-07-09T00:01:41+09:00"
+        }
+      }
+    ],
+    "procurement": [
+      {
+        "date_of_order": "2018-03-30T00:00:00+09:00",
+        "title": "情報システム保守管理業務委託",
+        "amount": 10935000,
+        "government_departments": "総務省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_001_00",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2018-10-12T00:00:00+09:00",
+          "last_update_date": "2026-01-24T00:50:13+09:00"
+        }
+      },
+      {
+        "date_of_order": "2022-08-03T00:00:00+09:00",
+        "title": "庁舎清掃業務委託",
+        "amount": 2036423400,
+        "government_departments": "経済産業省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_001_01",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2022-10-18T00:00:00+09:00",
+          "last_update_date": "2026-01-24T00:50:13+09:00"
+        }
+      },
+      {
+        "date_of_order": "2017-08-04T00:00:00+09:00",
+        "title": "広報印刷物制作業務",
+        "amount": 39998880,
+        "government_departments": "経済産業省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_001_02",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2017-11-06T00:00:00+09:00",
+          "last_update_date": "2026-01-24T00:50:13+09:00"
+        }
+      }
+    ],
+    "patent": [
+      {
+        "patent_type": "商標",
+        "registration_number": "7000100",
+        "application_date": "2023-09-26",
+        "classifications": [],
+        "title": "情報処理方法及び情報処理装置",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_001_00",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "商標",
+        "registration_number": "7000101",
+        "application_date": "2023-07-14",
+        "classifications": [],
+        "title": "製品製造方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_001_01",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "商標",
+        "registration_number": "7000102",
+        "application_date": "2023-06-01",
+        "classifications": [],
+        "title": "通信システム及びその制御方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_001_02",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      }
+    ],
+    "finance": {
+      "accounting_standards": "有価証券報告書を参照してください",
+      "fiscal_year_cover_page": "第101期(自　2024年４月１日　至　2025年３月31日)",
+      "management_index": [
+        {
+          "period": "4",
+          "net_sales_summary_of_business_results": 487783000000,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": -22603000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 36281000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 1400975000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 2007099000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 7426733000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 7180,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "3",
+          "net_sales_summary_of_business_results": 479007000000,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 96891000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 120643000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 1400975000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 2128373000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 8045180000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 7113,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "2",
+          "net_sales_summary_of_business_results": 478601000000,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 51465000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 193797000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 1400975000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 2321443000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 8808936000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 7051,
+          "number_of_employees_unit_ref": "pure"
+        }
+      ],
+      "major_shareholders": [
+        {
+          "name_major_shareholders": "サンプル株主01",
+          "shareholding_ratio": 0.05
+        },
+        {
+          "name_major_shareholders": "サンプル株主02",
+          "shareholding_ratio": 0.07
+        },
+        {
+          "name_major_shareholders": "サンプル株主03",
+          "shareholding_ratio": 0.09
+        }
+      ],
+      "meta-data": {
+        "key_field": "sample_finance_00001",
+        "data_quality": "政府連携データ",
+        "source": "EDINET",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2025-06-25T00:00:00+09:00",
+        "last_update_date": "2025-12-17T20:48:28+09:00"
+      }
+    },
+    "workplace_info": {
+      "base_infos": {
+        "average_continuous_service_years_type": "その他",
+        "average_continuous_service_years_Male": 22.5,
+        "average_continuous_service_years_Female": 20.7,
+        "average_continuous_service_years": null,
+        "average_age": null,
+        "month_average_predetermined_overtime_hours": null
+      },
+      "women_activity_infos": {
+        "female_workers_proportion_type": "その他",
+        "female_workers_proportion": 31.0,
+        "female_share_of_manager": 118,
+        "gender_total_of_manager": 1884,
+        "female_share_of_officers": 10,
+        "gender_total_of_officers": 88
+      },
+      "compatibility_of_childcare_and_work": {
+        "number_of_paternity_leave": null,
+        "number_of_maternity_leave": null,
+        "paternity_leave_acquisition_num": null,
+        "maternity_leave_acquisition_num": null
+      },
+      "meta-data": {
+        "key_field": "sample_workplace_00001",
+        "data_quality": "政府連携データ",
+        "source": "厚生労働省",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2026-03-24T00:00:00+09:00",
+        "last_update_date": "2026-03-24T18:12:20+09:00"
+      }
+    }
+  },
+  {
+    "corporate_number": "1000000000002",
+    "name": "有限会社サンプル002",
+    "kana": "サンプル002",
+    "name_en": "Sample Company 002 Ltd.",
+    "postal_code": "530-0001",
+    "location": "大阪府大阪市北区梅田2-2-2",
+    "process": "12",
+    "aggregated_year": "1",
+    "status": "-",
+    "close_date": null,
+    "close_cause": null,
+    "kind": "301",
+    "representative_name": "代表 太郎002",
+    "capital_stock": 343441000000,
+    "employee_number": 5587,
+    "company_size_male": null,
+    "company_size_female": null,
+    "business_summary": "サンプル企業002の事業概要。製品・サービスの開発および販売を行っています。",
+    "company_url": "https://sample-company002.example.jp",
+    "founding_year": null,
+    "industry": [
+      "I"
+    ],
+    "date_of_establishment": "1947-07-25",
+    "business_items": [
+      "101",
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109",
+      "110",
+      "111",
+      "112",
+      "113",
+      "114",
+      "115",
+      "116",
+      "117",
+      "118",
+      "119",
+      "120",
+      "121",
+      "122",
+      "123",
+      "124",
+      "127",
+      "128",
+      "129",
+      "201",
+      "202",
+      "203",
+      "204",
+      "205",
+      "206",
+      "207",
+      "208",
+      "209",
+      "210",
+      "211",
+      "212",
+      "213",
+      "214",
+      "215",
+      "216",
+      "217",
+      "218",
+      "219",
+      "220",
+      "221",
+      "222",
+      "223",
+      "224",
+      "227",
+      "228",
+      "229",
+      "301",
+      "302",
+      "303",
+      "304",
+      "305",
+      "306",
+      "307",
+      "308",
+      "309",
+      "310",
+      "311",
+      "312",
+      "313",
+      "314",
+      "315",
+      "401",
+      "402"
+    ],
+    "qualification_grade": "A、A、A、A",
+    "update_date": "2023-03-09T00:00:00+09:00",
+    "meta-data": {
+      "key_field": "sample_company_00002",
+      "data_quality": "政府承認データ",
+      "source": "国税庁",
+      "import_frequency": {
+        "corporate_number": "日次",
+        "name": "日次",
+        "kana": "日次",
+        "name_en": "日次",
+        "postal_code": "日次",
+        "location": "日次",
+        "process": "日次",
+        "aggregated_year": "日次",
+        "status": "日次",
+        "close_date": "日次",
+        "close_cause": "日次",
+        "kind": "日次",
+        "representative_name": "日次",
+        "capital_stock": "日次",
+        "employee_number": "日次",
+        "company_size_male": "日次",
+        "company_size_female": "日次",
+        "business_summary": "日次",
+        "company_url": "日次",
+        "founding_year": "日次",
+        "industry": "日次",
+        "date_of_establishment": "日次",
+        "business_items": "日次",
+        "qualification_grade": "日次",
+        "update_date": "日次"
+      },
+      "last_acquisition_date": {
+        "corporate_number": "2025-12-05T00:00:00+09:00",
+        "name": "2025-12-05T00:00:00+09:00",
+        "kana": "2025-12-05T00:00:00+09:00",
+        "name_en": "2025-12-05T00:00:00+09:00",
+        "postal_code": "2025-12-05T00:00:00+09:00",
+        "location": "2025-12-05T00:00:00+09:00",
+        "process": "2025-12-05T00:00:00+09:00",
+        "aggregated_year": "2025-12-05T00:00:00+09:00",
+        "status": "2025-12-05T00:00:00+09:00",
+        "close_date": "2025-12-05T00:00:00+09:00",
+        "close_cause": "2025-12-05T00:00:00+09:00",
+        "kind": "2025-12-05T00:00:00+09:00",
+        "representative_name": "2025-06-17T00:00:00+09:00",
+        "capital_stock": "2025-06-17T00:00:00+09:00",
+        "employee_number": "2025-06-17T00:00:00+09:00",
+        "company_size_male": "2026-03-24T00:00:00+09:00",
+        "company_size_female": "2026-03-24T00:00:00+09:00",
+        "business_summary": "2026-03-24T00:00:00+09:00",
+        "company_url": "2026-03-24T00:00:00+09:00",
+        "founding_year": "2026-03-24T00:00:00+09:00",
+        "industry": "2026-03-24T00:00:00+09:00",
+        "date_of_establishment": "2026-04-13T00:00:00+09:00",
+        "business_items": "2026-04-13T00:00:00+09:00",
+        "qualification_grade": "2026-04-13T00:00:00+09:00",
+        "update_date": "2025-12-05T00:00:00+09:00"
+      },
+      "last_update_date": {
+        "corporate_number": "2025-12-05T12:32:23+09:00",
+        "name": "2025-12-05T12:32:23+09:00",
+        "kana": "2025-12-05T12:32:23+09:00",
+        "name_en": "2025-12-05T12:32:23+09:00",
+        "postal_code": "2025-12-05T12:32:23+09:00",
+        "location": "2025-12-05T12:32:23+09:00",
+        "process": "2025-12-05T12:32:23+09:00",
+        "aggregated_year": "2025-12-05T12:32:23+09:00",
+        "status": "2025-12-05T12:32:23+09:00",
+        "close_date": "2025-12-05T12:32:23+09:00",
+        "close_cause": "2025-12-05T12:32:23+09:00",
+        "kind": "2025-12-05T12:32:23+09:00",
+        "representative_name": "2025-12-17T20:48:28+09:00",
+        "capital_stock": "2025-12-17T20:48:28+09:00",
+        "employee_number": "2025-12-17T20:48:28+09:00",
+        "company_size_male": "2026-03-24T18:12:20+09:00",
+        "company_size_female": "2026-03-24T18:12:20+09:00",
+        "business_summary": "2026-03-24T18:12:20+09:00",
+        "company_url": "2026-03-24T18:12:20+09:00",
+        "founding_year": "2026-03-24T18:12:20+09:00",
+        "industry": "2026-03-24T18:12:20+09:00",
+        "date_of_establishment": "2026-04-13T00:41:21+09:00",
+        "business_items": "2026-04-13T00:41:21+09:00",
+        "qualification_grade": "2026-04-13T00:41:21+09:00",
+        "update_date": "2025-12-05T12:32:23+09:00"
+      }
+    },
+    "subsidy": [
+      {
+        "date_of_approval": null,
+        "title": "令和X年度省エネルギー設備導入補助金",
+        "amount": "17517979",
+        "target": null,
+        "government_departments": "経済産業省",
+        "meta-data": {
+          "key_field": "sample_subsidy_002_00",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2022-03-24T00:00:00+09:00",
+          "last_update_date": "2022-03-29T00:02:44+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2023-04-03",
+        "title": "中小企業DX推進補助事業費補助金",
+        "amount": "50381637",
+        "target": null,
+        "government_departments": "厚生労働省",
+        "meta-data": {
+          "key_field": "sample_subsidy_002_01",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2024-02-26T00:00:00+09:00",
+          "last_update_date": "2024-02-27T00:01:29+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2022-12-13",
+        "title": "地域新エネルギー事業化支援補助金",
+        "amount": "19539752",
+        "target": null,
+        "government_departments": "環境省",
+        "meta-data": {
+          "key_field": "sample_subsidy_002_02",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2023-06-26T00:00:00+09:00",
+          "last_update_date": "2023-06-29T00:13:15+09:00"
+        }
+      }
+    ],
+    "commendation": [
+      {
+        "date_of_commendation": null,
+        "title": "優良企業表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "総務省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_002_00",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      },
+      {
+        "date_of_commendation": null,
+        "title": "環境大臣表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "総務省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_002_01",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      },
+      {
+        "date_of_commendation": null,
+        "title": "女性活躍推進企業認定",
+        "target": null,
+        "category": null,
+        "government_departments": "経済産業省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_002_02",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      }
+    ],
+    "certification": [
+      {
+        "date_of_approval": "2024-01-01",
+        "title": "事業継続力強化計画認定",
+        "target": null,
+        "government_departments": "総務省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_002_00",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2024-01-12T00:00:00+09:00",
+          "last_update_date": "2024-01-12T13:59:40+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2022-01-01",
+        "title": "DX認定",
+        "target": null,
+        "government_departments": "厚生労働省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_002_01",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2022-01-13T00:00:00+09:00",
+          "last_update_date": "2022-02-10T00:01:44+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2019-04-01",
+        "title": "健康経営優良法人認定",
+        "target": null,
+        "government_departments": "総務省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_002_02",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2020-03-26T00:00:00+09:00",
+          "last_update_date": "2020-03-27T09:15:13+09:00"
+        }
+      }
+    ],
+    "procurement": [
+      {
+        "date_of_order": "2017-10-23T00:00:00+09:00",
+        "title": "情報システム保守管理業務委託",
+        "amount": 5463720,
+        "government_departments": "環境省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_002_00",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2017-12-28T00:00:00+09:00",
+          "last_update_date": "2026-01-24T00:50:13+09:00"
+        }
+      },
+      {
+        "date_of_order": "2022-07-13T00:00:00+09:00",
+        "title": "庁舎清掃業務委託",
+        "amount": 1964600,
+        "government_departments": "総務省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_002_01",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2022-09-21T00:00:00+09:00",
+          "last_update_date": "2026-01-24T00:50:13+09:00"
+        }
+      },
+      {
+        "date_of_order": "2019-12-04T00:00:00+09:00",
+        "title": "広報印刷物制作業務",
+        "amount": 8999500,
+        "government_departments": "経済産業省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_002_02",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2020-09-28T00:00:00+09:00",
+          "last_update_date": "2026-01-24T00:50:13+09:00"
+        }
+      }
+    ],
+    "patent": [
+      {
+        "patent_type": "商標",
+        "registration_number": "7000200",
+        "application_date": "2023-08-24",
+        "classifications": [],
+        "title": "情報処理方法及び情報処理装置",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_002_00",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "商標",
+        "registration_number": "7000201",
+        "application_date": "2023-08-24",
+        "classifications": [],
+        "title": "製品製造方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_002_01",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "特許",
+        "registration_number": "7000202",
+        "application_date": "2023-02-10",
+        "classifications": [],
+        "title": "通信システム及びその制御方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_002_02",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      }
+    ],
+    "finance": {
+      "accounting_standards": "有価証券報告書を参照してください",
+      "fiscal_year_cover_page": "第106期（自　2024年4月1日　至　2025年3月31日）",
+      "management_index": [
+        {
+          "period": "4",
+          "net_sales_summary_of_business_results": 3260501000000,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 146282000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 139834000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 342080000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 2234630000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 6587749000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 5587,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "3",
+          "net_sales_summary_of_business_results": null,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 331890000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 339049000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 342383000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 2190271000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 7481222000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 5494,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "2",
+          "net_sales_summary_of_business_results": null,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 897540000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 922579000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 342560000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 2494047000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 7539370000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 5449,
+          "number_of_employees_unit_ref": "pure"
+        }
+      ],
+      "major_shareholders": [
+        {
+          "name_major_shareholders": "サンプル株主01",
+          "shareholding_ratio": 0.05
+        },
+        {
+          "name_major_shareholders": "サンプル株主02",
+          "shareholding_ratio": 0.07
+        },
+        {
+          "name_major_shareholders": "サンプル株主03",
+          "shareholding_ratio": 0.09
+        }
+      ],
+      "meta-data": {
+        "key_field": "sample_finance_00002",
+        "data_quality": "政府連携データ",
+        "source": "EDINET",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2025-06-17T00:00:00+09:00",
+        "last_update_date": "2025-12-17T20:48:28+09:00"
+      }
+    },
+    "workplace_info": {
+      "base_infos": {
+        "average_continuous_service_years_type": "その他",
+        "average_continuous_service_years_Male": 18.6,
+        "average_continuous_service_years_Female": 15.5,
+        "average_continuous_service_years": null,
+        "average_age": null,
+        "month_average_predetermined_overtime_hours": null
+      },
+      "women_activity_infos": {
+        "female_workers_proportion_type": "その他",
+        "female_workers_proportion": 39.5,
+        "female_share_of_manager": 370,
+        "gender_total_of_manager": 3352,
+        "female_share_of_officers": 5,
+        "gender_total_of_officers": 17
+      },
+      "compatibility_of_childcare_and_work": {
+        "number_of_paternity_leave": null,
+        "number_of_maternity_leave": null,
+        "paternity_leave_acquisition_num": null,
+        "maternity_leave_acquisition_num": null
+      },
+      "meta-data": {
+        "key_field": "sample_workplace_00002",
+        "data_quality": "政府連携データ",
+        "source": "厚生労働省",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2026-03-24T00:00:00+09:00",
+        "last_update_date": "2026-03-24T18:12:20+09:00"
+      }
+    }
+  },
+  {
+    "corporate_number": "1000000000003",
+    "name": "合同会社サンプル003",
+    "kana": "サンプル003",
+    "name_en": "Sample Company 003 合同会社",
+    "postal_code": "460-0001",
+    "location": "愛知県名古屋市中区栄3-3-3",
+    "process": "12",
+    "aggregated_year": "0",
+    "status": "-",
+    "close_date": null,
+    "close_cause": null,
+    "kind": "301",
+    "representative_name": "代表 太郎003",
+    "capital_stock": 221023000000,
+    "employee_number": 4829,
+    "company_size_male": 3636,
+    "company_size_female": 1327,
+    "business_summary": "サンプル企業003の事業概要。製品・サービスの開発および販売を行っています。",
+    "company_url": "https://sample-company003.example.jp",
+    "founding_year": null,
+    "industry": [
+      "I"
+    ],
+    "date_of_establishment": "1919-12-24",
+    "business_items": [
+      "201",
+      "202",
+      "203",
+      "204",
+      "205",
+      "206",
+      "207",
+      "208",
+      "209",
+      "210",
+      "211",
+      "212",
+      "213",
+      "214",
+      "215",
+      "216",
+      "217",
+      "218",
+      "219",
+      "220",
+      "221",
+      "222",
+      "223",
+      "224",
+      "227",
+      "228",
+      "229",
+      "301",
+      "302",
+      "303",
+      "304",
+      "305",
+      "306",
+      "307",
+      "308",
+      "309",
+      "310",
+      "311",
+      "312",
+      "313",
+      "314",
+      "315",
+      "402"
+    ],
+    "qualification_grade": "、A、A、A",
+    "update_date": "2018-09-20T00:00:00+09:00",
+    "meta-data": {
+      "key_field": "sample_company_00003",
+      "data_quality": "政府承認データ",
+      "source": "国税庁",
+      "import_frequency": {
+        "corporate_number": "日次",
+        "name": "日次",
+        "kana": "日次",
+        "name_en": "日次",
+        "postal_code": "日次",
+        "location": "日次",
+        "process": "日次",
+        "aggregated_year": "日次",
+        "status": "日次",
+        "close_date": "日次",
+        "close_cause": "日次",
+        "kind": "日次",
+        "representative_name": "日次",
+        "capital_stock": "日次",
+        "employee_number": "日次",
+        "company_size_male": "日次",
+        "company_size_female": "日次",
+        "business_summary": "日次",
+        "company_url": "日次",
+        "founding_year": "日次",
+        "industry": "日次",
+        "date_of_establishment": "日次",
+        "business_items": "日次",
+        "qualification_grade": "日次",
+        "update_date": "日次"
+      },
+      "last_acquisition_date": {
+        "corporate_number": "2025-12-05T00:00:00+09:00",
+        "name": "2025-12-05T00:00:00+09:00",
+        "kana": "2025-12-05T00:00:00+09:00",
+        "name_en": "2025-12-05T00:00:00+09:00",
+        "postal_code": "2025-12-05T00:00:00+09:00",
+        "location": "2025-12-05T00:00:00+09:00",
+        "process": "2025-12-05T00:00:00+09:00",
+        "aggregated_year": "2025-12-05T00:00:00+09:00",
+        "status": "2025-12-05T00:00:00+09:00",
+        "close_date": "2025-12-05T00:00:00+09:00",
+        "close_cause": "2025-12-05T00:00:00+09:00",
+        "kind": "2025-12-05T00:00:00+09:00",
+        "representative_name": "2025-06-18T00:00:00+09:00",
+        "capital_stock": "2025-06-18T00:00:00+09:00",
+        "employee_number": "2025-06-18T00:00:00+09:00",
+        "company_size_male": "2026-03-24T00:00:00+09:00",
+        "company_size_female": "2026-03-24T00:00:00+09:00",
+        "business_summary": "2026-03-24T00:00:00+09:00",
+        "company_url": "2026-03-24T00:00:00+09:00",
+        "founding_year": "2026-03-24T00:00:00+09:00",
+        "industry": "2026-03-24T00:00:00+09:00",
+        "date_of_establishment": "2026-04-13T00:00:00+09:00",
+        "business_items": "2026-04-13T00:00:00+09:00",
+        "qualification_grade": "2026-04-13T00:00:00+09:00",
+        "update_date": "2025-12-05T00:00:00+09:00"
+      },
+      "last_update_date": {
+        "corporate_number": "2025-12-05T12:32:23+09:00",
+        "name": "2025-12-05T12:32:23+09:00",
+        "kana": "2025-12-05T12:32:23+09:00",
+        "name_en": "2025-12-05T12:32:23+09:00",
+        "postal_code": "2025-12-05T12:32:23+09:00",
+        "location": "2025-12-05T12:32:23+09:00",
+        "process": "2025-12-05T12:32:23+09:00",
+        "aggregated_year": "2025-12-05T12:32:23+09:00",
+        "status": "2025-12-05T12:32:23+09:00",
+        "close_date": "2025-12-05T12:32:23+09:00",
+        "close_cause": "2025-12-05T12:32:23+09:00",
+        "kind": "2025-12-05T12:32:23+09:00",
+        "representative_name": "2025-12-17T20:48:28+09:00",
+        "capital_stock": "2025-12-17T20:48:28+09:00",
+        "employee_number": "2025-12-17T20:48:28+09:00",
+        "company_size_male": "2026-03-24T18:12:20+09:00",
+        "company_size_female": "2026-03-24T18:12:20+09:00",
+        "business_summary": "2026-03-24T18:12:20+09:00",
+        "company_url": "2026-03-24T18:12:20+09:00",
+        "founding_year": "2026-03-24T18:12:20+09:00",
+        "industry": "2026-03-24T18:12:20+09:00",
+        "date_of_establishment": "2026-04-13T00:41:21+09:00",
+        "business_items": "2026-04-13T00:41:21+09:00",
+        "qualification_grade": "2026-04-13T00:41:21+09:00",
+        "update_date": "2025-12-05T12:32:23+09:00"
+      }
+    },
+    "subsidy": [
+      {
+        "date_of_approval": null,
+        "title": "令和X年度省エネルギー設備導入補助金",
+        "amount": "2769880",
+        "target": null,
+        "government_departments": "国土交通省",
+        "meta-data": {
+          "key_field": "sample_subsidy_003_00",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2020-11-26T00:00:00+09:00",
+          "last_update_date": "2020-11-27T00:01:42+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2023-12-08",
+        "title": "中小企業DX推進補助事業費補助金",
+        "amount": "61119219",
+        "target": null,
+        "government_departments": "経済産業省",
+        "meta-data": {
+          "key_field": "sample_subsidy_003_01",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2024-02-26T00:00:00+09:00",
+          "last_update_date": "2024-02-27T00:01:29+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2022-10-05",
+        "title": "地域新エネルギー事業化支援補助金",
+        "amount": "119564361",
+        "target": null,
+        "government_departments": "経済産業省",
+        "meta-data": {
+          "key_field": "sample_subsidy_003_02",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2024-02-26T00:00:00+09:00",
+          "last_update_date": "2024-02-27T00:01:29+09:00"
+        }
+      }
+    ],
+    "commendation": [
+      {
+        "date_of_commendation": null,
+        "title": "優良企業表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "環境省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_003_00",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      },
+      {
+        "date_of_commendation": null,
+        "title": "環境大臣表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "国土交通省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_003_01",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      },
+      {
+        "date_of_commendation": null,
+        "title": "女性活躍推進企業認定",
+        "target": null,
+        "category": null,
+        "government_departments": "環境省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_003_02",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      }
+    ],
+    "certification": [
+      {
+        "date_of_approval": "2025-05-01",
+        "title": "事業継続力強化計画認定",
+        "target": null,
+        "government_departments": "国土交通省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_003_00",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2025-06-25T00:00:00+09:00",
+          "last_update_date": "2025-06-26T00:29:45+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2023-05-01",
+        "title": "DX認定",
+        "target": null,
+        "government_departments": "厚生労働省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_003_01",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2023-05-10T00:00:00+09:00",
+          "last_update_date": "2023-05-11T00:01:00+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2021-05-01",
+        "title": "健康経営優良法人認定",
+        "target": null,
+        "government_departments": "総務省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_003_02",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2021-07-08T00:00:00+09:00",
+          "last_update_date": "2021-07-09T00:01:41+09:00"
+        }
+      }
+    ],
+    "procurement": [
+      {
+        "date_of_order": "2024-12-27T00:00:00+09:00",
+        "title": "情報システム保守管理業務委託",
+        "amount": 1089000,
+        "government_departments": "国土交通省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_003_00",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2025-06-25T00:00:00+09:00",
+          "last_update_date": "2026-01-24T00:50:13+09:00"
+        }
+      },
+      {
+        "date_of_order": "2025-12-18T00:00:00+09:00",
+        "title": "庁舎清掃業務委託",
+        "amount": 1829000,
+        "government_departments": "経済産業省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_003_01",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2025-12-23T00:00:00+09:00",
+          "last_update_date": "2025-12-23T15:12:59+09:00"
+        }
+      },
+      {
+        "date_of_order": "2021-09-01T00:00:00+09:00",
+        "title": "広報印刷物制作業務",
+        "amount": 1203400,
+        "government_departments": "総務省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_003_02",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2022-01-27T00:00:00+09:00",
+          "last_update_date": "2026-01-24T00:50:13+09:00"
+        }
+      }
+    ],
+    "patent": [
+      {
+        "patent_type": "商標",
+        "registration_number": "7000300",
+        "application_date": "2023-10-03",
+        "classifications": [],
+        "title": "情報処理方法及び情報処理装置",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_003_00",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "商標",
+        "registration_number": "7000301",
+        "application_date": "2023-10-03",
+        "classifications": [],
+        "title": "製品製造方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_003_01",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "商標",
+        "registration_number": "7000302",
+        "application_date": "2023-07-26",
+        "classifications": [],
+        "title": "通信システム及びその制御方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_003_02",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      }
+    ],
+    "finance": {
+      "accounting_standards": "有価証券報告書を参照してください",
+      "fiscal_year_cover_page": "第157期(自2024年4月1日  至2025年3月31日)",
+      "management_index": [
+        {
+          "period": "4",
+          "net_sales_summary_of_business_results": 1622317000000,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": -105187000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": -125560000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 219781000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 1053351000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 4174571000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 5240,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "3",
+          "net_sales_summary_of_business_results": null,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 275466000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 287902000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 219893000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 1205666000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 4702441000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 5150,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "2",
+          "net_sales_summary_of_business_results": null,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 391718000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 413561000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 220046000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 1419359000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 4801000000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 5068,
+          "number_of_employees_unit_ref": "pure"
+        }
+      ],
+      "major_shareholders": [
+        {
+          "name_major_shareholders": "サンプル株主01",
+          "shareholding_ratio": 0.05
+        },
+        {
+          "name_major_shareholders": "サンプル株主02",
+          "shareholding_ratio": 0.07
+        },
+        {
+          "name_major_shareholders": "サンプル株主03",
+          "shareholding_ratio": 0.09
+        }
+      ],
+      "meta-data": {
+        "key_field": "sample_finance_00003",
+        "data_quality": "政府連携データ",
+        "source": "EDINET",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2025-06-18T00:00:00+09:00",
+        "last_update_date": "2025-12-17T20:48:28+09:00"
+      }
+    },
+    "workplace_info": {
+      "base_infos": {
+        "average_continuous_service_years_type": "その他",
+        "average_continuous_service_years_Male": 17.2,
+        "average_continuous_service_years_Female": 15.4,
+        "average_continuous_service_years": null,
+        "average_age": null,
+        "month_average_predetermined_overtime_hours": null
+      },
+      "women_activity_infos": {
+        "female_workers_proportion_type": "その他",
+        "female_workers_proportion": 36.0,
+        "female_share_of_manager": 306,
+        "gender_total_of_manager": 2944,
+        "female_share_of_officers": 3,
+        "gender_total_of_officers": 16
+      },
+      "compatibility_of_childcare_and_work": {
+        "number_of_paternity_leave": null,
+        "number_of_maternity_leave": null,
+        "paternity_leave_acquisition_num": null,
+        "maternity_leave_acquisition_num": null
+      },
+      "meta-data": {
+        "key_field": "sample_workplace_00003",
+        "data_quality": "政府連携データ",
+        "source": "厚生労働省",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2026-03-24T00:00:00+09:00",
+        "last_update_date": "2026-03-24T18:12:20+09:00"
+      }
+    }
+  },
+  {
+    "corporate_number": "1000000000004",
+    "name": "一般社団法人サンプル004",
+    "kana": "サンプル004",
+    "name_en": "Sample Company 004 一般社団法人",
+    "postal_code": "220-0001",
+    "location": "神奈川県横浜市西区みなとみらい4-4-4",
+    "process": "71",
+    "aggregated_year": "1",
+    "status": "-",
+    "close_date": null,
+    "close_cause": null,
+    "kind": "301",
+    "representative_name": "代表 太郎004",
+    "capital_stock": 949679000000,
+    "employee_number": 13896,
+    "company_size_male": 16843,
+    "company_size_female": 5123,
+    "business_summary": "サンプル企業004の事業概要。製品・サービスの開発および販売を行っています。",
+    "company_url": "https://sample-company004.example.jp",
+    "founding_year": null,
+    "industry": [
+      "G"
+    ],
+    "date_of_establishment": "1991-08-14",
+    "business_items": [
+      "108",
+      "110",
+      "116",
+      "117",
+      "118",
+      "124",
+      "127",
+      "128",
+      "206",
+      "207",
+      "208",
+      "210",
+      "211",
+      "212",
+      "214",
+      "215",
+      "216",
+      "217",
+      "218",
+      "219",
+      "220",
+      "221",
+      "222",
+      "223",
+      "224",
+      "227",
+      "228",
+      "229",
+      "301",
+      "303",
+      "304",
+      "306",
+      "308",
+      "309",
+      "314",
+      "402"
+    ],
+    "qualification_grade": "A、A、A、A",
+    "update_date": "2024-07-30T00:00:00+09:00",
+    "meta-data": {
+      "key_field": "sample_company_00004",
+      "data_quality": "政府承認データ",
+      "source": "国税庁",
+      "import_frequency": {
+        "corporate_number": "日次",
+        "name": "日次",
+        "kana": "日次",
+        "name_en": "日次",
+        "postal_code": "日次",
+        "location": "日次",
+        "process": "日次",
+        "aggregated_year": "日次",
+        "status": "日次",
+        "close_date": "日次",
+        "close_cause": "日次",
+        "kind": "日次",
+        "representative_name": "日次",
+        "capital_stock": "日次",
+        "employee_number": "日次",
+        "company_size_male": "日次",
+        "company_size_female": "日次",
+        "business_summary": "日次",
+        "company_url": "日次",
+        "founding_year": "日次",
+        "industry": "日次",
+        "date_of_establishment": "日次",
+        "business_items": "日次",
+        "qualification_grade": "日次",
+        "update_date": "日次"
+      },
+      "last_acquisition_date": {
+        "corporate_number": "2025-12-05T00:00:00+09:00",
+        "name": "2025-12-05T00:00:00+09:00",
+        "kana": "2025-12-05T00:00:00+09:00",
+        "name_en": "2025-12-05T00:00:00+09:00",
+        "postal_code": "2025-12-05T00:00:00+09:00",
+        "location": "2025-12-05T00:00:00+09:00",
+        "process": "2025-12-05T00:00:00+09:00",
+        "aggregated_year": "2025-12-05T00:00:00+09:00",
+        "status": "2025-12-05T00:00:00+09:00",
+        "close_date": "2025-12-05T00:00:00+09:00",
+        "close_cause": "2025-12-05T00:00:00+09:00",
+        "kind": "2025-12-05T00:00:00+09:00",
+        "representative_name": "2020-07-01T00:00:00+09:00",
+        "capital_stock": "2020-07-01T00:00:00+09:00",
+        "employee_number": "2020-07-01T00:00:00+09:00",
+        "company_size_male": "2026-03-24T00:00:00+09:00",
+        "company_size_female": "2026-03-24T00:00:00+09:00",
+        "business_summary": "2026-03-24T00:00:00+09:00",
+        "company_url": "2026-03-24T00:00:00+09:00",
+        "founding_year": "2026-03-24T00:00:00+09:00",
+        "industry": "2026-03-24T00:00:00+09:00",
+        "date_of_establishment": "2026-04-13T00:00:00+09:00",
+        "business_items": "2026-04-13T00:00:00+09:00",
+        "qualification_grade": "2026-04-13T00:00:00+09:00",
+        "update_date": "2025-12-05T00:00:00+09:00"
+      },
+      "last_update_date": {
+        "corporate_number": "2025-12-05T12:32:23+09:00",
+        "name": "2025-12-05T12:32:23+09:00",
+        "kana": "2025-12-05T12:32:23+09:00",
+        "name_en": "2025-12-05T12:32:23+09:00",
+        "postal_code": "2025-12-05T12:32:23+09:00",
+        "location": "2025-12-05T12:32:23+09:00",
+        "process": "2025-12-05T12:32:23+09:00",
+        "aggregated_year": "2025-12-05T12:32:23+09:00",
+        "status": "2025-12-05T12:32:23+09:00",
+        "close_date": "2025-12-05T12:32:23+09:00",
+        "close_cause": "2025-12-05T12:32:23+09:00",
+        "kind": "2025-12-05T12:32:23+09:00",
+        "representative_name": "2025-12-17T11:06:17+09:00",
+        "capital_stock": "2025-12-17T11:06:17+09:00",
+        "employee_number": "2025-12-17T11:06:17+09:00",
+        "company_size_male": "2026-03-24T18:12:20+09:00",
+        "company_size_female": "2026-03-24T18:12:20+09:00",
+        "business_summary": "2026-03-24T18:12:20+09:00",
+        "company_url": "2026-03-24T18:12:20+09:00",
+        "founding_year": "2026-03-24T18:12:20+09:00",
+        "industry": "2026-03-24T18:12:20+09:00",
+        "date_of_establishment": "2026-04-13T00:41:21+09:00",
+        "business_items": "2026-04-13T00:41:21+09:00",
+        "qualification_grade": "2026-04-13T00:41:21+09:00",
+        "update_date": "2025-12-05T12:32:23+09:00"
+      }
+    },
+    "subsidy": [
+      {
+        "date_of_approval": "2024-04-17",
+        "title": "令和X年度省エネルギー設備導入補助金",
+        "amount": "12300000",
+        "target": null,
+        "government_departments": "環境省",
+        "meta-data": {
+          "key_field": "sample_subsidy_004_00",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2025-02-27T00:00:00+09:00",
+          "last_update_date": "2025-02-28T00:01:36+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2023-09-25",
+        "title": "中小企業DX推進補助事業費補助金",
+        "amount": "11526000",
+        "target": null,
+        "government_departments": "国土交通省",
+        "meta-data": {
+          "key_field": "sample_subsidy_004_01",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2024-02-26T00:00:00+09:00",
+          "last_update_date": "2024-02-27T00:01:29+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2023-08-24",
+        "title": "地域新エネルギー事業化支援補助金",
+        "amount": "70304000",
+        "target": null,
+        "government_departments": "国土交通省",
+        "meta-data": {
+          "key_field": "sample_subsidy_004_02",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2024-02-26T00:00:00+09:00",
+          "last_update_date": "2024-02-27T00:01:29+09:00"
+        }
+      }
+    ],
+    "commendation": [
+      {
+        "date_of_commendation": null,
+        "title": "優良企業表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "経済産業省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_004_00",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      },
+      {
+        "date_of_commendation": null,
+        "title": "環境大臣表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "国土交通省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_004_01",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      },
+      {
+        "date_of_commendation": null,
+        "title": "女性活躍推進企業認定",
+        "target": null,
+        "category": null,
+        "government_departments": "総務省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_004_02",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      }
+    ],
+    "certification": [
+      {
+        "date_of_approval": "2023-08-01",
+        "title": "事業継続力強化計画認定",
+        "target": null,
+        "government_departments": "環境省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_004_00",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2023-08-09T00:00:00+09:00",
+          "last_update_date": "2023-08-10T00:01:05+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2022-11-22",
+        "title": "DX認定",
+        "target": null,
+        "government_departments": "国土交通省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_004_01",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2023-03-29T00:00:00+09:00",
+          "last_update_date": "2023-03-29T00:02:10+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2021-08-01",
+        "title": "健康経営優良法人認定",
+        "target": null,
+        "government_departments": "経済産業省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_004_02",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2021-08-11T00:00:00+09:00",
+          "last_update_date": "2021-08-12T00:01:34+09:00"
+        }
+      }
+    ],
+    "procurement": [
+      {
+        "date_of_order": "2016-01-25T00:00:00+09:00",
+        "title": "情報システム保守管理業務委託",
+        "amount": 6980000,
+        "government_departments": "総務省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_004_00",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2025-12-05T00:00:00+09:00",
+          "last_update_date": "2025-12-23T15:12:59+09:00"
+        }
+      },
+      {
+        "date_of_order": "2016-06-14T00:00:00+09:00",
+        "title": "庁舎清掃業務委託",
+        "amount": 132800000,
+        "government_departments": "総務省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_004_01",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2025-12-05T00:00:00+09:00",
+          "last_update_date": "2025-12-23T15:12:59+09:00"
+        }
+      },
+      {
+        "date_of_order": "2016-07-29T00:00:00+09:00",
+        "title": "広報印刷物制作業務",
+        "amount": 145000000,
+        "government_departments": "総務省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_004_02",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2025-12-05T00:00:00+09:00",
+          "last_update_date": "2025-12-23T15:12:59+09:00"
+        }
+      }
+    ],
+    "patent": [
+      {
+        "patent_type": "意匠",
+        "registration_number": "7000400",
+        "application_date": "2023-10-05",
+        "classifications": [],
+        "title": "情報処理方法及び情報処理装置",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_004_00",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "商標",
+        "registration_number": "7000401",
+        "application_date": "2023-09-20",
+        "classifications": [],
+        "title": "製品製造方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_004_01",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "商標",
+        "registration_number": "7000402",
+        "application_date": "2023-09-06",
+        "classifications": [],
+        "title": "通信システム及びその制御方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_004_02",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      }
+    ],
+    "finance": {
+      "accounting_standards": "有価証券報告書を参照してください",
+      "fiscal_year_cover_page": "第29期(自　2019年4月1日　至　2020年3月31日)",
+      "management_index": [
+        {
+          "period": "4",
+          "net_sales_summary_of_business_results": null,
+          "net_sales_summary_of_business_results_unit_ref": null,
+          "operating_revenue1_summary_of_business_results": 4461505000000,
+          "operating_revenue1_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 750261000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 461006000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 949679000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 4988846000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 6595645000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 7616,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "3",
+          "net_sales_summary_of_business_results": null,
+          "net_sales_summary_of_business_results_unit_ref": null,
+          "operating_revenue1_summary_of_business_results": 4588579000000,
+          "operating_revenue1_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 937816000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 629165000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 949679000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 5222663000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 6829897000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 7609,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "2",
+          "net_sales_summary_of_business_results": null,
+          "net_sales_summary_of_business_results_unit_ref": null,
+          "operating_revenue1_summary_of_business_results": 4807129000000,
+          "operating_revenue1_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 969966000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 848155000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 949679000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 5413635000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 7140451000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 7767,
+          "number_of_employees_unit_ref": "pure"
+        }
+      ],
+      "major_shareholders": [
+        {
+          "name_major_shareholders": "サンプル株主01",
+          "shareholding_ratio": 0.05
+        },
+        {
+          "name_major_shareholders": "サンプル株主02",
+          "shareholding_ratio": 0.07
+        },
+        {
+          "name_major_shareholders": "サンプル株主03",
+          "shareholding_ratio": 0.09
+        }
+      ],
+      "meta-data": {
+        "key_field": "sample_finance_00004",
+        "data_quality": "政府連携データ",
+        "source": "EDINET",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2020-07-01T00:00:00+09:00",
+        "last_update_date": "2025-12-17T11:06:17+09:00"
+      }
+    },
+    "workplace_info": {
+      "base_infos": {
+        "average_continuous_service_years_type": "その他",
+        "average_continuous_service_years_Male": 19.2,
+        "average_continuous_service_years_Female": 15.2,
+        "average_continuous_service_years": null,
+        "average_age": null,
+        "month_average_predetermined_overtime_hours": null
+      },
+      "women_activity_infos": {
+        "female_workers_proportion_type": "その他",
+        "female_workers_proportion": 29.1,
+        "female_share_of_manager": null,
+        "gender_total_of_manager": null,
+        "female_share_of_officers": null,
+        "gender_total_of_officers": null
+      },
+      "compatibility_of_childcare_and_work": {
+        "number_of_paternity_leave": null,
+        "number_of_maternity_leave": null,
+        "paternity_leave_acquisition_num": null,
+        "maternity_leave_acquisition_num": null
+      },
+      "meta-data": {
+        "key_field": "sample_workplace_00004",
+        "data_quality": "政府連携データ",
+        "source": "厚生労働省",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2026-03-24T00:00:00+09:00",
+        "last_update_date": "2026-03-24T18:12:20+09:00"
+      }
+    }
+  },
+  {
+    "corporate_number": "1000000000005",
+    "name": "株式会社サンプル005",
+    "kana": "サンプル005",
+    "name_en": "Sample Company 005 Inc.",
+    "postal_code": "812-0001",
+    "location": "福岡県福岡市博多区博多駅前5-5-5",
+    "process": "01",
+    "aggregated_year": "1",
+    "status": "-",
+    "close_date": null,
+    "close_cause": null,
+    "kind": "301",
+    "representative_name": "代表 太郎005",
+    "capital_stock": 10374000000,
+    "employee_number": 8673,
+    "company_size_male": 6128,
+    "company_size_female": 2545,
+    "business_summary": "サンプル企業005の事業概要。製品・サービスの開発および販売を行っています。",
+    "company_url": "https://sample-company005.example.jp",
+    "founding_year": null,
+    "industry": [
+      "G"
+    ],
+    "date_of_establishment": "1961-12-13",
+    "business_items": [
+      "209",
+      "214",
+      "215",
+      "216",
+      "217",
+      "218",
+      "220",
+      "221",
+      "223",
+      "229",
+      "301",
+      "302",
+      "303",
+      "304",
+      "306",
+      "308",
+      "309",
+      "313",
+      "315",
+      "402"
+    ],
+    "qualification_grade": "、A、A、A",
+    "update_date": "2018-04-12T00:00:00+09:00",
+    "meta-data": {
+      "key_field": "sample_company_00005",
+      "data_quality": "政府承認データ",
+      "source": "国税庁",
+      "import_frequency": {
+        "corporate_number": "日次",
+        "name": "日次",
+        "kana": "日次",
+        "name_en": "日次",
+        "postal_code": "日次",
+        "location": "日次",
+        "process": "日次",
+        "aggregated_year": "日次",
+        "status": "日次",
+        "close_date": "日次",
+        "close_cause": "日次",
+        "kind": "日次",
+        "representative_name": "日次",
+        "capital_stock": "日次",
+        "employee_number": "日次",
+        "company_size_male": "日次",
+        "company_size_female": "日次",
+        "business_summary": "日次",
+        "company_url": "日次",
+        "founding_year": "日次",
+        "industry": "日次",
+        "date_of_establishment": "日次",
+        "business_items": "日次",
+        "qualification_grade": "日次",
+        "update_date": "日次"
+      },
+      "last_acquisition_date": {
+        "corporate_number": "2025-12-05T00:00:00+09:00",
+        "name": "2025-12-05T00:00:00+09:00",
+        "kana": "2025-12-05T00:00:00+09:00",
+        "name_en": "2025-12-05T00:00:00+09:00",
+        "postal_code": "2025-12-05T00:00:00+09:00",
+        "location": "2025-12-05T00:00:00+09:00",
+        "process": "2025-12-05T00:00:00+09:00",
+        "aggregated_year": "2025-12-05T00:00:00+09:00",
+        "status": "2025-12-05T00:00:00+09:00",
+        "close_date": "2025-12-05T00:00:00+09:00",
+        "close_cause": "2025-12-05T00:00:00+09:00",
+        "kind": "2025-12-05T00:00:00+09:00",
+        "representative_name": "2026-03-26T00:00:00+09:00",
+        "capital_stock": "2026-03-26T00:00:00+09:00",
+        "employee_number": "2026-03-26T00:00:00+09:00",
+        "company_size_male": "2026-03-24T00:00:00+09:00",
+        "company_size_female": "2026-03-24T00:00:00+09:00",
+        "business_summary": "2026-03-24T00:00:00+09:00",
+        "company_url": "2026-03-24T00:00:00+09:00",
+        "founding_year": "2026-03-24T00:00:00+09:00",
+        "industry": "2026-03-24T00:00:00+09:00",
+        "date_of_establishment": "2026-04-13T00:00:00+09:00",
+        "business_items": "2026-04-13T00:00:00+09:00",
+        "qualification_grade": "2026-04-13T00:00:00+09:00",
+        "update_date": "2025-12-05T00:00:00+09:00"
+      },
+      "last_update_date": {
+        "corporate_number": "2025-12-05T12:32:23+09:00",
+        "name": "2025-12-05T12:32:23+09:00",
+        "kana": "2025-12-05T12:32:23+09:00",
+        "name_en": "2025-12-05T12:32:23+09:00",
+        "postal_code": "2025-12-05T12:32:23+09:00",
+        "location": "2025-12-05T12:32:23+09:00",
+        "process": "2025-12-05T12:32:23+09:00",
+        "aggregated_year": "2025-12-05T12:32:23+09:00",
+        "status": "2025-12-05T12:32:23+09:00",
+        "close_date": "2025-12-05T12:32:23+09:00",
+        "close_cause": "2025-12-05T12:32:23+09:00",
+        "kind": "2025-12-05T12:32:23+09:00",
+        "representative_name": "2026-03-27T00:30:53+09:00",
+        "capital_stock": "2026-03-27T00:30:53+09:00",
+        "employee_number": "2026-03-27T00:30:53+09:00",
+        "company_size_male": "2026-03-24T18:12:20+09:00",
+        "company_size_female": "2026-03-24T18:12:20+09:00",
+        "business_summary": "2026-03-24T18:12:20+09:00",
+        "company_url": "2026-03-24T18:12:20+09:00",
+        "founding_year": "2026-03-24T18:12:20+09:00",
+        "industry": "2026-03-24T18:12:20+09:00",
+        "date_of_establishment": "2026-04-13T00:41:21+09:00",
+        "business_items": "2026-04-13T00:41:21+09:00",
+        "qualification_grade": "2026-04-13T00:41:21+09:00",
+        "update_date": "2025-12-05T12:32:23+09:00"
+      }
+    },
+    "subsidy": [
+      {
+        "date_of_approval": "2022-04-01",
+        "title": "令和X年度省エネルギー設備導入補助金",
+        "amount": "181775880",
+        "target": null,
+        "government_departments": "厚生労働省",
+        "meta-data": {
+          "key_field": "sample_subsidy_005_00",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2023-06-26T00:00:00+09:00",
+          "last_update_date": "2023-06-29T00:13:15+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2022-04-01",
+        "title": "中小企業DX推進補助事業費補助金",
+        "amount": "105680410",
+        "target": null,
+        "government_departments": "総務省",
+        "meta-data": {
+          "key_field": "sample_subsidy_005_01",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2023-06-26T00:00:00+09:00",
+          "last_update_date": "2023-06-29T00:13:15+09:00"
+        }
+      }
+    ],
+    "commendation": [
+      {
+        "date_of_commendation": null,
+        "title": "優良企業表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "環境省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_005_00",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      },
+      {
+        "date_of_commendation": null,
+        "title": "環境大臣表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "国土交通省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_005_01",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      },
+      {
+        "date_of_commendation": null,
+        "title": "女性活躍推進企業認定",
+        "target": null,
+        "category": null,
+        "government_departments": "国土交通省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_005_02",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      }
+    ],
+    "certification": [
+      {
+        "date_of_approval": "2025-04-01",
+        "title": "事業継続力強化計画認定",
+        "target": null,
+        "government_departments": "経済産業省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_005_00",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2025-06-25T00:00:00+09:00",
+          "last_update_date": "2025-06-26T00:29:45+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2023-04-01",
+        "title": "DX認定",
+        "target": null,
+        "government_departments": "総務省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_005_01",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2023-04-13T00:00:00+09:00",
+          "last_update_date": "2023-04-14T10:33:16+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2021-04-01",
+        "title": "健康経営優良法人認定",
+        "target": null,
+        "government_departments": "総務省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_005_02",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2021-07-08T00:00:00+09:00",
+          "last_update_date": "2021-07-09T00:01:41+09:00"
+        }
+      }
+    ],
+    "procurement": [
+      {
+        "date_of_order": "2017-12-15T00:00:00+09:00",
+        "title": "情報システム保守管理業務委託",
+        "amount": 5178600,
+        "government_departments": "環境省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_005_00",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2018-01-30T00:00:00+09:00",
+          "last_update_date": "2026-01-24T00:50:13+09:00"
+        }
+      },
+      {
+        "date_of_order": "2018-01-29T00:00:00+09:00",
+        "title": "庁舎清掃業務委託",
+        "amount": 2554200,
+        "government_departments": "環境省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_005_01",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2018-02-28T00:00:00+09:00",
+          "last_update_date": "2026-01-24T00:50:13+09:00"
+        }
+      },
+      {
+        "date_of_order": "2019-03-08T00:00:00+09:00",
+        "title": "広報印刷物制作業務",
+        "amount": 6091200,
+        "government_departments": "国土交通省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_005_02",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2019-06-21T00:00:00+09:00",
+          "last_update_date": "2026-01-24T00:50:13+09:00"
+        }
+      }
+    ],
+    "patent": [
+      {
+        "patent_type": "商標",
+        "registration_number": "7000500",
+        "application_date": "2023-07-06",
+        "classifications": [],
+        "title": "情報処理方法及び情報処理装置",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_005_00",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "商標",
+        "registration_number": "7000501",
+        "application_date": "2023-07-06",
+        "classifications": [],
+        "title": "製品製造方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_005_01",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "商標",
+        "registration_number": "7000502",
+        "application_date": "2022-08-01",
+        "classifications": [],
+        "title": "通信システム及びその制御方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_005_02",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      }
+    ],
+    "finance": {
+      "accounting_standards": "有価証券報告書を参照してください",
+      "fiscal_year_cover_page": "第65期(自  2025年１月１日  至  2025年12月31日)",
+      "management_index": [
+        {
+          "period": "4",
+          "net_sales_summary_of_business_results": 766724000000,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 50986000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 36087000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 10374000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 268128000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 443127000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 7480,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "3",
+          "net_sales_summary_of_business_results": 767649000000,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 50692000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 36631000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 10374000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 283595000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 473250000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 7524,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "2",
+          "net_sales_summary_of_business_results": 869573000000,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 57253000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 43150000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 10374000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 303608000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 504852000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 7713,
+          "number_of_employees_unit_ref": "pure"
+        }
+      ],
+      "major_shareholders": [
+        {
+          "name_major_shareholders": "サンプル株主01",
+          "shareholding_ratio": 0.05
+        },
+        {
+          "name_major_shareholders": "サンプル株主02",
+          "shareholding_ratio": 0.07
+        },
+        {
+          "name_major_shareholders": "サンプル株主03",
+          "shareholding_ratio": 0.09
+        }
+      ],
+      "meta-data": {
+        "key_field": "sample_finance_00005",
+        "data_quality": "政府連携データ",
+        "source": "EDINET",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2026-03-26T00:00:00+09:00",
+        "last_update_date": "2026-03-27T00:30:53+09:00"
+      }
+    },
+    "workplace_info": {
+      "base_infos": {
+        "average_continuous_service_years_type": "正社員",
+        "average_continuous_service_years_Male": null,
+        "average_continuous_service_years_Female": 13.4,
+        "average_continuous_service_years": null,
+        "average_age": null,
+        "month_average_predetermined_overtime_hours": null
+      },
+      "women_activity_infos": {
+        "female_workers_proportion_type": "正社員",
+        "female_workers_proportion": 31.8,
+        "female_share_of_manager": 115,
+        "gender_total_of_manager": 915,
+        "female_share_of_officers": 2,
+        "gender_total_of_officers": 39
+      },
+      "compatibility_of_childcare_and_work": {
+        "number_of_paternity_leave": null,
+        "number_of_maternity_leave": null,
+        "paternity_leave_acquisition_num": null,
+        "maternity_leave_acquisition_num": null
+      },
+      "meta-data": {
+        "key_field": "sample_workplace_00005",
+        "data_quality": "政府連携データ",
+        "source": "厚生労働省",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2026-03-24T00:00:00+09:00",
+        "last_update_date": "2026-03-24T18:12:20+09:00"
+      }
+    }
+  },
+  {
+    "corporate_number": "1000000000006",
+    "name": "有限会社サンプル006",
+    "kana": "サンプル006",
+    "name_en": "Sample Company 006 Ltd.",
+    "postal_code": "060-0001",
+    "location": "北海道札幌市中央区大通西6-6-6",
+    "process": "71",
+    "aggregated_year": "0",
+    "status": "-",
+    "close_date": null,
+    "close_cause": null,
+    "kind": "301",
+    "representative_name": "代表 太郎006",
+    "capital_stock": 74365000000,
+    "employee_number": 11665,
+    "company_size_male": 9357,
+    "company_size_female": 2308,
+    "business_summary": "サンプル企業006の事業概要。製品・サービスの開発および販売を行っています。",
+    "company_url": "https://sample-company006.example.jp",
+    "founding_year": null,
+    "industry": [
+      "D"
+    ],
+    "date_of_establishment": "1937-08-24",
+    "business_items": [
+      "111",
+      "114",
+      "115",
+      "116",
+      "117",
+      "118",
+      "124",
+      "128",
+      "129",
+      "214",
+      "216",
+      "224",
+      "302",
+      "303",
+      "304",
+      "306",
+      "308",
+      "309",
+      "314",
+      "315"
+    ],
+    "qualification_grade": "A、A、A、",
+    "update_date": "2021-05-31T00:00:00+09:00",
+    "meta-data": {
+      "key_field": "sample_company_00006",
+      "data_quality": "政府承認データ",
+      "source": "国税庁",
+      "import_frequency": {
+        "corporate_number": "日次",
+        "name": "日次",
+        "kana": "日次",
+        "name_en": "日次",
+        "postal_code": "日次",
+        "location": "日次",
+        "process": "日次",
+        "aggregated_year": "日次",
+        "status": "日次",
+        "close_date": "日次",
+        "close_cause": "日次",
+        "kind": "日次",
+        "representative_name": "日次",
+        "capital_stock": "日次",
+        "employee_number": "日次",
+        "company_size_male": "日次",
+        "company_size_female": "日次",
+        "business_summary": "日次",
+        "company_url": "日次",
+        "founding_year": "日次",
+        "industry": "日次",
+        "date_of_establishment": "日次",
+        "business_items": "日次",
+        "qualification_grade": "日次",
+        "update_date": "日次"
+      },
+      "last_acquisition_date": {
+        "corporate_number": "2025-12-05T00:00:00+09:00",
+        "name": "2025-12-05T00:00:00+09:00",
+        "kana": "2025-12-05T00:00:00+09:00",
+        "name_en": "2025-12-05T00:00:00+09:00",
+        "postal_code": "2025-12-05T00:00:00+09:00",
+        "location": "2025-12-05T00:00:00+09:00",
+        "process": "2025-12-05T00:00:00+09:00",
+        "aggregated_year": "2025-12-05T00:00:00+09:00",
+        "status": "2025-12-05T00:00:00+09:00",
+        "close_date": "2025-12-05T00:00:00+09:00",
+        "close_cause": "2025-12-05T00:00:00+09:00",
+        "kind": "2025-12-05T00:00:00+09:00",
+        "representative_name": "2025-06-27T00:00:00+09:00",
+        "capital_stock": "2025-06-27T00:00:00+09:00",
+        "employee_number": "2025-06-27T00:00:00+09:00",
+        "company_size_male": "2026-03-24T00:00:00+09:00",
+        "company_size_female": "2026-03-24T00:00:00+09:00",
+        "business_summary": "2026-03-24T00:00:00+09:00",
+        "company_url": "2026-03-24T00:00:00+09:00",
+        "founding_year": "2026-03-24T00:00:00+09:00",
+        "industry": "2026-03-24T00:00:00+09:00",
+        "date_of_establishment": "2026-04-13T00:00:00+09:00",
+        "business_items": "2026-04-13T00:00:00+09:00",
+        "qualification_grade": "2026-04-13T00:00:00+09:00",
+        "update_date": "2025-12-05T00:00:00+09:00"
+      },
+      "last_update_date": {
+        "corporate_number": "2025-12-05T12:32:23+09:00",
+        "name": "2025-12-05T12:32:23+09:00",
+        "kana": "2025-12-05T12:32:23+09:00",
+        "name_en": "2025-12-05T12:32:23+09:00",
+        "postal_code": "2025-12-05T12:32:23+09:00",
+        "location": "2025-12-05T12:32:23+09:00",
+        "process": "2025-12-05T12:32:23+09:00",
+        "aggregated_year": "2025-12-05T12:32:23+09:00",
+        "status": "2025-12-05T12:32:23+09:00",
+        "close_date": "2025-12-05T12:32:23+09:00",
+        "close_cause": "2025-12-05T12:32:23+09:00",
+        "kind": "2025-12-05T12:32:23+09:00",
+        "representative_name": "2025-12-17T20:48:28+09:00",
+        "capital_stock": "2025-12-17T20:48:28+09:00",
+        "employee_number": "2025-12-17T20:48:28+09:00",
+        "company_size_male": "2026-03-24T18:12:20+09:00",
+        "company_size_female": "2026-03-24T18:12:20+09:00",
+        "business_summary": "2026-03-24T18:12:20+09:00",
+        "company_url": "2026-03-24T18:12:20+09:00",
+        "founding_year": "2026-03-24T18:12:20+09:00",
+        "industry": "2026-03-24T18:12:20+09:00",
+        "date_of_establishment": "2026-04-13T00:41:21+09:00",
+        "business_items": "2026-04-13T00:41:21+09:00",
+        "qualification_grade": "2026-04-13T00:41:21+09:00",
+        "update_date": "2025-12-05T12:32:23+09:00"
+      }
+    },
+    "subsidy": [
+      {
+        "date_of_approval": "2020-07-20",
+        "title": "令和X年度省エネルギー設備導入補助金",
+        "amount": "5292000",
+        "target": null,
+        "government_departments": "総務省",
+        "meta-data": {
+          "key_field": "sample_subsidy_006_00",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2021-03-25T00:00:00+09:00",
+          "last_update_date": "2021-03-26T00:02:45+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2020-02-27",
+        "title": "中小企業DX推進補助事業費補助金",
+        "amount": "0",
+        "target": null,
+        "government_departments": "厚生労働省",
+        "meta-data": {
+          "key_field": "sample_subsidy_006_01",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2021-03-25T00:00:00+09:00",
+          "last_update_date": "2021-03-26T00:02:45+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2019-11-15",
+        "title": "地域新エネルギー事業化支援補助金",
+        "amount": "10940000",
+        "target": null,
+        "government_departments": "経済産業省",
+        "meta-data": {
+          "key_field": "sample_subsidy_006_02",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2021-03-25T00:00:00+09:00",
+          "last_update_date": "2021-03-26T00:02:45+09:00"
+        }
+      }
+    ],
+    "commendation": [
+      {
+        "date_of_commendation": null,
+        "title": "優良企業表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "環境省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_006_00",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      },
+      {
+        "date_of_commendation": null,
+        "title": "環境大臣表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "環境省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_006_01",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      },
+      {
+        "date_of_commendation": "2024-02-28",
+        "title": "女性活躍推進企業認定",
+        "target": null,
+        "category": null,
+        "government_departments": "総務省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_006_02",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2025-02-27T00:00:00+09:00",
+          "last_update_date": "2025-02-28T00:01:36+09:00"
+        }
+      }
+    ],
+    "certification": [
+      {
+        "date_of_approval": "2025-04-01",
+        "title": "事業継続力強化計画認定",
+        "target": null,
+        "government_departments": "総務省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_006_00",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2025-06-25T00:00:00+09:00",
+          "last_update_date": "2025-06-26T00:29:45+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2023-04-01",
+        "title": "DX認定",
+        "target": null,
+        "government_departments": "環境省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_006_01",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2023-04-13T00:00:00+09:00",
+          "last_update_date": "2023-04-14T10:33:16+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2023-03-27",
+        "title": "健康経営優良法人認定",
+        "target": null,
+        "government_departments": "国土交通省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_006_02",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2024-02-26T00:00:00+09:00",
+          "last_update_date": "2024-02-27T00:01:29+09:00"
+        }
+      }
+    ],
+    "procurement": [
+      {
+        "date_of_order": "2015-06-01T00:00:00+09:00",
+        "title": "情報システム保守管理業務委託",
+        "amount": 18550000000,
+        "government_departments": "経済産業省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_006_00",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2025-12-05T00:00:00+09:00",
+          "last_update_date": "2025-12-23T15:12:59+09:00"
+        }
+      },
+      {
+        "date_of_order": "2019-02-12T00:00:00+09:00",
+        "title": "庁舎清掃業務委託",
+        "amount": 1369980000,
+        "government_departments": "経済産業省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_006_01",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2025-12-05T00:00:00+09:00",
+          "last_update_date": "2025-12-23T15:12:59+09:00"
+        }
+      },
+      {
+        "date_of_order": "2021-01-06T00:00:00+09:00",
+        "title": "広報印刷物制作業務",
+        "amount": 5530000000,
+        "government_departments": "国土交通省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_006_02",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2025-12-05T00:00:00+09:00",
+          "last_update_date": "2025-12-23T15:12:59+09:00"
+        }
+      }
+    ],
+    "patent": [
+      {
+        "patent_type": "商標",
+        "registration_number": "7000600",
+        "application_date": "2023-10-27",
+        "classifications": [],
+        "title": "情報処理方法及び情報処理装置",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_006_00",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "商標",
+        "registration_number": "7000601",
+        "application_date": "2023-10-27",
+        "classifications": [],
+        "title": "製品製造方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_006_01",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "商標",
+        "registration_number": "7000602",
+        "application_date": "2023-10-11",
+        "classifications": [],
+        "title": "通信システム及びその制御方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_006_02",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      }
+    ],
+    "finance": {
+      "accounting_standards": "有価証券報告書を参照してください",
+      "fiscal_year_cover_page": "第123期(自　2024年４月１日　至　2025年３月31日)",
+      "management_index": [
+        {
+          "period": "4",
+          "net_sales_summary_of_business_results": 1249985000000,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 98613000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 72370000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 74365000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 697042000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 1632972000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 10494,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "3",
+          "net_sales_summary_of_business_results": 1287352000000,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 43926000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 45735000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 74365000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 699210000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 1749528000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 10688,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "2",
+          "net_sales_summary_of_business_results": 1557325000000,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 41389000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 41754000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 74365000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 714361000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 2016732000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 10845,
+          "number_of_employees_unit_ref": "pure"
+        }
+      ],
+      "major_shareholders": [
+        {
+          "name_major_shareholders": "サンプル株主01",
+          "shareholding_ratio": 0.05
+        },
+        {
+          "name_major_shareholders": "サンプル株主02",
+          "shareholding_ratio": 0.07
+        },
+        {
+          "name_major_shareholders": "サンプル株主03",
+          "shareholding_ratio": 0.09
+        }
+      ],
+      "meta-data": {
+        "key_field": "sample_finance_00006",
+        "data_quality": "政府連携データ",
+        "source": "EDINET",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2025-06-27T00:00:00+09:00",
+        "last_update_date": "2025-12-17T20:48:28+09:00"
+      }
+    },
+    "workplace_info": {
+      "base_infos": {
+        "average_continuous_service_years_type": "その他",
+        "average_continuous_service_years_Male": 19.1,
+        "average_continuous_service_years_Female": 13.7,
+        "average_continuous_service_years": null,
+        "average_age": null,
+        "month_average_predetermined_overtime_hours": null
+      },
+      "women_activity_infos": {
+        "female_workers_proportion_type": "その他",
+        "female_workers_proportion": 28.1,
+        "female_share_of_manager": 269,
+        "gender_total_of_manager": 4816,
+        "female_share_of_officers": 4,
+        "gender_total_of_officers": 64
+      },
+      "compatibility_of_childcare_and_work": {
+        "number_of_paternity_leave": null,
+        "number_of_maternity_leave": null,
+        "paternity_leave_acquisition_num": null,
+        "maternity_leave_acquisition_num": null
+      },
+      "meta-data": {
+        "key_field": "sample_workplace_00006",
+        "data_quality": "政府連携データ",
+        "source": "厚生労働省",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2026-03-24T00:00:00+09:00",
+        "last_update_date": "2026-03-24T18:12:20+09:00"
+      }
+    }
+  },
+  {
+    "corporate_number": "1000000000007",
+    "name": "合同会社サンプル007",
+    "kana": "サンプル007",
+    "name_en": "Sample Company 007 合同会社",
+    "postal_code": "980-0001",
+    "location": "宮城県仙台市青葉区一番町7-7-7",
+    "process": "71",
+    "aggregated_year": "1",
+    "status": "-",
+    "close_date": null,
+    "close_cause": null,
+    "kind": "301",
+    "representative_name": "代表 太郎007",
+    "capital_stock": 89500000000,
+    "employee_number": 1660,
+    "company_size_male": null,
+    "company_size_female": null,
+    "business_summary": "サンプル企業007の事業概要。製品・サービスの開発および販売を行っています。",
+    "company_url": "https://sample-company007.example.jp",
+    "founding_year": null,
+    "industry": [
+      "K"
+    ],
+    "date_of_establishment": "1959-06-02",
+    "business_items": [
+      "301",
+      "302",
+      "303",
+      "304",
+      "305",
+      "306",
+      "307",
+      "308",
+      "309",
+      "313",
+      "315"
+    ],
+    "qualification_grade": "、、A、",
+    "update_date": "2026-03-16T00:00:00+09:00",
+    "meta-data": {
+      "key_field": "sample_company_00007",
+      "data_quality": "政府承認データ",
+      "source": "国税庁",
+      "import_frequency": {
+        "corporate_number": "日次",
+        "name": "日次",
+        "kana": "日次",
+        "name_en": "日次",
+        "postal_code": "日次",
+        "location": "日次",
+        "process": "日次",
+        "aggregated_year": "日次",
+        "status": "日次",
+        "close_date": "日次",
+        "close_cause": "日次",
+        "kind": "日次",
+        "representative_name": "日次",
+        "capital_stock": "日次",
+        "employee_number": "日次",
+        "company_size_male": "日次",
+        "company_size_female": "日次",
+        "business_summary": "日次",
+        "company_url": "日次",
+        "founding_year": "日次",
+        "industry": "日次",
+        "date_of_establishment": "日次",
+        "business_items": "日次",
+        "qualification_grade": "日次",
+        "update_date": "日次"
+      },
+      "last_acquisition_date": {
+        "corporate_number": "2026-03-17T00:00:00+09:00",
+        "name": "2026-03-17T00:00:00+09:00",
+        "kana": "2026-03-17T00:00:00+09:00",
+        "name_en": "2026-03-17T00:00:00+09:00",
+        "postal_code": "2026-03-17T00:00:00+09:00",
+        "location": "2026-03-17T00:00:00+09:00",
+        "process": "2026-03-17T00:00:00+09:00",
+        "aggregated_year": "2026-03-17T00:00:00+09:00",
+        "status": "2026-03-17T00:00:00+09:00",
+        "close_date": "2026-03-17T00:00:00+09:00",
+        "close_cause": "2026-03-17T00:00:00+09:00",
+        "kind": "2026-03-17T00:00:00+09:00",
+        "representative_name": "2025-06-25T00:00:00+09:00",
+        "capital_stock": "2025-06-25T00:00:00+09:00",
+        "employee_number": "2025-06-25T00:00:00+09:00",
+        "company_size_male": "2026-03-24T00:00:00+09:00",
+        "company_size_female": "2026-03-24T00:00:00+09:00",
+        "business_summary": "2026-03-24T00:00:00+09:00",
+        "company_url": "2026-03-24T00:00:00+09:00",
+        "founding_year": "2026-03-24T00:00:00+09:00",
+        "industry": "2026-03-24T00:00:00+09:00",
+        "date_of_establishment": "2026-04-13T00:00:00+09:00",
+        "business_items": "2026-04-13T00:00:00+09:00",
+        "qualification_grade": "2026-04-13T00:00:00+09:00",
+        "update_date": "2026-03-17T00:00:00+09:00"
+      },
+      "last_update_date": {
+        "corporate_number": "2026-03-17T00:40:19+09:00",
+        "name": "2026-03-17T00:40:19+09:00",
+        "kana": "2026-03-17T00:40:19+09:00",
+        "name_en": "2026-03-17T00:40:19+09:00",
+        "postal_code": "2026-03-17T00:40:19+09:00",
+        "location": "2026-03-17T00:40:19+09:00",
+        "process": "2026-03-17T00:40:19+09:00",
+        "aggregated_year": "2026-03-17T00:40:19+09:00",
+        "status": "2026-03-17T00:40:19+09:00",
+        "close_date": "2026-03-17T00:40:19+09:00",
+        "close_cause": "2026-03-17T00:40:19+09:00",
+        "kind": "2026-03-17T00:40:19+09:00",
+        "representative_name": "2025-12-17T20:48:28+09:00",
+        "capital_stock": "2025-12-17T20:48:28+09:00",
+        "employee_number": "2025-12-17T20:48:28+09:00",
+        "company_size_male": "2026-03-24T18:12:20+09:00",
+        "company_size_female": "2026-03-24T18:12:20+09:00",
+        "business_summary": "2026-03-24T18:12:20+09:00",
+        "company_url": "2026-03-24T18:12:20+09:00",
+        "founding_year": "2026-03-24T18:12:20+09:00",
+        "industry": "2026-03-24T18:12:20+09:00",
+        "date_of_establishment": "2026-04-13T00:41:21+09:00",
+        "business_items": "2026-04-13T00:41:21+09:00",
+        "qualification_grade": "2026-04-13T00:41:21+09:00",
+        "update_date": "2026-03-17T00:40:19+09:00"
+      }
+    },
+    "subsidy": [
+      {
+        "date_of_approval": "2023-08-10",
+        "title": "令和X年度省エネルギー設備導入補助金",
+        "amount": "5000000",
+        "target": null,
+        "government_departments": "経済産業省",
+        "meta-data": {
+          "key_field": "sample_subsidy_007_00",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2024-02-26T00:00:00+09:00",
+          "last_update_date": "2024-02-27T00:01:29+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2023-06-23",
+        "title": "中小企業DX推進補助事業費補助金",
+        "amount": "4820000",
+        "target": null,
+        "government_departments": "国土交通省",
+        "meta-data": {
+          "key_field": "sample_subsidy_007_01",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2024-02-26T00:00:00+09:00",
+          "last_update_date": "2024-02-27T00:01:29+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2023-03-28",
+        "title": "地域新エネルギー事業化支援補助金",
+        "amount": "22000000",
+        "target": null,
+        "government_departments": "環境省",
+        "meta-data": {
+          "key_field": "sample_subsidy_007_02",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2024-02-26T00:00:00+09:00",
+          "last_update_date": "2024-02-27T00:01:29+09:00"
+        }
+      }
+    ],
+    "commendation": [
+      {
+        "date_of_commendation": null,
+        "title": "優良企業表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "総務省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_007_00",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      },
+      {
+        "date_of_commendation": null,
+        "title": "環境大臣表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "国土交通省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_007_01",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      }
+    ],
+    "certification": [
+      {
+        "date_of_approval": "2023-08-01",
+        "title": "事業継続力強化計画認定",
+        "target": null,
+        "government_departments": "総務省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_007_00",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2023-08-09T00:00:00+09:00",
+          "last_update_date": "2023-08-10T00:01:05+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2021-08-01",
+        "title": "DX認定",
+        "target": null,
+        "government_departments": "環境省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_007_01",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2021-08-11T00:00:00+09:00",
+          "last_update_date": "2021-08-12T00:01:34+09:00"
+        }
+      },
+      {
+        "date_of_approval": null,
+        "title": "健康経営優良法人認定",
+        "target": null,
+        "government_departments": "国土交通省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_007_02",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      }
+    ],
+    "procurement": [
+      {
+        "date_of_order": "2017-10-06T00:00:00+09:00",
+        "title": "情報システム保守管理業務委託",
+        "amount": 8640000,
+        "government_departments": "経済産業省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_007_00",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2017-11-28T00:00:00+09:00",
+          "last_update_date": "2026-01-24T00:50:13+09:00"
+        }
+      },
+      {
+        "date_of_order": "2017-02-27T00:00:00+09:00",
+        "title": "庁舎清掃業務委託",
+        "amount": 8330000,
+        "government_departments": "経済産業省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_007_01",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2025-12-05T00:00:00+09:00",
+          "last_update_date": "2025-12-23T15:12:59+09:00"
+        }
+      },
+      {
+        "date_of_order": "2025-09-04T00:00:00+09:00",
+        "title": "広報印刷物制作業務",
+        "amount": 16311020,
+        "government_departments": "環境省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_007_02",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2025-12-05T00:00:00+09:00",
+          "last_update_date": "2025-12-23T15:12:59+09:00"
+        }
+      }
+    ],
+    "patent": [
+      {
+        "patent_type": "商標",
+        "registration_number": "7000700",
+        "application_date": "2023-11-07",
+        "classifications": [],
+        "title": "情報処理方法及び情報処理装置",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_007_00",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "商標",
+        "registration_number": "7000701",
+        "application_date": "2023-11-07",
+        "classifications": [],
+        "title": "製品製造方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_007_01",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "商標",
+        "registration_number": "7000702",
+        "application_date": "2023-11-07",
+        "classifications": [],
+        "title": "通信システム及びその制御方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_007_02",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      }
+    ],
+    "finance": {
+      "accounting_standards": "有価証券報告書を参照してください",
+      "fiscal_year_cover_page": "第67期（自　2024年４月１日　至　2025年３月31日）",
+      "management_index": [
+        {
+          "period": "4",
+          "net_sales_summary_of_business_results": null,
+          "net_sales_summary_of_business_results_unit_ref": null,
+          "operating_revenue1_summary_of_business_results": 186483000000,
+          "operating_revenue1_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 51994000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 38521000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 79500000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 428691000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 1876818000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 1437,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "3",
+          "net_sales_summary_of_business_results": null,
+          "net_sales_summary_of_business_results_unit_ref": null,
+          "operating_revenue1_summary_of_business_results": 193646000000,
+          "operating_revenue1_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 49979000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 42311000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 79500000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 464594000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 1956167000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 1480,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "2",
+          "net_sales_summary_of_business_results": null,
+          "net_sales_summary_of_business_results_unit_ref": null,
+          "operating_revenue1_summary_of_business_results": 225814000000,
+          "operating_revenue1_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 54739000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 41551000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 89500000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 513959000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 2185803000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 1539,
+          "number_of_employees_unit_ref": "pure"
+        }
+      ],
+      "major_shareholders": [
+        {
+          "name_major_shareholders": "サンプル株主01",
+          "shareholding_ratio": 0.05
+        },
+        {
+          "name_major_shareholders": "サンプル株主02",
+          "shareholding_ratio": 0.07
+        },
+        {
+          "name_major_shareholders": "サンプル株主03",
+          "shareholding_ratio": 0.09
+        }
+      ],
+      "meta-data": {
+        "key_field": "sample_finance_00007",
+        "data_quality": "政府連携データ",
+        "source": "EDINET",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2025-06-25T00:00:00+09:00",
+        "last_update_date": "2025-12-17T20:48:28+09:00"
+      }
+    },
+    "workplace_info": {
+      "base_infos": {
+        "average_continuous_service_years_type": "正社員",
+        "average_continuous_service_years_Male": 16.7,
+        "average_continuous_service_years_Female": 12.3,
+        "average_continuous_service_years": null,
+        "average_age": null,
+        "month_average_predetermined_overtime_hours": null
+      },
+      "women_activity_infos": {
+        "female_workers_proportion_type": "正社員",
+        "female_workers_proportion": 48.6,
+        "female_share_of_manager": null,
+        "gender_total_of_manager": null,
+        "female_share_of_officers": null,
+        "gender_total_of_officers": null
+      },
+      "compatibility_of_childcare_and_work": {
+        "number_of_paternity_leave": null,
+        "number_of_maternity_leave": null,
+        "paternity_leave_acquisition_num": null,
+        "maternity_leave_acquisition_num": null
+      },
+      "meta-data": {
+        "key_field": "sample_workplace_00007",
+        "data_quality": "政府連携データ",
+        "source": "厚生労働省",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2026-03-24T00:00:00+09:00",
+        "last_update_date": "2026-03-24T18:12:20+09:00"
+      }
+    }
+  },
+  {
+    "corporate_number": "1000000000008",
+    "name": "一般社団法人サンプル008",
+    "kana": "サンプル008",
+    "name_en": "Sample Company 008 一般社団法人",
+    "postal_code": "730-0001",
+    "location": "広島県広島市中区紙屋町8-8-8",
+    "process": "71",
+    "aggregated_year": "1",
+    "status": "-",
+    "close_date": null,
+    "close_cause": null,
+    "kind": "301",
+    "representative_name": "代表 太郎008",
+    "capital_stock": 60359000000,
+    "employee_number": 3682,
+    "company_size_male": 3329,
+    "company_size_female": 353,
+    "business_summary": "サンプル企業008の事業概要。製品・サービスの開発および販売を行っています。",
+    "company_url": "https://sample-company008.example.jp",
+    "founding_year": null,
+    "industry": [
+      "H"
+    ],
+    "date_of_establishment": "1948-06-01",
+    "business_items": [
+      "229",
+      "301",
+      "303",
+      "307",
+      "310",
+      "315"
+    ],
+    "qualification_grade": "、A、A、",
+    "update_date": "2023-07-25T00:00:00+09:00",
+    "meta-data": {
+      "key_field": "sample_company_00008",
+      "data_quality": "政府承認データ",
+      "source": "国税庁",
+      "import_frequency": {
+        "corporate_number": "日次",
+        "name": "日次",
+        "kana": "日次",
+        "name_en": "日次",
+        "postal_code": "日次",
+        "location": "日次",
+        "process": "日次",
+        "aggregated_year": "日次",
+        "status": "日次",
+        "close_date": "日次",
+        "close_cause": "日次",
+        "kind": "日次",
+        "representative_name": "日次",
+        "capital_stock": "日次",
+        "employee_number": "日次",
+        "company_size_male": "日次",
+        "company_size_female": "日次",
+        "business_summary": "日次",
+        "company_url": "日次",
+        "founding_year": "日次",
+        "industry": "日次",
+        "date_of_establishment": "日次",
+        "business_items": "日次",
+        "qualification_grade": "日次",
+        "update_date": "日次"
+      },
+      "last_acquisition_date": {
+        "corporate_number": "2025-12-05T00:00:00+09:00",
+        "name": "2025-12-05T00:00:00+09:00",
+        "kana": "2025-12-05T00:00:00+09:00",
+        "name_en": "2025-12-05T00:00:00+09:00",
+        "postal_code": "2025-12-05T00:00:00+09:00",
+        "location": "2025-12-05T00:00:00+09:00",
+        "process": "2025-12-05T00:00:00+09:00",
+        "aggregated_year": "2025-12-05T00:00:00+09:00",
+        "status": "2025-12-05T00:00:00+09:00",
+        "close_date": "2025-12-05T00:00:00+09:00",
+        "close_cause": "2025-12-05T00:00:00+09:00",
+        "kind": "2025-12-05T00:00:00+09:00",
+        "representative_name": "2025-06-27T00:00:00+09:00",
+        "capital_stock": "2025-06-27T00:00:00+09:00",
+        "employee_number": "2025-06-27T00:00:00+09:00",
+        "company_size_male": "2026-03-24T00:00:00+09:00",
+        "company_size_female": "2026-03-24T00:00:00+09:00",
+        "business_summary": "2026-03-24T00:00:00+09:00",
+        "company_url": "2026-03-24T00:00:00+09:00",
+        "founding_year": "2026-03-24T00:00:00+09:00",
+        "industry": "2026-03-24T00:00:00+09:00",
+        "date_of_establishment": "2026-04-13T00:00:00+09:00",
+        "business_items": "2026-04-13T00:00:00+09:00",
+        "qualification_grade": "2026-04-13T00:00:00+09:00",
+        "update_date": "2025-12-05T00:00:00+09:00"
+      },
+      "last_update_date": {
+        "corporate_number": "2025-12-05T12:32:23+09:00",
+        "name": "2025-12-05T12:32:23+09:00",
+        "kana": "2025-12-05T12:32:23+09:00",
+        "name_en": "2025-12-05T12:32:23+09:00",
+        "postal_code": "2025-12-05T12:32:23+09:00",
+        "location": "2025-12-05T12:32:23+09:00",
+        "process": "2025-12-05T12:32:23+09:00",
+        "aggregated_year": "2025-12-05T12:32:23+09:00",
+        "status": "2025-12-05T12:32:23+09:00",
+        "close_date": "2025-12-05T12:32:23+09:00",
+        "close_cause": "2025-12-05T12:32:23+09:00",
+        "kind": "2025-12-05T12:32:23+09:00",
+        "representative_name": "2025-12-17T20:48:28+09:00",
+        "capital_stock": "2025-12-17T20:48:28+09:00",
+        "employee_number": "2025-12-17T20:48:28+09:00",
+        "company_size_male": "2026-03-24T18:12:20+09:00",
+        "company_size_female": "2026-03-24T18:12:20+09:00",
+        "business_summary": "2026-03-24T18:12:20+09:00",
+        "company_url": "2026-03-24T18:12:20+09:00",
+        "founding_year": "2026-03-24T18:12:20+09:00",
+        "industry": "2026-03-24T18:12:20+09:00",
+        "date_of_establishment": "2026-04-13T00:41:21+09:00",
+        "business_items": "2026-04-13T00:41:21+09:00",
+        "qualification_grade": "2026-04-13T00:41:21+09:00",
+        "update_date": "2025-12-05T12:32:23+09:00"
+      }
+    },
+    "subsidy": [
+      {
+        "date_of_approval": "2023-06-28",
+        "title": "令和X年度省エネルギー設備導入補助金",
+        "amount": "40000000",
+        "target": null,
+        "government_departments": "厚生労働省",
+        "meta-data": {
+          "key_field": "sample_subsidy_008_00",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2024-02-26T00:00:00+09:00",
+          "last_update_date": "2024-02-27T00:01:29+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2023-05-26",
+        "title": "中小企業DX推進補助事業費補助金",
+        "amount": "7000000",
+        "target": null,
+        "government_departments": "経済産業省",
+        "meta-data": {
+          "key_field": "sample_subsidy_008_01",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2024-02-26T00:00:00+09:00",
+          "last_update_date": "2024-02-27T00:01:29+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2022-08-23",
+        "title": "地域新エネルギー事業化支援補助金",
+        "amount": "6000000",
+        "target": null,
+        "government_departments": "厚生労働省",
+        "meta-data": {
+          "key_field": "sample_subsidy_008_02",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2023-02-27T00:00:00+09:00",
+          "last_update_date": "2023-03-29T00:02:10+09:00"
+        }
+      }
+    ],
+    "commendation": [
+      {
+        "date_of_commendation": null,
+        "title": "優良企業表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "国土交通省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_008_00",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      },
+      {
+        "date_of_commendation": null,
+        "title": "環境大臣表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "厚生労働省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_008_01",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      },
+      {
+        "date_of_commendation": null,
+        "title": "女性活躍推進企業認定",
+        "target": null,
+        "category": null,
+        "government_departments": "経済産業省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_008_02",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      }
+    ],
+    "certification": [
+      {
+        "date_of_approval": "2025-02-01",
+        "title": "事業継続力強化計画認定",
+        "target": null,
+        "government_departments": "国土交通省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_008_00",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2025-02-13T00:00:00+09:00",
+          "last_update_date": "2025-02-14T00:01:25+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2023-02-01",
+        "title": "DX認定",
+        "target": null,
+        "government_departments": "総務省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_008_01",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2023-02-07T00:00:00+09:00",
+          "last_update_date": "2023-02-08T00:01:22+09:00"
+        }
+      },
+      {
+        "date_of_approval": "1991-05-27",
+        "title": "健康経営優良法人認定",
+        "target": null,
+        "government_departments": "国土交通省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_008_02",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2020-09-28T00:00:00+09:00",
+          "last_update_date": "2020-09-29T00:02:00+09:00"
+        }
+      }
+    ],
+    "procurement": [
+      {
+        "date_of_order": "2022-12-22T00:00:00+09:00",
+        "title": "情報システム保守管理業務委託",
+        "amount": 1100000,
+        "government_departments": "厚生労働省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_008_00",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2023-03-29T00:00:00+09:00",
+          "last_update_date": "2026-01-24T00:50:13+09:00"
+        }
+      },
+      {
+        "date_of_order": "2023-04-03T00:00:00+09:00",
+        "title": "庁舎清掃業務委託",
+        "amount": 9084238,
+        "government_departments": "経済産業省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_008_01",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2025-12-05T00:00:00+09:00",
+          "last_update_date": "2025-12-23T15:12:59+09:00"
+        }
+      }
+    ],
+    "patent": [
+      {
+        "patent_type": "商標",
+        "registration_number": "7000800",
+        "application_date": "2023-01-23",
+        "classifications": [],
+        "title": "情報処理方法及び情報処理装置",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_008_00",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "特許",
+        "registration_number": "7000801",
+        "application_date": "2022-12-23",
+        "classifications": [],
+        "title": "製品製造方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_008_01",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "商標",
+        "registration_number": "7000802",
+        "application_date": "2022-08-26",
+        "classifications": [],
+        "title": "通信システム及びその制御方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_008_02",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      }
+    ],
+    "finance": {
+      "accounting_standards": "有価証券報告書を参照してください",
+      "fiscal_year_cover_page": "第104期（自　2024年４月１日　至　2025年３月31日）",
+      "management_index": [
+        {
+          "period": "4",
+          "net_sales_summary_of_business_results": null,
+          "net_sales_summary_of_business_results_unit_ref": null,
+          "operating_revenue1_summary_of_business_results": 114366000000,
+          "operating_revenue1_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": -14664000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": -19702000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 60359000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 314816000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 1149616000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 3760,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "3",
+          "net_sales_summary_of_business_results": null,
+          "net_sales_summary_of_business_results_unit_ref": null,
+          "operating_revenue1_summary_of_business_results": 131365000000,
+          "operating_revenue1_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 6523000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 13576000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 60359000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 313381000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 1108060000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 3758,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "2",
+          "net_sales_summary_of_business_results": null,
+          "net_sales_summary_of_business_results_unit_ref": null,
+          "operating_revenue1_summary_of_business_results": 144058000000,
+          "operating_revenue1_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 16899000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 28089000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 60359000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 338974000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 1096840000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 3712,
+          "number_of_employees_unit_ref": "pure"
+        }
+      ],
+      "major_shareholders": [
+        {
+          "name_major_shareholders": "サンプル株主01",
+          "shareholding_ratio": 0.05
+        },
+        {
+          "name_major_shareholders": "サンプル株主02",
+          "shareholding_ratio": 0.07
+        },
+        {
+          "name_major_shareholders": "サンプル株主03",
+          "shareholding_ratio": 0.09
+        }
+      ],
+      "meta-data": {
+        "key_field": "sample_finance_00008",
+        "data_quality": "政府連携データ",
+        "source": "EDINET",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2025-06-27T00:00:00+09:00",
+        "last_update_date": "2025-12-17T20:48:28+09:00"
+      }
+    },
+    "workplace_info": {
+      "base_infos": {
+        "average_continuous_service_years_type": null,
+        "average_continuous_service_years_Male": null,
+        "average_continuous_service_years_Female": null,
+        "average_continuous_service_years": null,
+        "average_age": null,
+        "month_average_predetermined_overtime_hours": null
+      },
+      "women_activity_infos": {
+        "female_workers_proportion_type": "その他",
+        "female_workers_proportion": 36.8,
+        "female_share_of_manager": null,
+        "gender_total_of_manager": null,
+        "female_share_of_officers": 3,
+        "gender_total_of_officers": 22
+      },
+      "compatibility_of_childcare_and_work": {
+        "number_of_paternity_leave": null,
+        "number_of_maternity_leave": null,
+        "paternity_leave_acquisition_num": null,
+        "maternity_leave_acquisition_num": null
+      },
+      "meta-data": {
+        "key_field": "sample_workplace_00008",
+        "data_quality": "政府連携データ",
+        "source": "厚生労働省",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2026-03-24T00:00:00+09:00",
+        "last_update_date": "2026-03-24T18:12:20+09:00"
+      }
+    }
+  },
+  {
+    "corporate_number": "1000000000009",
+    "name": "株式会社サンプル009",
+    "kana": "サンプル009",
+    "name_en": "Sample Company 009 Inc.",
+    "postal_code": "604-0001",
+    "location": "京都府京都市中京区烏丸通9-9-9",
+    "process": "12",
+    "aggregated_year": "0",
+    "status": "-",
+    "close_date": null,
+    "close_cause": null,
+    "kind": "301",
+    "representative_name": "代表 太郎009",
+    "capital_stock": 100000000,
+    "employee_number": 888,
+    "company_size_male": null,
+    "company_size_female": null,
+    "business_summary": "サンプル企業009の事業概要。製品・サービスの開発および販売を行っています。",
+    "company_url": "https://sample-company009.example.jp",
+    "founding_year": null,
+    "industry": [
+      "R"
+    ],
+    "date_of_establishment": "1989-10-02",
+    "business_items": [
+      "301",
+      "303",
+      "304",
+      "306",
+      "315"
+    ],
+    "qualification_grade": "、、A、",
+    "update_date": "2022-07-12T00:00:00+09:00",
+    "meta-data": {
+      "key_field": "sample_company_00009",
+      "data_quality": "政府承認データ",
+      "source": "国税庁",
+      "import_frequency": {
+        "corporate_number": "日次",
+        "name": "日次",
+        "kana": "日次",
+        "name_en": "日次",
+        "postal_code": "日次",
+        "location": "日次",
+        "process": "日次",
+        "aggregated_year": "日次",
+        "status": "日次",
+        "close_date": "日次",
+        "close_cause": "日次",
+        "kind": "日次",
+        "representative_name": "日次",
+        "capital_stock": "日次",
+        "employee_number": "日次",
+        "company_size_male": "日次",
+        "company_size_female": "日次",
+        "business_summary": "日次",
+        "company_url": "日次",
+        "founding_year": "日次",
+        "industry": "日次",
+        "date_of_establishment": "日次",
+        "business_items": "日次",
+        "qualification_grade": "日次",
+        "update_date": "日次"
+      },
+      "last_acquisition_date": {
+        "corporate_number": "2025-12-05T00:00:00+09:00",
+        "name": "2025-12-05T00:00:00+09:00",
+        "kana": "2025-12-05T00:00:00+09:00",
+        "name_en": "2025-12-05T00:00:00+09:00",
+        "postal_code": "2025-12-05T00:00:00+09:00",
+        "location": "2025-12-05T00:00:00+09:00",
+        "process": "2025-12-05T00:00:00+09:00",
+        "aggregated_year": "2025-12-05T00:00:00+09:00",
+        "status": "2025-12-05T00:00:00+09:00",
+        "close_date": "2025-12-05T00:00:00+09:00",
+        "close_cause": "2025-12-05T00:00:00+09:00",
+        "kind": "2025-12-05T00:00:00+09:00",
+        "representative_name": "2025-06-24T00:00:00+09:00",
+        "capital_stock": "2025-06-24T00:00:00+09:00",
+        "employee_number": "2025-06-24T00:00:00+09:00",
+        "company_size_male": "2026-03-24T00:00:00+09:00",
+        "company_size_female": "2026-03-24T00:00:00+09:00",
+        "business_summary": "2026-03-24T00:00:00+09:00",
+        "company_url": "2026-03-24T00:00:00+09:00",
+        "founding_year": "2026-03-24T00:00:00+09:00",
+        "industry": "2026-03-24T00:00:00+09:00",
+        "date_of_establishment": "2026-04-13T00:00:00+09:00",
+        "business_items": "2026-04-13T00:00:00+09:00",
+        "qualification_grade": "2026-04-13T00:00:00+09:00",
+        "update_date": "2025-12-05T00:00:00+09:00"
+      },
+      "last_update_date": {
+        "corporate_number": "2025-12-05T12:32:23+09:00",
+        "name": "2025-12-05T12:32:23+09:00",
+        "kana": "2025-12-05T12:32:23+09:00",
+        "name_en": "2025-12-05T12:32:23+09:00",
+        "postal_code": "2025-12-05T12:32:23+09:00",
+        "location": "2025-12-05T12:32:23+09:00",
+        "process": "2025-12-05T12:32:23+09:00",
+        "aggregated_year": "2025-12-05T12:32:23+09:00",
+        "status": "2025-12-05T12:32:23+09:00",
+        "close_date": "2025-12-05T12:32:23+09:00",
+        "close_cause": "2025-12-05T12:32:23+09:00",
+        "kind": "2025-12-05T12:32:23+09:00",
+        "representative_name": "2025-12-17T20:48:28+09:00",
+        "capital_stock": "2025-12-17T20:48:28+09:00",
+        "employee_number": "2025-12-17T20:48:28+09:00",
+        "company_size_male": "2026-03-24T18:12:20+09:00",
+        "company_size_female": "2026-03-24T18:12:20+09:00",
+        "business_summary": "2026-03-24T18:12:20+09:00",
+        "company_url": "2026-03-24T18:12:20+09:00",
+        "founding_year": "2026-03-24T18:12:20+09:00",
+        "industry": "2026-03-24T18:12:20+09:00",
+        "date_of_establishment": "2026-04-13T00:41:21+09:00",
+        "business_items": "2026-04-13T00:41:21+09:00",
+        "qualification_grade": "2026-04-13T00:41:21+09:00",
+        "update_date": "2025-12-05T12:32:23+09:00"
+      }
+    },
+    "subsidy": [
+      {
+        "date_of_approval": "2024-03-05",
+        "title": "令和X年度省エネルギー設備導入補助金",
+        "amount": "150000000",
+        "target": null,
+        "government_departments": "総務省",
+        "meta-data": {
+          "key_field": "sample_subsidy_009_00",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2025-02-27T00:00:00+09:00",
+          "last_update_date": "2025-02-28T00:01:36+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2024-02-29",
+        "title": "中小企業DX推進補助事業費補助金",
+        "amount": "90000000",
+        "target": null,
+        "government_departments": "経済産業省",
+        "meta-data": {
+          "key_field": "sample_subsidy_009_01",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2025-02-27T00:00:00+09:00",
+          "last_update_date": "2025-02-28T00:01:36+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2024-02-19",
+        "title": "地域新エネルギー事業化支援補助金",
+        "amount": "1050000000",
+        "target": null,
+        "government_departments": "経済産業省",
+        "meta-data": {
+          "key_field": "sample_subsidy_009_02",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2025-02-27T00:00:00+09:00",
+          "last_update_date": "2025-02-28T00:01:36+09:00"
+        }
+      }
+    ],
+    "commendation": [
+      {
+        "date_of_commendation": null,
+        "title": "優良企業表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "厚生労働省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_009_00",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      },
+      {
+        "date_of_commendation": null,
+        "title": "環境大臣表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "厚生労働省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_009_01",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      }
+    ],
+    "procurement": [
+      {
+        "date_of_order": "2023-03-28T00:00:00+09:00",
+        "title": "情報システム保守管理業務委託",
+        "amount": 1517628200,
+        "government_departments": "経済産業省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_009_00",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2023-07-25T00:00:00+09:00",
+          "last_update_date": "2026-01-24T00:50:13+09:00"
+        }
+      },
+      {
+        "date_of_order": "2023-07-31T00:00:00+09:00",
+        "title": "庁舎清掃業務委託",
+        "amount": 4360000,
+        "government_departments": "厚生労働省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_009_01",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2025-12-05T00:00:00+09:00",
+          "last_update_date": "2025-12-23T15:12:59+09:00"
+        }
+      },
+      {
+        "date_of_order": "2024-05-23T00:00:00+09:00",
+        "title": "広報印刷物制作業務",
+        "amount": 45414000,
+        "government_departments": "厚生労働省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_009_02",
+          "data_quality": "政府承認データ",
+          "source": "経済産業省",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2025-12-05T00:00:00+09:00",
+          "last_update_date": "2025-12-23T15:12:59+09:00"
+        }
+      }
+    ],
+    "patent": [
+      {
+        "patent_type": "商標",
+        "registration_number": "7000900",
+        "application_date": "2023-08-01",
+        "classifications": [],
+        "title": "情報処理方法及び情報処理装置",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_009_00",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "商標",
+        "registration_number": "7000901",
+        "application_date": "2023-08-01",
+        "classifications": [],
+        "title": "製品製造方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_009_01",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "商標",
+        "registration_number": "7000902",
+        "application_date": "2023-08-01",
+        "classifications": [],
+        "title": "通信システム及びその制御方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_009_02",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      }
+    ],
+    "finance": {
+      "accounting_standards": "有価証券報告書を参照してください",
+      "fiscal_year_cover_page": "第36期(自　2024年４月１日　至　2025年３月31日)",
+      "management_index": [
+        {
+          "period": "4",
+          "net_sales_summary_of_business_results": 16168647000,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": -6921482000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": -9311618000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 2334300000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 9036141000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 13261526000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 1379,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "3",
+          "net_sales_summary_of_business_results": 12766962000,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": -4625498000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": -5668465000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 100000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 8569522000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 11816355000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 1231,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "2",
+          "net_sales_summary_of_business_results": 12017572000,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": -1370448000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": -2189268000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 100000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 6688821000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 12782265000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 799,
+          "number_of_employees_unit_ref": "pure"
+        }
+      ],
+      "major_shareholders": [
+        {
+          "name_major_shareholders": "サンプル株主01",
+          "shareholding_ratio": 0.05
+        },
+        {
+          "name_major_shareholders": "サンプル株主02",
+          "shareholding_ratio": 0.07
+        },
+        {
+          "name_major_shareholders": "サンプル株主03",
+          "shareholding_ratio": 0.09
+        }
+      ],
+      "meta-data": {
+        "key_field": "sample_finance_00009",
+        "data_quality": "政府連携データ",
+        "source": "EDINET",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2025-06-24T00:00:00+09:00",
+        "last_update_date": "2025-12-17T20:48:28+09:00"
+      }
+    },
+    "workplace_info": {
+      "base_infos": {
+        "average_continuous_service_years_type": "正社員",
+        "average_continuous_service_years_Male": 10.1,
+        "average_continuous_service_years_Female": 9.9,
+        "average_continuous_service_years": null,
+        "average_age": null,
+        "month_average_predetermined_overtime_hours": null
+      },
+      "women_activity_infos": {
+        "female_workers_proportion_type": "正社員",
+        "female_workers_proportion": 63.0,
+        "female_share_of_manager": 37,
+        "gender_total_of_manager": 168,
+        "female_share_of_officers": 1,
+        "gender_total_of_officers": 9
+      },
+      "compatibility_of_childcare_and_work": {
+        "number_of_paternity_leave": null,
+        "number_of_maternity_leave": null,
+        "paternity_leave_acquisition_num": null,
+        "maternity_leave_acquisition_num": null
+      },
+      "meta-data": {
+        "key_field": "sample_workplace_00009",
+        "data_quality": "政府連携データ",
+        "source": "厚生労働省",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2026-03-24T00:00:00+09:00",
+        "last_update_date": "2026-03-24T18:12:20+09:00"
+      }
+    }
+  },
+  {
+    "corporate_number": "1000000000010",
+    "name": "有限会社サンプル010",
+    "kana": "サンプル010",
+    "name_en": "Sample Company 010 Ltd.",
+    "postal_code": "330-0001",
+    "location": "埼玉県さいたま市大宮区桜木町1-2-3",
+    "process": "01",
+    "aggregated_year": "1",
+    "status": "-",
+    "close_date": null,
+    "close_cause": null,
+    "kind": "301",
+    "representative_name": "代表 太郎010",
+    "capital_stock": 30449000000,
+    "employee_number": 3539,
+    "company_size_male": 3019,
+    "company_size_female": 520,
+    "business_summary": "サンプル企業010の事業概要。製品・サービスの開発および販売を行っています。",
+    "company_url": "https://sample-company010.example.jp",
+    "founding_year": null,
+    "industry": [
+      "D"
+    ],
+    "date_of_establishment": "1950-04-28",
+    "business_items": [
+      "111",
+      "112",
+      "124",
+      "129",
+      "211",
+      "212",
+      "215",
+      "224",
+      "229",
+      "303",
+      "308",
+      "309",
+      "310",
+      "312",
+      "315",
+      "402"
+    ],
+    "qualification_grade": "D、D、D、B",
+    "update_date": "2024-04-08T00:00:00+09:00",
+    "meta-data": {
+      "key_field": "sample_company_00010",
+      "data_quality": "政府承認データ",
+      "source": "国税庁",
+      "import_frequency": {
+        "corporate_number": "日次",
+        "name": "日次",
+        "kana": "日次",
+        "name_en": "日次",
+        "postal_code": "日次",
+        "location": "日次",
+        "process": "日次",
+        "aggregated_year": "日次",
+        "status": "日次",
+        "close_date": "日次",
+        "close_cause": "日次",
+        "kind": "日次",
+        "representative_name": "日次",
+        "capital_stock": "日次",
+        "employee_number": "日次",
+        "company_size_male": "日次",
+        "company_size_female": "日次",
+        "business_summary": "日次",
+        "company_url": "日次",
+        "founding_year": "日次",
+        "industry": "日次",
+        "date_of_establishment": "日次",
+        "business_items": "日次",
+        "qualification_grade": "日次",
+        "update_date": "日次"
+      },
+      "last_acquisition_date": {
+        "corporate_number": "2025-12-05T00:00:00+09:00",
+        "name": "2025-12-05T00:00:00+09:00",
+        "kana": "2025-12-05T00:00:00+09:00",
+        "name_en": "2025-12-05T00:00:00+09:00",
+        "postal_code": "2025-12-05T00:00:00+09:00",
+        "location": "2025-12-05T00:00:00+09:00",
+        "process": "2025-12-05T00:00:00+09:00",
+        "aggregated_year": "2025-12-05T00:00:00+09:00",
+        "status": "2025-12-05T00:00:00+09:00",
+        "close_date": "2025-12-05T00:00:00+09:00",
+        "close_cause": "2025-12-05T00:00:00+09:00",
+        "kind": "2025-12-05T00:00:00+09:00",
+        "representative_name": "2025-06-20T00:00:00+09:00",
+        "capital_stock": "2025-06-20T00:00:00+09:00",
+        "employee_number": "2025-06-20T00:00:00+09:00",
+        "company_size_male": "2026-03-24T00:00:00+09:00",
+        "company_size_female": "2026-03-24T00:00:00+09:00",
+        "business_summary": "2026-03-24T00:00:00+09:00",
+        "company_url": "2026-03-24T00:00:00+09:00",
+        "founding_year": "2026-03-24T00:00:00+09:00",
+        "industry": "2026-03-24T00:00:00+09:00",
+        "date_of_establishment": "2026-04-13T00:00:00+09:00",
+        "business_items": "2026-04-13T00:00:00+09:00",
+        "qualification_grade": "2026-04-13T00:00:00+09:00",
+        "update_date": "2025-12-05T00:00:00+09:00"
+      },
+      "last_update_date": {
+        "corporate_number": "2025-12-05T12:32:23+09:00",
+        "name": "2025-12-05T12:32:23+09:00",
+        "kana": "2025-12-05T12:32:23+09:00",
+        "name_en": "2025-12-05T12:32:23+09:00",
+        "postal_code": "2025-12-05T12:32:23+09:00",
+        "location": "2025-12-05T12:32:23+09:00",
+        "process": "2025-12-05T12:32:23+09:00",
+        "aggregated_year": "2025-12-05T12:32:23+09:00",
+        "status": "2025-12-05T12:32:23+09:00",
+        "close_date": "2025-12-05T12:32:23+09:00",
+        "close_cause": "2025-12-05T12:32:23+09:00",
+        "kind": "2025-12-05T12:32:23+09:00",
+        "representative_name": "2025-12-17T20:48:28+09:00",
+        "capital_stock": "2025-12-17T20:48:28+09:00",
+        "employee_number": "2025-12-17T20:48:28+09:00",
+        "company_size_male": "2026-03-24T18:12:20+09:00",
+        "company_size_female": "2026-03-24T18:12:20+09:00",
+        "business_summary": "2026-03-24T18:12:20+09:00",
+        "company_url": "2026-03-24T18:12:20+09:00",
+        "founding_year": "2026-03-24T18:12:20+09:00",
+        "industry": "2026-03-24T18:12:20+09:00",
+        "date_of_establishment": "2026-04-13T00:41:21+09:00",
+        "business_items": "2026-04-13T00:41:21+09:00",
+        "qualification_grade": "2026-04-13T00:41:21+09:00",
+        "update_date": "2025-12-05T12:32:23+09:00"
+      }
+    },
+    "commendation": [
+      {
+        "date_of_commendation": null,
+        "title": "優良企業表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "国土交通省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_010_00",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2026-04-13T00:00:00+09:00",
+          "last_update_date": "2026-04-13T00:41:21+09:00"
+        }
+      },
+      {
+        "date_of_commendation": "2024-07-25",
+        "title": "環境大臣表彰",
+        "target": null,
+        "category": null,
+        "government_departments": "経済産業省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_010_01",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2025-02-27T00:00:00+09:00",
+          "last_update_date": "2025-02-28T00:01:36+09:00"
+        }
+      },
+      {
+        "date_of_commendation": "2024-07-04",
+        "title": "女性活躍推進企業認定",
+        "target": null,
+        "category": null,
+        "government_departments": "総務省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_commendation_010_02",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2025-02-27T00:00:00+09:00",
+          "last_update_date": "2025-02-28T00:01:36+09:00"
+        }
+      }
+    ],
+    "certification": [
+      {
+        "date_of_approval": "2023-03-27",
+        "title": "事業継続力強化計画認定",
+        "target": null,
+        "government_departments": "経済産業省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_010_00",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2024-02-26T00:00:00+09:00",
+          "last_update_date": "2024-02-27T00:01:29+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2021-04-01",
+        "title": "DX認定",
+        "target": null,
+        "government_departments": "国土交通省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_010_01",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2022-03-24T00:00:00+09:00",
+          "last_update_date": "2022-03-29T00:02:44+09:00"
+        }
+      },
+      {
+        "date_of_approval": "2019-04-01",
+        "title": "健康経営優良法人認定",
+        "target": null,
+        "government_departments": "総務省",
+        "category": null,
+        "meta-data": {
+          "key_field": "sample_certification_010_02",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2021-02-25T00:00:00+09:00",
+          "last_update_date": "2021-02-26T00:01:51+09:00"
+        }
+      }
+    ],
+    "procurement": [
+      {
+        "date_of_order": "2020-10-30T00:00:00+09:00",
+        "title": "情報システム保守管理業務委託",
+        "amount": 131890000,
+        "government_departments": "環境省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_010_00",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "不定期",
+          "last_acquisition_date": "2020-12-17T00:00:00+09:00",
+          "last_update_date": "2026-01-24T00:50:13+09:00"
+        }
+      },
+      {
+        "date_of_order": "2022-10-17T00:00:00+09:00",
+        "title": "庁舎清掃業務委託",
+        "amount": 745000000,
+        "government_departments": "経済産業省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_010_01",
+          "data_quality": "政府承認データ",
+          "source": "特許庁",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2025-12-05T00:00:00+09:00",
+          "last_update_date": "2025-12-23T15:12:59+09:00"
+        }
+      },
+      {
+        "date_of_order": "2022-11-07T00:00:00+09:00",
+        "title": "広報印刷物制作業務",
+        "amount": 105000000,
+        "government_departments": "総務省",
+        "note": null,
+        "meta-data": {
+          "key_field": "sample_procurement_010_02",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "日次",
+          "last_acquisition_date": "2025-12-05T00:00:00+09:00",
+          "last_update_date": "2025-12-23T15:12:59+09:00"
+        }
+      }
+    ],
+    "patent": [
+      {
+        "patent_type": "商標",
+        "registration_number": "7001000",
+        "application_date": "2023-09-11",
+        "classifications": [],
+        "title": "情報処理方法及び情報処理装置",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_010_00",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "商標",
+        "registration_number": "7001001",
+        "application_date": "2023-09-11",
+        "classifications": [],
+        "title": "製品製造方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_010_01",
+          "data_quality": "政府承認データ",
+          "source": "GEPS",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      },
+      {
+        "patent_type": "特許",
+        "registration_number": "7001002",
+        "application_date": "2023-09-06",
+        "classifications": [],
+        "title": "通信システム及びその制御方法",
+        "url": null,
+        "meta-data": {
+          "key_field": "sample_patent_010_02",
+          "data_quality": "政府承認データ",
+          "source": "jGrants",
+          "import_frequency": "年次",
+          "last_acquisition_date": "2024-07-01T00:00:00+09:00",
+          "last_update_date": "2024-08-07T00:01:09+09:00"
+        }
+      }
+    ],
+    "finance": {
+      "accounting_standards": "有価証券報告書を参照してください",
+      "fiscal_year_cover_page": "第75期(自　2024年４月１日　至　2025年３月31日)",
+      "management_index": [
+        {
+          "period": "4",
+          "net_sales_summary_of_business_results": 445142000000,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 27270000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 18706000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 30449000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 140025000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 446525000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 3046,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "3",
+          "net_sales_summary_of_business_results": 428991000000,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 13179000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 9129000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 30449000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 139835000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 456004000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 3136,
+          "number_of_employees_unit_ref": "pure"
+        },
+        {
+          "period": "2",
+          "net_sales_summary_of_business_results": 469065000000,
+          "net_sales_summary_of_business_results_unit_ref": "JPY",
+          "operating_revenue1_summary_of_business_results": null,
+          "operating_revenue1_summary_of_business_results_unit_ref": null,
+          "operating_revenue2_summary_of_business_results": null,
+          "operating_revenue2_summary_of_business_results_unit_ref": null,
+          "gross_operating_revenue_summary_of_business_results": null,
+          "gross_operating_revenue_summary_of_business_results_unit_ref": null,
+          "ordinary_income_summary_of_business_results": null,
+          "ordinary_income_summary_of_business_results_unit_ref": null,
+          "net_premiums_written_summary_of_business_results_ins": null,
+          "net_premiums_written_summary_of_business_results_ins_unit_ref": null,
+          "ordinary_income_loss_summary_of_business_results": 523000000,
+          "ordinary_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "net_income_loss_summary_of_business_results": 168000000,
+          "net_income_loss_summary_of_business_results_unit_ref": "JPY",
+          "capital_stock_summary_of_business_results": 30449000000,
+          "capital_stock_summary_of_business_results_unit_ref": "JPY",
+          "net_assets_summary_of_business_results": 135079000000,
+          "net_assets_summary_of_business_results_unit_ref": "JPY",
+          "total_assets_summary_of_business_results": 495506000000,
+          "total_assets_summary_of_business_results_unit_ref": "JPY",
+          "number_of_employees": 3222,
+          "number_of_employees_unit_ref": "pure"
+        }
+      ],
+      "major_shareholders": [
+        {
+          "name_major_shareholders": "サンプル株主01",
+          "shareholding_ratio": 0.05
+        },
+        {
+          "name_major_shareholders": "サンプル株主02",
+          "shareholding_ratio": 0.07
+        },
+        {
+          "name_major_shareholders": "サンプル株主03",
+          "shareholding_ratio": 0.09
+        }
+      ],
+      "meta-data": {
+        "key_field": "sample_finance_00010",
+        "data_quality": "政府連携データ",
+        "source": "EDINET",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2025-06-20T00:00:00+09:00",
+        "last_update_date": "2025-12-17T20:48:28+09:00"
+      }
+    },
+    "workplace_info": {
+      "base_infos": {
+        "average_continuous_service_years_type": "対象とする労働者すべて",
+        "average_continuous_service_years_Male": 15.2,
+        "average_continuous_service_years_Female": 12.1,
+        "average_continuous_service_years": null,
+        "average_age": null,
+        "month_average_predetermined_overtime_hours": null
+      },
+      "women_activity_infos": {
+        "female_workers_proportion_type": "その他",
+        "female_workers_proportion": 18.3,
+        "female_share_of_manager": 28,
+        "gender_total_of_manager": 1138,
+        "female_share_of_officers": 2,
+        "gender_total_of_officers": 58
+      },
+      "compatibility_of_childcare_and_work": {
+        "number_of_paternity_leave": null,
+        "number_of_maternity_leave": null,
+        "paternity_leave_acquisition_num": null,
+        "maternity_leave_acquisition_num": null
+      },
+      "meta-data": {
+        "key_field": "sample_workplace_00010",
+        "data_quality": "政府連携データ",
+        "source": "厚生労働省",
+        "import_frequency": "日次",
+        "last_acquisition_date": "2026-03-24T00:00:00+09:00",
+        "last_update_date": "2026-03-24T18:12:20+09:00"
+      }
+    }
+  }
+]

@@ -62,6 +62,13 @@
             <artifactId>flyway-database-postgresql</artifactId>
         </dependency>
 
+        <!-- DevTools（ホットリロード） -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+
         <!-- Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -97,7 +104,8 @@
                     <url>${db.url}</url>
                     <user>${db.username}</user>
                     <password>${db.password}</password>
-                    <locations>classpath:db/migration</locations>
+                    <locations>filesystem:src/main/resources/db/migration</locations>
+                    <table>flyway_schema_history_backend</table>
                 </configuration>
             </plugin>
         </plugins>

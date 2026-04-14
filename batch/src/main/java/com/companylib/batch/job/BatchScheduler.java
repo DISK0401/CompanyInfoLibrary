@@ -3,6 +3,7 @@ package com.companylib.batch.job;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.*;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -15,6 +16,7 @@ import java.time.LocalDateTime;
 public class BatchScheduler {
 
     private final JobLauncher jobLauncher;
+    @Qualifier(GBizInfoDailyUpdateJobConfig.JOB_NAME)
     private final Job gbizInfoDailyUpdateJob;
 
     /** 毎日 02:00 に日次差分更新ジョブを実行 */

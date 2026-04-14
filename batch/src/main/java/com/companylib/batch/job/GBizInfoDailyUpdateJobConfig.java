@@ -1,7 +1,7 @@
 package com.companylib.batch.job;
 
 import com.companylib.batch.infrastructure.gbizinfo.GBizInfoApiClient;
-import com.companylib.batch.infrastructure.gbizinfo.CompanyUpsertService;
+import com.companylib.batch.infrastructure.gbizinfo.CompanyFullUpsertService;
 import com.companylib.batch.infrastructure.gbizinfo.UpdateTargetRepository;
 import com.companylib.batch.infrastructure.gbizinfo.dto.HojinInfo;
 import com.companylib.batch.infrastructure.gbizinfo.dto.HojinInfoResponse;
@@ -26,6 +26,15 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * gBizINFO 日次差分更新ジョブ。
+ *
+ * <p>処理フロー:
+ * <ol>
+ *   <li>fetchUpdateInfoStep — /updateInfo API から更新法人番号リストを取得して DB に保存</li>
+ *   <li>updateCompaniesStep — 各法人番号の詳細情報を API から取得し全テーブルを UPSERT</li>
+ * </ol>
+ */
 @Slf4j
 @Configuration
 @RequiredArgsConstructor
@@ -34,11 +43,13 @@ public class GBizInfoDailyUpdateJobConfig {
     private final JobRepository jobRepository;
     private final PlatformTransactionManager transactionManager;
     private final GBizInfoApiClient apiClient;
-    private final CompanyUpsertService companyUpsertService;
+    private final CompanyFullUpsertService companyFullUpsertService;
     private final UpdateTargetRepository updateTargetRepository;
 
     public static final String JOB_NAME = "gbizInfoDailyUpdateJob";
     private static final int CHUNK_SIZE = 50;
+
+    // ── Job ──────────────────────────────────────────────────────────────────
 
     @Bean(JOB_NAME)
     public Job gbizInfoDailyUpdateJob(Step fetchUpdateInfoStep, Step updateCompaniesStep) {
@@ -48,7 +59,8 @@ public class GBizInfoDailyUpdateJobConfig {
             .build();
     }
 
-    /** Step1: /updateInfo API から更新法人番号リストを取得して DB テーブルに保存 */
+    // ── Step 1: 更新対象法人番号リスト取得 ────────────────────────────────────
+
     @Bean
     public Step fetchUpdateInfoStep() {
         return new StepBuilder("fetchUpdateInfoStep", jobRepository)
@@ -71,7 +83,7 @@ public class GBizInfoDailyUpdateJobConfig {
             String targetTo = to != null ? to
                 : LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE);
 
-            log.info("差分取得期間: {} ~ {}", targetFrom, targetTo);
+            log.info("=== 差分取得期間: {} ~ {} ===", targetFrom, targetTo);
 
             // 冪等性: 前回の残骸を削除してから再登録
             updateTargetRepository.clearTargets(jobExecutionId);
@@ -93,7 +105,8 @@ public class GBizInfoDailyUpdateJobConfig {
         };
     }
 
-    /** Step2: 各法人番号の詳細情報を DB ページングで取得して UPSERT（chunk 指向処理） */
+    // ── Step 2: 各法人の全データを取得して UPSERT ─────────────────────────────
+
     @Bean
     public Step updateCompaniesStep() {
         return new StepBuilder("updateCompaniesStep", jobRepository)
@@ -106,6 +119,18 @@ public class GBizInfoDailyUpdateJobConfig {
             .retryLimit(3)
             .skipLimit(100)
             .skip(IllegalArgumentException.class)
+            .listener(new StepExecutionListener() {
+                @Override
+                public void beforeStep(StepExecution stepExecution) {
+                    log.info("=== 企業データ更新ステップ開始 ===");
+                }
+                @Override
+                public ExitStatus afterStep(StepExecution stepExecution) {
+                    log.info("=== 企業データ更新ステップ完了: 処理={}, スキップ={} ===",
+                        stepExecution.getWriteCount(), stepExecution.getSkipCount());
+                    return stepExecution.getExitStatus();
+                }
+            })
             .build();
     }
 
@@ -161,7 +186,7 @@ public class GBizInfoDailyUpdateJobConfig {
         return items -> {
             List<String> processedNumbers = new ArrayList<>();
             for (HojinInfo item : items) {
-                companyUpsertService.upsert(item);
+                companyFullUpsertService.upsert(item);
                 processedNumbers.add(item.getCorporateNumber());
             }
             updateTargetRepository.markProcessed(jobExecutionId, processedNumbers);

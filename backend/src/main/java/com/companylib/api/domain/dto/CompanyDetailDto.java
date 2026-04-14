@@ -19,7 +19,6 @@ public class CompanyDetailDto {
     private final Long capitalStock;
     private final Integer employeeNumber;
     private final String representativeName;
-    private final String representativePosition;
     private final LocalDate dateOfEstablishment;
     private final Integer foundingYear;
     private final String status;
@@ -38,7 +37,6 @@ public class CompanyDetailDto {
         this.capitalStock = c.getCapitalStock();
         this.employeeNumber = c.getEmployeeNumber();
         this.representativeName = c.getRepresentativeName();
-        this.representativePosition = c.getRepresentativePosition();
         this.dateOfEstablishment = c.getDateOfEstablishment();
         this.foundingYear = c.getFoundingYear();
         this.status = c.getStatus();

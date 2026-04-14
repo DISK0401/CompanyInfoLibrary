@@ -5,6 +5,8 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -57,9 +59,6 @@ public class Company {
     @Column(name = "representative_name", length = 200)
     private String representativeName;
 
-    @Column(name = "representative_position", length = 200)
-    private String representativePosition;
-
     @Column(name = "date_of_establishment")
     private LocalDate dateOfEstablishment;
 
@@ -77,6 +76,26 @@ public class Company {
 
     @Column(name = "gbizinfo_update_date")
     private LocalDate gbizinfoUpdateDate;
+
+    @Column(name = "kind", length = 10)
+    private String kind;
+
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "industry")
+    private String industry;
+
+    @Column(name = "qualification_grade", length = 200)
+    private String qualificationGrade;
+
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "meta_data_json")
+    private String metaDataJson;
+
+    @Column(name = "process", length = 10)
+    private String process;
+
+    @Column(name = "aggregated_year", length = 10)
+    private String aggregatedYear;
 
     @Setter(AccessLevel.NONE)
     @Column(name = "created_at", nullable = false, updatable = false)

@@ -54,3 +54,8 @@ Thumbs.db
 
 # ===== Claude Code =====
 .claude/
+
+# ===== gBizINFO ダウンロードデータ（実データはコミット禁止） =====
+# ダウンロードした ZIP・解凍ファイル
+gbizinfo-downloads/
+/tmp/gbizinfo/

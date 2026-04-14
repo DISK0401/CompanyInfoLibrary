@@ -14,6 +14,12 @@
     <name>CompanyInfoLibrary Batch</name>
     <description>企業情報ライブラリ バッチサーバー（gBizINFO取込・Webスクレイピング）</description>
 
+    <properties>
+        <db.url>jdbc:postgresql://localhost:5432/companylib</db.url>
+        <db.username>companylib</db.username>
+        <db.password>companylib</db.password>
+    </properties>
+
     <dependencies>
         <!-- Spring Batch -->
         <dependency>
@@ -31,6 +37,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Apache HttpClient 5（プロキシ・SSL バイパスの確実な制御） -->
+        <dependency>
+            <groupId>org.apache.httpcomponents.client5</groupId>
+            <artifactId>httpclient5</artifactId>
         </dependency>
 
         <!-- PostgreSQL Driver -->
@@ -93,6 +105,19 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <configuration>
+                    <url>${db.url}</url>
+                    <user>${db.username}</user>
+                    <password>${db.password}</password>
+                    <locations>filesystem:src/main/resources/db/migration</locations>
+                    <table>flyway_schema_history_batch</table>
+                    <baselineOnMigrate>true</baselineOnMigrate>
+                    <baselineVersion>0</baselineVersion>
                 </configuration>
             </plugin>
         </plugins>
