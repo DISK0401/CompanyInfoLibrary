@@ -2,6 +2,11 @@ spring:
   application:
     name: company-info-library-batch
 
+  # バッチはWebサーバー不要（spring-boot-starter-web は RestTemplate 用に含んでいるが
+  # HTTPサーバーとして起動する必要はない）
+  main:
+    web-application-type: none
+
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5432/companylib}
     username: ${DB_USERNAME:companylib}
@@ -19,7 +24,10 @@ spring:
   batch:
     job:
       # 起動時に自動でジョブを実行しない（明示的に実行する）
-      enabled: false
+      # 環境変数 SPRING_BATCH_JOB_ENABLED=true で上書き可能
+      enabled: ${SPRING_BATCH_JOB_ENABLED:false}
+      # 実行するジョブ名（環境変数 SPRING_BATCH_JOB_NAME で指定）
+      name: ${SPRING_BATCH_JOB_NAME:}
     jdbc:
       initialize-schema: always
 
@@ -34,6 +42,18 @@ gbizinfo:
   api:
     base-url: ${GBIZINFO_API_BASE_URL:https://api.info.gbiz.go.jp/hojin/v2}
     token: ${GBIZINFO_API_TOKEN:}
+  download:
+    api-url: ${GBIZINFO_DOWNLOAD_API_URL:https://info.gbiz.go.jp/hojin/Download}
+    dir: ${GBIZINFO_DOWNLOAD_DIR:/tmp/gbizinfo/downloads}
+  # プロキシ設定（社内プロキシ経由が必要な場合に設定）
+  proxy:
+    host: ${GBIZINFO_PROXY_HOST:}
+    port: ${GBIZINFO_PROXY_PORT:0}
+    user: ${GBIZINFO_PROXY_USER:}
+    password: ${GBIZINFO_PROXY_PASSWORD:}
+  # SSL 証明書検証（社内プロキシで証明書エラーが出る場合は false に設定）
+  ssl:
+    verify: ${GBIZINFO_SSL_VERIFY:true}
 
 scraping:
   rate-limit:

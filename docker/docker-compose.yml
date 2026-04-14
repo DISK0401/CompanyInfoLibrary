@@ -56,6 +56,39 @@ services:
       db:
         condition: service_healthy
 
+  # ── 初回データ投入ジョブ（1回限り実行） ───────────────────────────────────────
+  # 使用方法:
+  #   GBIZINFO_API_TOKEN=<トークン> docker compose run --rm batch_initial_load
+  # オプション（ローカルに ZIP がある場合はダウンロードをスキップ）:
+  #   GBIZINFO_DOWNLOAD_DIR=/path/to/zips docker compose run --rm batch_initial_load
+  batch_initial_load:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.batch
+    container_name: companylib-batch-initial-load
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/companylib
+      DB_USERNAME: companylib
+      DB_PASSWORD: companylib
+      JPA_DDL_AUTO: validate
+      GBIZINFO_API_TOKEN: ${GBIZINFO_API_TOKEN:-}
+      GBIZINFO_DOWNLOAD_DIR: ${GBIZINFO_DOWNLOAD_DIR:-/data/gbizinfo/downloads}
+      GBIZINFO_DOWNLOAD_API_URL: ${GBIZINFO_DOWNLOAD_API_URL:-https://info.gbiz.go.jp/hojin/Download}
+      SPRING_BATCH_JOB_ENABLED: "true"
+      SPRING_BATCH_JOB_NAME: gbizInfoInitialLoadJob
+      GBIZINFO_PROXY_HOST: ${GBIZINFO_PROXY_HOST:-}
+      GBIZINFO_PROXY_PORT: ${GBIZINFO_PROXY_PORT:-0}
+      GBIZINFO_PROXY_USER: ${GBIZINFO_PROXY_USER:-}
+      GBIZINFO_PROXY_PASSWORD: ${GBIZINFO_PROXY_PASSWORD:-}
+      GBIZINFO_SSL_VERIFY: ${GBIZINFO_SSL_VERIFY:-true}
+    volumes:
+      - gbizinfo_downloads:/data/gbizinfo/downloads
+    depends_on:
+      backend:
+        condition: service_healthy
+    profiles:
+      - initial-load
+
   frontend:
     build:
       context: ..
@@ -69,3 +102,4 @@ services:
 
 volumes:
   postgres_data:
+  gbizinfo_downloads:

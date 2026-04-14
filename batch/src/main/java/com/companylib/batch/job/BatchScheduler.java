@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 public class BatchScheduler {
 
     private final JobLauncher jobLauncher;
+    @org.springframework.beans.factory.annotation.Qualifier(GBizInfoDailyUpdateJobConfig.JOB_NAME)
     private final Job gbizInfoDailyUpdateJob;
 
     /** 毎日 02:00 に日次差分更新ジョブを実行 */
