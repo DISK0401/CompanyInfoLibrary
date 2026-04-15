@@ -6,6 +6,8 @@ import com.companylib.api.domain.dto.CompanySummaryDto;
 import com.companylib.api.domain.dto.PageResponse;
 import com.companylib.api.domain.entity.Company;
 import com.companylib.api.repository.CompanyRepository;
+import com.companylib.api.repository.CompanyWorkplaceRepository;
+import com.companylib.api.repository.spec.FuzzyQueryBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -28,6 +30,12 @@ class CompanyServiceTest {
 
     @Mock
     private CompanyRepository companyRepository;
+
+    @Mock
+    private CompanyWorkplaceRepository companyWorkplaceRepository;
+
+    @Mock
+    private FuzzyQueryBuilder fuzzyQueryBuilder;
 
     @InjectMocks
     private CompanyService companyService;
@@ -161,6 +169,8 @@ class CompanyServiceTest {
         void getDetail_returnsDto() {
             when(companyRepository.findByIdWithDetails("1234567890123"))
                 .thenReturn(Optional.of(sampleCompany));
+            when(companyWorkplaceRepository.findByCompanyCorporateNumber("1234567890123"))
+                .thenReturn(Optional.empty());
 
             CompanyDetailDto dto = companyService.getDetail("1234567890123");
 
