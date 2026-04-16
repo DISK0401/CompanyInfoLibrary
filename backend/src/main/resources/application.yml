@@ -22,6 +22,9 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
+        # ORDER BY で NULL を常に末尾に配置する（DESC NULLS LAST / ASC NULLS LAST）
+        # Hibernate 6.x の正式プロパティ名
+        default_null_ordering: last
 
   web:
     resources:

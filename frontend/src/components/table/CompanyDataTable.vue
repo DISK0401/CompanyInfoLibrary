@@ -40,10 +40,25 @@ const emit = defineEmits(['page-change', 'sort-change', 'row-click'])
 const computedColumns = computed(() => {
   return props.visibleColumns.map(colKey => {
     const field = COMPANY_FIELDS.find(f => f.key === colKey)
+    // sortOrder のマッピング:
+    //   ↑ (ascend)  = 大→小（降順 DESC）... sortOrder === -1
+    //   ↓ (descend) = 小→大（昇順 ASC）... sortOrder === 1
+    // ※ 一般的なデータ表示ツールの慣習に合わせ ↑=降順 / ↓=昇順 とする
+    const currentOrder = colKey === props.sortField
+      ? (props.sortOrder === 1 ? 'ascend' : 'descend')
+      : false
+
     const col = {
       title: field?.label ?? colKey,
       key: colKey,
       sorter: true,
+      sortOrder: currentOrder,
+      // デフォルトの矢印アイコンを ▲▼ に差し替える
+      renderSorterIcon: ({ order }) => {
+        if (order === 'ascend')  return h('span', { style: { fontSize: '0.6rem', color: '#93c5fd', marginLeft: '3px' } }, '▲')
+        if (order === 'descend') return h('span', { style: { fontSize: '0.6rem', color: '#93c5fd', marginLeft: '3px' } }, '▼')
+        return h('span', { style: { fontSize: '0.55rem', color: '#6b7280', opacity: '0.5', marginLeft: '3px' } }, '⬍')
+      },
       minWidth: field?.minWidth ?? 100,
       ellipsis: { tooltip: true },
     }
@@ -104,6 +119,8 @@ function handleSorter(sorter) {
   if (!sorter || sorter.order === false) {
     emit('sort-change', { sortField: null, sortOrder: null })
   } else {
+    // ▲(ascend) = 小→大(昇順 ASC) = sortOrder 1
+    // ▼(descend) = 大→小(降順 DESC) = sortOrder -1
     emit('sort-change', {
       sortField: sorter.columnKey,
       sortOrder: sorter.order === 'ascend' ? 1 : -1,
@@ -129,6 +146,13 @@ function handleSorter(sorter) {
 
 .table-container :deep(.n-data-table-th:last-child) {
   border-right: none !important;
+}
+
+/* ソート中の列ヘッダーの色を通常状態と同じに固定 */
+.table-container :deep(.n-data-table-th.n-data-table-th--sorting),
+.table-container :deep(.n-data-table-th.n-data-table-th--hover) {
+  background: #374151 !important;
+  color: #e5e7eb !important;
 }
 
 .table-container :deep(.n-data-table-td) {

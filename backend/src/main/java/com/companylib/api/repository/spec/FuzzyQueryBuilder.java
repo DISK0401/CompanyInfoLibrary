@@ -213,7 +213,7 @@ public class FuzzyQueryBuilder {
             }
             String col = CompanyFieldRegistry.toColumnName(sortCondition.field());
             String dir = sortCondition.direction() == SortDirection.DESC ? "DESC" : "ASC";
-            orderParts.add(col + " " + dir);
+            orderParts.add(col + " " + dir + " NULLS LAST");
         }
 
         return String.join(", ", orderParts);

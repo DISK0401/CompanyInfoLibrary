@@ -58,16 +58,11 @@ public class CompanyService {
             }
         });
 
+        // FUZZY・非FUZZY どちらも FuzzyQueryBuilder 経由でネイティブ SQL を使用する。
+        // JpaSpecificationExecutor は Sort.NullHandling を PostgreSQL の NULLS LAST として
+        // 確実に出力できないため、ソート句を直接 SQL で組み立てる方式に統一する。
         PageRequest pageable = buildPageable(req);
-
-        if (CompanySpecification.hasFuzzy(req)) {
-            Page<Company> page = fuzzyQueryBuilder.search(req, pageable);
-            log.debug("Advanced search (FUZZY): conditions={}, results={}", req.conditions().size(), page.getTotalElements());
-            return new PageResponse<>(page.map(CompanySummaryDto::new));
-        }
-
-        Specification<Company> spec = CompanySpecification.from(req);
-        Page<Company> page = companyRepository.findAll(spec, pageable);
+        Page<Company> page = fuzzyQueryBuilder.search(req, pageable);
         log.debug("Advanced search: conditions={}, logic={}, results={}", req.conditions().size(), req.logic(), page.getTotalElements());
         return new PageResponse<>(page.map(CompanySummaryDto::new));
     }
