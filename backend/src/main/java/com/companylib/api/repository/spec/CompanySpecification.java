@@ -49,10 +49,12 @@ public final class CompanySpecification {
             Path<String> path = root.get(c.field());
             String val = c.value();
             if (val == null || val.isBlank()) return cb.conjunction();
+            // PREFIX/CONTAINS/SUFFIX はすべて LOWER() で正規化し、
+            // V23 マイグレーションで追加した lower(col) GIN インデックスを利用する
             return switch (c.matchType()) {
                 case EXACT    -> cb.equal(path, val);
-                case PREFIX   -> cb.like(path, val + "%");
-                case SUFFIX   -> cb.like(path, "%" + val);
+                case PREFIX   -> cb.like(cb.lower(path), val.toLowerCase() + "%");
+                case SUFFIX   -> cb.like(cb.lower(path), "%" + val.toLowerCase());
                 case CONTAINS -> cb.like(cb.lower(path), "%" + val.toLowerCase() + "%");
                 default       -> cb.conjunction();
             };
