@@ -9,7 +9,9 @@ public record AdvancedSearchRequest(
     LogicType logic,
     List<@Valid SortCondition> sort,
     @Min(0) int page,
-    @Min(1) @Max(100) int size
+    // @Min(1) @Max(100) はコンパクトコンストラクタのデフォルト補正より先に評価されないため、
+    // バリデーションアノテーションを除去し、コンパクトコンストラクタで補正する方針に統一する
+    int size
 ) {
     public AdvancedSearchRequest {
         if (conditions == null) conditions = List.of();

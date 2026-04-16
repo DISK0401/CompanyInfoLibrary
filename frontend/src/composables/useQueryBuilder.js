@@ -61,6 +61,12 @@ export function useQueryBuilder() {
         valueTo: c.valueTo != null ? String(c.valueTo) : null,
       }))
 
+    // バックエンドは FUZZY + OR の組み合わせを拒否するため、フロントで事前チェック
+    const hasFuzzy = validConditions.some(c => c.matchType === 'FUZZY')
+    if (hasFuzzy && logic.value === 'OR') {
+      throw new Error('あいまい一致（FUZZY）はOR条件と組み合わせて使用できません。AND条件に変更してください。')
+    }
+
     const sort = sortField ? [{ field: sortField, direction: sortOrder === 1 ? 'ASC' : 'DESC' }] : []
 
     return {

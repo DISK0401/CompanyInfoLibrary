@@ -74,15 +74,23 @@
 <script setup>
 import { ref } from 'vue'
 import { NCard, NIcon, NBadge, NButton, NRadioGroup, NRadioButton, NEmpty, NCollapseTransition, NTag } from 'naive-ui'
+import { useMessage } from 'naive-ui'
 import { FunnelOutline, ChevronDownOutline, ChevronUpOutline, AddOutline, SearchOutline } from '@vicons/ionicons5'
 import QueryConditionRow from './QueryConditionRow.vue'
 import { useQueryBuilder } from '@/composables/useQueryBuilder'
 
 const emit = defineEmits(['search', 'reset'])
 const collapsed = ref(false)
+const message = useMessage()
 const { logic, conditions, addCondition, removeCondition, updateConditionField, updateCondition, resetConditions, buildSearchBody, matchTypeOptions } = useQueryBuilder()
 
-function onSearch() { emit('search', buildSearchBody(null, null, 0, 20)) }
+function onSearch() {
+  try {
+    emit('search', buildSearchBody(null, null, 0, 20))
+  } catch (e) {
+    message.warning(e.message)
+  }
+}
 function onReset() { resetConditions(); emit('reset') }
 </script>
 
