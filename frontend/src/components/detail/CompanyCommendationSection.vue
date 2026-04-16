@@ -22,6 +22,7 @@
       size="small"
       striped
       :max-height="360"
+      virtual-scroll
     />
   </n-card>
 </template>

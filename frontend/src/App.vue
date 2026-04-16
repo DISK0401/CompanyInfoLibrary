@@ -19,6 +19,10 @@
                   <n-icon :component="SearchOutline" size="14" />
                   企業検索
                 </RouterLink>
+                <a v-if="swaggerEnabled" href="/api-docs" target="_blank" rel="noopener" class="nav-item">
+                  <n-icon :component="CodeSlashOutline" size="14" />
+                  API仕様
+                </a>
               </nav>
             </div>
           </header>
@@ -32,12 +36,24 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
 import { RouterView, RouterLink, useRouter } from 'vue-router'
 import { NConfigProvider, NMessageProvider, NDialogProvider, NIcon } from 'naive-ui'
 import { jaJP, dateJaJP } from 'naive-ui'
-import { BusinessOutline, SearchOutline } from '@vicons/ionicons5'
+import { BusinessOutline, SearchOutline, CodeSlashOutline } from '@vicons/ionicons5'
+import axios from 'axios'
 
 const router = useRouter()
+const swaggerEnabled = ref(false)
+
+onMounted(async () => {
+  try {
+    await axios.get('/v3/api-docs')
+    swaggerEnabled.value = true
+  } catch {
+    swaggerEnabled.value = false
+  }
+})
 
 const themeOverrides = {
   common: {
