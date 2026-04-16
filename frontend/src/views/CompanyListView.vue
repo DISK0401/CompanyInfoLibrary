@@ -1,189 +1,213 @@
 <template>
   <div class="page">
-    <h1 class="page-title">企業検索</h1>
+    <div class="page-hd">
+      <h1 class="page-title">企業検索</h1>
+      <p class="page-sub">条件を設定して絞り込み検索。条件なしで検索すると全件が対象になります。</p>
+    </div>
 
-    <!-- 検索フォーム -->
-    <form class="search-form" @submit.prevent="onSearch">
-      <div class="form-row">
-        <label class="form-label">
-          法人名
-          <input v-model="form.name" class="form-input" type="text" placeholder="例: テスト株式会社" maxlength="200" />
-        </label>
-        <label class="form-label">
-          所在地
-          <input v-model="form.location" class="form-input" type="text" placeholder="例: 東京都" maxlength="200" />
-        </label>
-      </div>
-      <div class="form-row">
-        <label class="form-label">
-          資本金（円以上）
-          <input v-model.number="form.minCapital" class="form-input" type="number" placeholder="例: 10000000" min="0" />
-        </label>
-        <label class="form-label">
-          従業員数（名以上）
-          <input v-model.number="form.minEmployees" class="form-input" type="number" placeholder="例: 100" min="0" />
-        </label>
-      </div>
-      <div class="form-actions">
-        <button type="submit" class="btn-primary" :disabled="loading">
-          {{ loading ? '検索中...' : '検索' }}
-        </button>
-        <button type="button" class="btn-secondary" @click="onReset">リセット</button>
-      </div>
-    </form>
+    <QueryBuilder @search="onSearch" @reset="onReset" />
 
-    <!-- エラー -->
-    <div v-if="error" class="alert-error">{{ error }}</div>
+    <n-alert v-if="store.error" type="error" :show-icon="true" style="margin-top: 0.75rem;">
+      {{ store.error }}
+    </n-alert>
 
-    <!-- 検索結果 -->
-    <template v-if="result">
-      <div class="result-summary">
-        <span>{{ result.totalElements.toLocaleString() }} 件中
-          {{ currentRangeStart }}〜{{ currentRangeEnd }} 件を表示</span>
+    <template v-if="store.result">
+      <div class="result-toolbar">
+        <div class="result-info">
+          <span class="result-num">{{ store.result.totalElements.toLocaleString() }}</span>
+          <span class="result-label">件の企業が見つかりました</span>
+          <n-text depth="3" style="font-size: 0.75rem;">（{{ rangeStart }}〜{{ rangeEnd }} 件表示中）</n-text>
+        </div>
+        <ColumnSettingsPanel
+          :model-value="visibleColumns"
+          @update:model-value="onColumnsUpdate"
+        />
       </div>
 
-      <div v-if="result.content.length === 0" class="empty-state">
-        該当する企業が見つかりませんでした。
-      </div>
-
-      <table v-else class="result-table">
-        <thead>
-          <tr>
-            <th>法人番号</th>
-            <th>法人名</th>
-            <th>所在地</th>
-            <th class="num-col">資本金</th>
-            <th class="num-col">従業員数</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="c in result.content"
-            :key="c.corporateNumber"
-            class="clickable-row"
-            @click="goToDetail(c.corporateNumber)"
-          >
-            <td class="corp-num">{{ c.corporateNumber }}</td>
-            <td class="company-name">{{ c.name }}</td>
-            <td>{{ c.location || '—' }}</td>
-            <td class="num-col">{{ formatCapital(c.capitalStock) }}</td>
-            <td class="num-col">{{ c.employeeNumber != null ? c.employeeNumber.toLocaleString() + ' 名' : '—' }}</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <!-- ページネーション -->
-      <div v-if="result.totalPages > 1" class="pagination">
-        <button :disabled="currentPage === 0" @click="changePage(currentPage - 1)">‹ 前</button>
-        <span class="page-info">{{ currentPage + 1 }} / {{ result.totalPages }}</span>
-        <button :disabled="currentPage >= result.totalPages - 1" @click="changePage(currentPage + 1)">次 ›</button>
-      </div>
+      <CompanyDataTable
+        :companies="store.result.content"
+        :total-records="store.result.totalElements"
+        :loading="store.loading"
+        :page="store.currentPage"
+        :page-size="pageSize"
+        :sort-field="sortField"
+        :sort-order="sortOrder"
+        :visible-columns="visibleColumns"
+        @page-change="onPageChange"
+        @sort-change="onSortChange"
+        @row-click="goToDetail"
+      />
     </template>
+
+    <div v-else-if="!store.loading && !store.error" class="empty-start">
+      <div class="empty-icon-wrap">
+        <n-icon :component="BusinessOutline" size="36" color="#6366f1" />
+      </div>
+      <p class="empty-title">企業情報を検索</p>
+      <p class="empty-sub">上の検索フォームに条件を入力して「検索」ボタンを押してください</p>
+    </div>
+
+    <div v-if="store.loading && !store.result" class="initial-loading">
+      <n-spin size="medium" />
+      <n-text depth="3">検索中...</n-text>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, reactive, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import { searchCompanies } from '@/api/companies'
-import { formatCapital } from '@/utils/format'
+import { NAlert, NSpin, NIcon, NText } from 'naive-ui'
+import { BusinessOutline } from '@vicons/ionicons5'
+import QueryBuilder from '@/components/search/QueryBuilder.vue'
+import CompanyDataTable from '@/components/table/CompanyDataTable.vue'
+import ColumnSettingsPanel from '@/components/table/ColumnSettingsPanel.vue'
+import { useCompanySearchStore } from '@/stores/companySearch'
+import { useColumnSettings } from '@/composables/useColumnSettings'
 
 const router = useRouter()
+const store = useCompanySearchStore()
+const { visibleColumns, loadSettings, saveSettings } = useColumnSettings()
 
-const form = reactive({ name: '', location: '', minCapital: null, minEmployees: null })
-const result = ref(null)
-const loading = ref(false)
-const error = ref(null)
-const currentPage = ref(0)
-const PAGE_SIZE = 20
+const sortField = ref('capitalStock')
+const sortOrder = ref(-1)
+const pageSize = ref(20)
 
-const currentRangeStart = computed(() => currentPage.value * PAGE_SIZE + 1)
-const currentRangeEnd = computed(() =>
-  Math.min((currentPage.value + 1) * PAGE_SIZE, result.value?.totalElements ?? 0)
-)
+const rangeStart = computed(() => store.currentPage * pageSize.value + 1)
+const rangeEnd = computed(() => Math.min((store.currentPage + 1) * pageSize.value, store.result?.totalElements ?? 0))
 
-async function fetchPage(page) {
-  loading.value = true
-  error.value = null
-  try {
-    const params = {
-      page,
-      size: PAGE_SIZE,
-      ...(form.name && { name: form.name }),
-      ...(form.location && { location: form.location }),
-      ...(form.minCapital != null && form.minCapital !== '' && { minCapital: form.minCapital }),
-      ...(form.minEmployees != null && form.minEmployees !== '' && { minEmployees: form.minEmployees }),
-    }
-    result.value = await searchCompanies(params)
-    currentPage.value = page
-  } catch (e) {
-    error.value = e.response?.data?.error ?? 'エラーが発生しました。しばらく時間をおいてから再試行してください。'
-  } finally {
-    loading.value = false
-  }
+onMounted(() => loadSettings())
+
+function onSearch(body) {
+  store.currentPage = 0
+  store.search({ ...body, sort: sortField.value ? [{ field: sortField.value, direction: sortOrder.value === 1 ? 'ASC' : 'DESC' }] : [], page: 0, size: pageSize.value })
 }
-
-function onSearch() {
-  fetchPage(0)
+function onReset() { store.reset() }
+function onColumnsUpdate(cols) { visibleColumns.value = cols; saveSettings() }
+function onPageChange({ page, rows }) { if (rows && rows !== pageSize.value) pageSize.value = rows; store.changePage(page, rows) }
+function onSortChange({ sortField: sf, sortOrder: so }) {
+  sortField.value = sf; sortOrder.value = so
+  if (store.lastSearchBody) store.search({ ...store.lastSearchBody, sort: sf ? [{ field: sf, direction: so === 1 ? 'ASC' : 'DESC' }] : [], page: 0 })
 }
-
-function onReset() {
-  form.name = ''
-  form.location = ''
-  form.minCapital = null
-  form.minEmployees = null
-  result.value = null
-  error.value = null
-  currentPage.value = 0
-}
-
-function changePage(page) {
-  fetchPage(page)
-}
-
-function goToDetail(corporateNumber) {
-  router.push({ name: 'CompanyDetail', params: { corporateNumber } })
-}
-
+function goToDetail(corporateNumber) { router.push({ name: 'CompanyDetail', params: { corporateNumber } }) }
 </script>
 
 <style scoped>
-.page { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
-.page-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 1.5rem; color: #1a202c; }
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-/* フォーム */
-.search-form { background: #f7fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
-.form-row { display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
-.form-label { display: flex; flex-direction: column; gap: 0.3rem; flex: 1; min-width: 200px; font-size: 0.875rem; font-weight: 600; color: #4a5568; }
-.form-input { padding: 0.5rem 0.75rem; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
-.form-input:focus { border-color: #3b82f6; }
-.form-actions { display: flex; gap: 0.75rem; margin-top: 0.5rem; }
-.btn-primary { padding: 0.55rem 1.5rem; background: #3b82f6; color: #fff; border: none; border-radius: 6px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
-.btn-primary:hover:not(:disabled) { background: #2563eb; }
-.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
-.btn-secondary { padding: 0.55rem 1.25rem; background: #fff; color: #4a5568; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 0.95rem; cursor: pointer; transition: background 0.2s; }
-.btn-secondary:hover { background: #f7fafc; }
+/* ページヘッダー */
+.page-hd {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(79,70,229,0.12);
+  position: relative;
+}
 
-/* エラー */
-.alert-error { background: #fff5f5; border: 1px solid #feb2b2; color: #c53030; border-radius: 6px; padding: 0.75rem 1rem; margin-bottom: 1rem; font-size: 0.9rem; }
+/* 左アクセントライン */
+.page-hd::before {
+  content: '';
+  position: absolute;
+  left: -1.5rem;
+  top: 0;
+  bottom: 1rem;
+  width: 3px;
+  background: linear-gradient(to bottom, #4f46e5, #a5b4fc);
+  border-radius: 0 2px 2px 0;
+}
 
-/* 結果 */
-.result-summary { font-size: 0.875rem; color: #718096; margin-bottom: 0.75rem; }
-.empty-state { text-align: center; color: #718096; padding: 3rem; }
+.page-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
 
-.result-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-.result-table th { background: #edf2f7; text-align: left; padding: 0.6rem 0.75rem; font-weight: 600; color: #4a5568; border-bottom: 2px solid #cbd5e0; white-space: nowrap; }
-.result-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid #e2e8f0; vertical-align: middle; }
-.clickable-row { cursor: pointer; transition: background 0.1s; }
-.clickable-row:hover { background: #ebf8ff; }
-.corp-num { font-family: monospace; font-size: 0.82rem; color: #718096; }
-.company-name { font-weight: 600; color: #2b6cb0; }
-.num-col { text-align: right; white-space: nowrap; }
+.page-sub {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  letter-spacing: 0.01em;
+}
 
-/* ページネーション */
-.pagination { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
-.pagination button { padding: 0.4rem 1rem; border: 1px solid #cbd5e0; border-radius: 6px; background: #fff; cursor: pointer; font-size: 0.9rem; transition: background 0.2s; }
-.pagination button:hover:not(:disabled) { background: #ebf8ff; }
-.pagination button:disabled { opacity: 0.4; cursor: not-allowed; }
-.page-info { font-size: 0.875rem; color: #4a5568; }
+/* 結果ツールバー */
+.result-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.875rem;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.result-info { display: flex; align-items: baseline; gap: 0.3rem; flex-wrap: wrap; }
+
+.result-num {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #4f46e5;
+  font-family: 'Fira Code', monospace;
+  letter-spacing: -0.03em;
+}
+
+.result-label { font-size: 0.82rem; font-weight: 500; color: #475569; }
+
+/* 初期状態 */
+.empty-start {
+  text-align: center;
+  padding: 5rem 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.empty-icon-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(99,102,241,0.2);
+}
+
+.empty-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #334155;
+  letter-spacing: -0.01em;
+}
+
+.empty-sub {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #94a3b8;
+  line-height: 1.7;
+}
+
+.initial-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 3rem;
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
 </style>

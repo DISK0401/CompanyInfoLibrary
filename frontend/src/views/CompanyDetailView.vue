@@ -1,95 +1,80 @@
 <template>
   <div class="page">
-    <button class="btn-back" @click="router.back()">← 検索結果に戻る</button>
+    <!-- 戻るボタン -->
+    <n-button text size="small" @click="router.back()" style="margin-bottom:1rem;">
+      <template #icon><n-icon :component="ArrowBackOutline" /></template>
+      企業一覧に戻る
+    </n-button>
 
     <!-- ローディング -->
-    <div v-if="loading" class="loading">読み込み中...</div>
+    <div v-if="loading" class="loading-wrap">
+      <n-spin size="large" />
+    </div>
 
     <!-- エラー -->
-    <div v-else-if="error" class="alert-error">{{ error }}</div>
+    <n-alert v-else-if="error" type="error" :closable="false">{{ error }}</n-alert>
 
-    <!-- 詳細 -->
+    <!-- 本体 -->
     <template v-else-if="company">
-      <!-- ヘッダー -->
-      <div class="company-header">
-        <h1 class="company-name">{{ company.name }}</h1>
-        <span class="company-kana">{{ company.kana }}</span>
-        <span class="corp-num">法人番号 {{ company.corporateNumber }}</span>
+      <!-- 会社ヘッダー -->
+      <div class="company-hero">
+        <div class="hero-main">
+          <div class="hero-name-block">
+            <h1 class="hero-name">{{ company.name }}</h1>
+            <p v-if="company.kana" class="hero-kana">{{ company.kana }}</p>
+            <p v-if="company.nameEn" class="hero-name-en">{{ company.nameEn }}</p>
+          </div>
+          <div class="hero-meta">
+            <div class="meta-chip">
+              <span class="meta-chip-label">法人番号</span>
+              <code class="meta-chip-value">{{ company.corporateNumber }}</code>
+            </div>
+            <div v-if="company.status" class="meta-chip">
+              <span class="meta-chip-label">ステータス</span>
+              <n-tag :type="statusType(company.status)" size="small" round>{{ statusLabel(company.status) }}</n-tag>
+            </div>
+            <div v-if="company.location" class="meta-chip">
+              <n-icon :component="LocationOutline" size="13" color="#64748b" />
+              <span class="meta-loc">{{ company.location }}</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="detail-grid">
-        <!-- 基本情報 -->
-        <section class="card">
-          <h2 class="card-title">基本情報</h2>
-          <dl class="info-list">
-            <template v-if="company.location">
-              <dt>所在地</dt><dd>{{ company.location }}</dd>
-            </template>
-            <template v-if="company.postalCode">
-              <dt>郵便番号</dt><dd>〒{{ company.postalCode }}</dd>
-            </template>
-            <template v-if="company.capitalStock != null">
-              <dt>資本金</dt><dd>{{ formatCapital(company.capitalStock) }}</dd>
-            </template>
-            <template v-if="company.employeeNumber != null">
-              <dt>従業員数</dt><dd>{{ company.employeeNumber.toLocaleString() }} 名</dd>
-            </template>
-            <template v-if="company.representativeName">
-              <dt>代表者</dt>
-              <dd>
-                {{ company.representativeName }}
-                <span v-if="company.representativePosition" class="sub-text">（{{ company.representativePosition }}）</span>
-              </dd>
-            </template>
-            <template v-if="company.dateOfEstablishment">
-              <dt>設立年月日</dt><dd>{{ company.dateOfEstablishment }}</dd>
-            </template>
-            <template v-if="company.foundingYear">
-              <dt>創業年</dt><dd>{{ company.foundingYear }} 年</dd>
-            </template>
-            <template v-if="company.companyUrl">
-              <dt>企業HP</dt>
-              <dd><a :href="company.companyUrl" target="_blank" rel="noopener noreferrer">{{ company.companyUrl }}</a></dd>
-            </template>
-            <template v-if="company.businessSummary">
-              <dt>事業概要</dt><dd class="summary-text">{{ company.businessSummary }}</dd>
-            </template>
-          </dl>
-        </section>
+      <!-- セクション縦並び -->
+      <div class="sections">
+        <CompanyBasicCard :company="company" />
+        <CompanyFinanceTable v-if="company.finances?.length" :finances="company.finances" />
+        <CompanyWorkplaceSection :workplace="company.workplace" />
 
         <!-- 事業内容 -->
-        <section v-if="company.businessItems?.length" class="card">
-          <h2 class="card-title">事業内容</h2>
-          <ul class="tag-list">
-            <li v-for="item in company.businessItems" :key="item" class="tag">{{ item }}</li>
-          </ul>
-        </section>
-      </div>
+        <n-card v-if="company.businessItems?.length" class="section-card">
+          <template #header>
+            <div class="sec-hd">
+              <n-icon :component="ListOutline" size="16" color="#4f46e5" />
+              <span>事業内容</span>
+              <n-text depth="3" style="font-size:0.75rem;">{{ company.businessItems.length }} 件</n-text>
+            </div>
+          </template>
+          <div class="tag-wrap">
+            <n-tag
+              v-for="item in company.businessItems"
+              :key="item"
+              :bordered="false"
+              size="small"
+              style="background:#e0e7ff; color:#3730a3; font-size:0.82rem;"
+            >
+              {{ resolveBusinessItem(item) }}
+            </n-tag>
+          </div>
+        </n-card>
 
-      <!-- 財務情報 -->
-      <section v-if="company.finances?.length" class="card mt">
-        <h2 class="card-title">財務情報</h2>
-        <table class="finance-table">
-          <thead>
-            <tr>
-              <th>期</th>
-              <th class="num-col">売上高</th>
-              <th class="num-col">当期純利益</th>
-              <th class="num-col">総資産額</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="f in company.finances" :key="f.period">
-              <td>{{ f.period ?? '—' }}</td>
-              <td class="num-col">{{ formatAmount(f.netSales) }}</td>
-              <td class="num-col" :class="{ negative: f.netIncomeLoss != null && f.netIncomeLoss < 0 }">
-                {{ formatAmount(f.netIncomeLoss) }}
-              </td>
-              <td class="num-col">{{ formatAmount(f.totalAssets) }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+        <CompanySubsidySection :corporate-number="corporateNumber" />
+        <CompanyPatentSection :corporate-number="corporateNumber" />
+        <CompanyProcurementSection :corporate-number="corporateNumber" />
+        <CompanyCertificationSection :corporate-number="corporateNumber" />
+        <CompanyCommendationSection :corporate-number="corporateNumber" />
+      </div>
     </template>
   </div>
 </template>
@@ -97,71 +82,160 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { NButton, NIcon, NSpin, NAlert, NCard, NTag, NText } from 'naive-ui'
+import { ArrowBackOutline, LocationOutline, ListOutline } from '@vicons/ionicons5'
+import { resolveBusinessItem } from '@/constants/businessItemMaster'
 import { getCompany } from '@/api/companies'
-import { formatCapital, formatAmount } from '@/utils/format'
+import CompanyBasicCard from '@/components/detail/CompanyBasicCard.vue'
+import CompanyFinanceTable from '@/components/detail/CompanyFinanceTable.vue'
+import CompanyWorkplaceSection from '@/components/detail/CompanyWorkplaceSection.vue'
+import CompanySubsidySection from '@/components/detail/CompanySubsidySection.vue'
+import CompanyPatentSection from '@/components/detail/CompanyPatentSection.vue'
+import CompanyProcurementSection from '@/components/detail/CompanyProcurementSection.vue'
+import CompanyCertificationSection from '@/components/detail/CompanyCertificationSection.vue'
+import CompanyCommendationSection from '@/components/detail/CompanyCommendationSection.vue'
 
 const route = useRoute()
 const router = useRouter()
 
+const corporateNumber = route.params.corporateNumber
 const company = ref(null)
 const loading = ref(true)
 const error = ref(null)
 
 onMounted(async () => {
   try {
-    company.value = await getCompany(route.params.corporateNumber)
+    company.value = await getCompany(corporateNumber)
   } catch (e) {
     if (e.response?.status === 404) {
-      error.value = `法人番号 ${route.params.corporateNumber} の企業情報が見つかりませんでした。`
+      error.value = `法人番号 ${corporateNumber} の企業情報が見つかりませんでした。`
     } else {
-      error.value = e.response?.data?.error ?? 'エラーが発生しました。しばらく時間をおいてから再試行してください。'
+      error.value = e.response?.data?.error ?? 'エラーが発生しました。'
     }
   } finally {
     loading.value = false
   }
 })
 
+
+function statusLabel(s) {
+  return { '01': '存続', '11': '清算中', '21': '解散', '31': '取消', '41': '合併消滅', '51': '解散・清算中', '71': '廃業', '81': '廃業・清算中' }[s] ?? s
+}
+
+function statusType(s) {
+  if (s === '01') return 'success'
+  if (['11', '21', '51', '81'].includes(s)) return 'warning'
+  return 'error'
+}
 </script>
 
 <style scoped>
-.page { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
-.btn-back { background: none; border: none; color: #3b82f6; font-size: 0.9rem; cursor: pointer; padding: 0; margin-bottom: 1.5rem; }
-.btn-back:hover { text-decoration: underline; }
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem 2rem;
+}
 
-.loading { text-align: center; color: #718096; padding: 4rem; }
-.alert-error { background: #fff5f5; border: 1px solid #feb2b2; color: #c53030; border-radius: 6px; padding: 0.75rem 1rem; font-size: 0.9rem; }
+.loading-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 5rem;
+}
 
-/* ヘッダー */
-.company-header { margin-bottom: 1.5rem; }
-.company-name { font-size: 1.8rem; font-weight: 700; color: #1a202c; margin: 0 0 0.25rem; }
-.company-kana { display: block; font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem; }
-.corp-num { font-size: 0.8rem; color: #a0aec0; font-family: monospace; }
+/* 会社ヘッダー */
+.company-hero {
+  background: linear-gradient(135deg, #1e293b 0%, #312e81 100%);
+  border-radius: 10px;
+  padding: 1.1rem 1.5rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #3b5bdb;
+  box-shadow: var(--shadow-md);
+}
 
-/* グリッド */
-.detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+.hero-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
 
-/* カード */
-.card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem; }
-.card.mt { margin-top: 1rem; }
-.card-title { font-size: 1rem; font-weight: 700; color: #2d3748; margin: 0 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e2e8f0; }
+.hero-kana {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin: 0.25rem 0 0;
+}
 
-/* 基本情報リスト */
-.info-list { display: grid; grid-template-columns: 7rem 1fr; gap: 0.4rem 0.75rem; margin: 0; font-size: 0.875rem; }
-.info-list dt { color: #718096; font-weight: 600; align-self: start; padding-top: 0.1rem; }
-.info-list dd { margin: 0; color: #2d3748; word-break: break-all; }
-.info-list a { color: #3b82f6; }
-.info-list a:hover { text-decoration: underline; }
-.sub-text { color: #718096; }
-.summary-text { line-height: 1.6; }
+.hero-name-en {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  font-style: italic;
+  margin: 0.15rem 0 0;
+}
 
-/* タグリスト */
-.tag-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.tag { background: #ebf8ff; color: #2b6cb0; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.82rem; font-weight: 500; }
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
 
-/* 財務テーブル */
-.finance-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-.finance-table th { background: #edf2f7; padding: 0.6rem 0.75rem; font-weight: 600; color: #4a5568; border-bottom: 2px solid #cbd5e0; white-space: nowrap; }
-.finance-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid #e2e8f0; }
-.num-col { text-align: right; white-space: nowrap; }
-.negative { color: #e53e3e; }
+.meta-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.meta-chip-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.meta-chip-value {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.82rem;
+  color: #a5b4fc;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.meta-loc {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+}
+
+/* セクション */
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section-card {
+  border-radius: 10px;
+  background: rgba(255,255,255,0.95) !important;
+  backdrop-filter: blur(8px);
+}
+
+.sec-hd {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-hd span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.tag-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 </style>

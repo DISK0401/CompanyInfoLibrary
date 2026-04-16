@@ -2,6 +2,7 @@ package com.companylib.api.controller;
 
 import com.companylib.api.domain.dto.*;
 import com.companylib.api.service.CompanyNotFoundException;
+import com.companylib.api.service.CompanyRelatedInfoService;
 import com.companylib.api.service.CompanyService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -30,6 +31,9 @@ class CompanyControllerTest {
 
     @MockBean
     private CompanyService companyService;
+
+    @MockBean
+    private CompanyRelatedInfoService companyRelatedInfoService;
 
     @Nested
     @DisplayName("GET /api/companies")
@@ -248,6 +252,6 @@ class CompanyControllerTest {
         com.companylib.api.domain.entity.Company c = new com.companylib.api.domain.entity.Company();
         c.setCorporateNumber(corporateNumber);
         c.setName(name);
-        return new CompanyDetailDto(c);
+        return new CompanyDetailDto(c, null);
     }
 }

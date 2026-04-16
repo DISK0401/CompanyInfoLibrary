@@ -9,8 +9,11 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@vicons/ionicons5": "^0.13.0",
     "axios": "^1.7.7",
+    "naive-ui": "^2.44.1",
     "pinia": "^2.2.4",
+    "vfonts": "^0.0.3",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5"
   },

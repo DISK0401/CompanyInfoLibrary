@@ -17,6 +17,17 @@ export function formatCapital(value) {
 }
 
 /**
+ * 日付文字列（YYYY-MM-DD）を「YYYY年MM月DD日」形式にフォーマットする
+ * @param {string|null} value
+ * @returns {string}
+ */
+export function formatJpDate(value) {
+  if (!value) return '—'
+  const [y, m, d] = value.split('-')
+  return `${y}年${parseInt(m)}月${parseInt(d)}日`
+}
+
+/**
  * 財務金額を「▲〇億円」形式にフォーマットする
  * @param {number|null} value
  * @returns {string}
