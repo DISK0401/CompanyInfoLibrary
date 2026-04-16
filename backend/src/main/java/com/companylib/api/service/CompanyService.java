@@ -33,7 +33,7 @@ public class CompanyService {
     public PageResponse<CompanySummaryDto> search(CompanySearchRequest req) {
         PageRequest pageable = PageRequest.of(
             req.getPage(), req.getSize(),
-            Sort.by(Sort.Direction.DESC, "capitalStock")
+            Sort.by(nullsLast(Sort.Direction.DESC, "capitalStock"))
         );
         Page<CompanySummaryDto> result = companyRepository.searchCompanies(
             req.getName(),
@@ -90,18 +90,28 @@ public class CompanyService {
     private PageRequest buildPageable(AdvancedSearchRequest req) {
         Sort sort;
         if (req.sort().isEmpty()) {
-            sort = Sort.by(Sort.Order.desc("capitalStock").nullsLast());
+            sort = Sort.by(nullsLast(Sort.Direction.DESC, "capitalStock"));
         } else {
             List<Sort.Order> orders = req.sort().stream()
-                .map(s -> {
-                    Sort.Order order = s.direction() == SortDirection.ASC
-                        ? Sort.Order.asc(s.field())
-                        : Sort.Order.desc(s.field());
-                    return order.nullsLast();
-                })
+                .map(s -> nullsLast(
+                    s.direction() == SortDirection.ASC ? Sort.Direction.ASC : Sort.Direction.DESC,
+                    s.field()
+                ))
                 .toList();
             sort = Sort.by(orders);
         }
         return PageRequest.of(req.page(), req.size(), sort);
+    }
+
+    /**
+     * 昇順・降順ともに NULL を末尾に追加する Sort.Order を生成する。
+     *
+     * PostgreSQL のデフォルトは ASC NULLS LAST / DESC NULLS FIRST であるため、
+     * 降順時に明示的に NULLS LAST を指定しないと NULL が先頭に来てしまう。
+     * Spring Data JPA の NullHandling.NULLS_LAST は Hibernate 6 以降で
+     * JPQL の NULLS LAST 句として出力される。
+     */
+    private static Sort.Order nullsLast(Sort.Direction direction, String field) {
+        return new Sort.Order(direction, field, Sort.NullHandling.NULLS_LAST);
     }
 }

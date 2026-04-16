@@ -78,10 +78,9 @@ const props = defineProps({
   finances: { type: Array, default: () => [] },
 })
 
-// finances はバックエンドから文字列ソート降順で来るが、
-// 多桁の期番号（「第50期」等）で逆転することがあるため、
-// 「数値の大きい方が当期」というユーザー要件に合わせてフロントで逆順に並び替える
-const sortedFinances = computed(() => [...props.finances].reverse())
+// finances はバックエンド（CompanyDetailDto）で period 降順ソート済みのため
+// finances[0] が当期（最新）となる。reverse() は不要。
+const sortedFinances = computed(() => [...props.finances])
 
 // 期ラベル: sortedFinances[0] = 当期（最新）
 const periodLabels = computed(() =>
