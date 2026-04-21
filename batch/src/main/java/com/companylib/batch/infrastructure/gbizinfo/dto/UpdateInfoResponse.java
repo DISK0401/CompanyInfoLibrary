@@ -7,14 +7,14 @@ import java.util.List;
 @Data
 public class UpdateInfoResponse {
     @JsonProperty("hojin-infos")
-    private List<UpdatedHojinInfo> hojinInfos;
+    private List<HojinInfo> hojinInfos;
 
-    @Data
-    public static class UpdatedHojinInfo {
-        @JsonProperty("corporate_number")
-        private String corporateNumber;
+    @JsonProperty("pageNumber")
+    private Integer pageNumber;
 
-        @JsonProperty("update_date")
-        private String updateDate;
-    }
+    @JsonProperty("totalCount")
+    private Integer totalCount;
+
+    @JsonProperty("totalPage")
+    private Integer totalPage;
 }

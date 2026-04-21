@@ -167,16 +167,62 @@ npm run lint
 バッチサーバー起動後、Spring Boot Actuator または直接 `JobLauncher` を呼び出します。
 開発中は以下のように起動時にジョブ名をパラメータで渡すことで実行できます。
 
+**bash / zsh:**
+
 ```bash
-# Job1: gBizINFO 初回インポート（JSON ファイルを指定）
 cd batch
-mvn spring-boot:run -Dspring-boot.run.arguments="--spring.batch.job.name=gbizInfoImportJob inputFilePath=/path/to/hojin.json"
+
+# Job1: gBizINFO 初回インポート（JSON ファイルを指定）
+mvn spring-boot:run -Dspring-boot.run.arguments="--spring.batch.job.enabled=true --spring.batch.job.name=gbizInfoInitialLoadJob inputFilePath=/path/to/hojin.json"
 
 # Job2: gBizINFO 日次差分更新（前日分）
-mvn spring-boot:run -Dspring-boot.run.arguments="--spring.batch.job.name=gbizInfoDailyUpdateJob"
+mvn spring-boot:run -Dspring-boot.run.arguments="--spring.batch.job.enabled=true --spring.batch.job.name=gbizInfoDailyUpdateJob"
 
 # Job2: 期間指定で実行
-mvn spring-boot:run -Dspring-boot.run.arguments="--spring.batch.job.name=gbizInfoDailyUpdateJob from=2024-01-01 to=2024-01-31"
+mvn spring-boot:run -Dspring-boot.run.arguments="--spring.batch.job.enabled=true --spring.batch.job.name=gbizInfoDailyUpdateJob from=2024-01-01 to=2024-01-31"
+```
+
+**PowerShell（Windows）— `-D` 引数はシングルクォートで囲む:**
+
+```powershell
+cd batch
+
+# Job1: gBizINFO 初回インポート（JSON ファイルを指定）
+mvn spring-boot:run '-Dspring-boot.run.arguments=--spring.batch.job.enabled=true --spring.batch.job.name=gbizInfoInitialLoadJob inputFilePath=/path/to/hojin.json'
+
+# Job2: gBizINFO 日次差分更新（前日分）
+mvn spring-boot:run '-Dspring-boot.run.arguments=--spring.batch.job.enabled=true --spring.batch.job.name=gbizInfoDailyUpdateJob'
+
+# Job2: 期間指定で実行
+mvn spring-boot:run '-Dspring-boot.run.arguments=--spring.batch.job.enabled=true --spring.batch.job.name=gbizInfoDailyUpdateJob from=2024-01-01 to=2024-01-31'
+
+# Job2: 完了済みジョブを強制的に再実行（force=true）
+mvn spring-boot:run '-Dspring-boot.run.arguments=--spring.batch.job.enabled=true --spring.batch.job.name=gbizInfoDailyUpdateJob from=2024-01-01 to=2024-01-31 --force=true'
+```
+
+### 途中停止したジョブの再開
+
+Spring Batch はジョブの実行状態を DB に保存するため、**同じパラメータで再実行すると中断点から自動的に再開**されます。
+
+- **Step1 で失敗した場合**: Step1 から再実行（法人情報 JSON の取得をやり直し）
+- **Step2 で失敗した場合**: Step1（完了済み）はスキップし、未処理分の続きから再開
+
+再開するには、**失敗時と同じパラメータ**（`from` / `to`）で再度実行するだけです。
+
+```powershell
+# 失敗したときと同じコマンドを再実行する
+mvn spring-boot:run '-Dspring-boot.run.arguments=--spring.batch.job.enabled=true --spring.batch.job.name=gbizInfoDailyUpdateJob from=2024-01-01 to=2024-01-31'
+```
+
+> **注意**: `from` / `to` を省略した場合（前日デフォルト）は、再実行する日が変わると異なるパラメータとして扱われ新規実行になります。再開したい場合は必ず同じ日付を明示してください。
+
+### 完了済みジョブの強制再実行
+
+既に COMPLETED のジョブを同じパラメータで再実行したい場合は `--force=true` を付けてください。
+メタデータを自動でクリアしてから再実行します。
+
+```powershell
+mvn spring-boot:run '-Dspring-boot.run.arguments=--spring.batch.job.enabled=true --spring.batch.job.name=gbizInfoDailyUpdateJob from=2024-01-01 to=2024-01-31 --force=true'
 ```
 
 ---

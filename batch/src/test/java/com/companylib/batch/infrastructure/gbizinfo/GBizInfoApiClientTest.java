@@ -37,6 +37,7 @@ class GBizInfoApiClientTest {
     void setUp() {
         ReflectionTestUtils.setField(apiClient, "baseUrl", "https://api.test.example.com/hojin/v2");
         ReflectionTestUtils.setField(apiClient, "apiToken", "test-token");
+        ReflectionTestUtils.setField(apiClient, "requestIntervalMs", 0L);
     }
 
     @Nested
@@ -152,11 +153,11 @@ class GBizInfoApiClientTest {
         @Test
         @DisplayName("正常レスポンスで UpdateInfoResponse を返す")
         void success_returnsResponse() {
-            UpdateInfoResponse.UpdatedHojinInfo updated = new UpdateInfoResponse.UpdatedHojinInfo();
-            updated.setCorporateNumber("1234567890123");
+            HojinInfo info = new HojinInfo();
+            info.setCorporateNumber("1234567890123");
 
             UpdateInfoResponse body = new UpdateInfoResponse();
-            body.setHojinInfos(List.of(updated));
+            body.setHojinInfos(List.of(info));
 
             when(restTemplate.exchange(
                 contains("updateInfo"),
@@ -165,7 +166,7 @@ class GBizInfoApiClientTest {
                 eq(UpdateInfoResponse.class)
             )).thenReturn(ResponseEntity.ok(body));
 
-            UpdateInfoResponse result = apiClient.getUpdateInfo("2024-01-01", "2024-01-02");
+            UpdateInfoResponse result = apiClient.getUpdateInfo("2024-01-01", "2024-01-02", 1);
 
             assertThat(result.getHojinInfos()).hasSize(1);
             assertThat(result.getHojinInfos().get(0).getCorporateNumber()).isEqualTo("1234567890123");
@@ -177,7 +178,7 @@ class GBizInfoApiClientTest {
             when(restTemplate.exchange(any(String.class), any(), any(HttpEntity.class), eq(UpdateInfoResponse.class)))
                 .thenReturn(ResponseEntity.ok(null));
 
-            UpdateInfoResponse result = apiClient.getUpdateInfo("2024-01-01", "2024-01-02");
+            UpdateInfoResponse result = apiClient.getUpdateInfo("2024-01-01", "2024-01-02", 1);
 
             assertThat(result).isNotNull();
             assertThat(result.getHojinInfos()).isNull();
@@ -190,7 +191,7 @@ class GBizInfoApiClientTest {
                 .thenThrow(HttpClientErrorException.create(
                     HttpStatus.TOO_MANY_REQUESTS, "Too Many Requests", HttpHeaders.EMPTY, null, null));
 
-            assertThatThrownBy(() -> apiClient.getUpdateInfo("2024-01-01", "2024-01-02"))
+            assertThatThrownBy(() -> apiClient.getUpdateInfo("2024-01-01", "2024-01-02", 1))
                 .isInstanceOf(RuntimeException.class)
                 .hasMessageContaining("レート制限");
         }
@@ -202,7 +203,7 @@ class GBizInfoApiClientTest {
                 .thenThrow(HttpServerErrorException.create(
                     HttpStatus.INTERNAL_SERVER_ERROR, "Internal Server Error", HttpHeaders.EMPTY, null, null));
 
-            assertThatThrownBy(() -> apiClient.getUpdateInfo("2024-01-01", "2024-01-02"))
+            assertThatThrownBy(() -> apiClient.getUpdateInfo("2024-01-01", "2024-01-02", 1))
                 .isInstanceOf(RuntimeException.class)
                 .hasMessageContaining("サーバーエラー");
         }
@@ -214,7 +215,7 @@ class GBizInfoApiClientTest {
                 .thenThrow(HttpClientErrorException.create(
                     HttpStatus.FORBIDDEN, "Forbidden", HttpHeaders.EMPTY, null, null));
 
-            assertThatThrownBy(() -> apiClient.getUpdateInfo("2024-01-01", "2024-01-02"))
+            assertThatThrownBy(() -> apiClient.getUpdateInfo("2024-01-01", "2024-01-02", 1))
                 .isInstanceOf(RuntimeException.class)
                 .hasMessageContaining("クライアントエラー");
         }

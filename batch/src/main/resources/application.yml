@@ -42,6 +42,8 @@ gbizinfo:
   api:
     base-url: ${GBIZINFO_API_BASE_URL:https://api.info.gbiz.go.jp/hojin/v2}
     token: ${GBIZINFO_API_TOKEN:}
+    # リクエスト間隔（ミリ秒）。gBizINFO API への過剰アクセスを防ぐ
+    request-interval-ms: ${GBIZINFO_API_REQUEST_INTERVAL_MS:500}
   download:
     api-url: ${GBIZINFO_DOWNLOAD_API_URL:https://info.gbiz.go.jp/hojin/Download}
     dir: ${GBIZINFO_DOWNLOAD_DIR:/tmp/gbizinfo/downloads}
